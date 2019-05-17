@@ -1,0 +1,7 @@
+-i https://pypi.org/simple
+django-cors-headers==3.0.1
+django==2.2.1
+djangorestframework==3.9.4
+pillow==6.0.0
+pytz==2019.1
+sqlparse==0.3.0
