@@ -1,0 +1,63 @@
+/*--font---------------------------------------------------------------*/
+
+$font-open: "Open Sans";
+$font-arial: "Arial";
+
+$font-size-base: 62.5%; /* 10px*/
+$font-size-global: 1.6rem;
+$font-size-littlest: 1rem;
+$font-size-little: 1.2rem;
+$font-size-normal: 1.4rem;
+$font-size-h1: 3.2rem;
+$font-size-h2: 2.6rem;
+$font-size-h3: 2.4rem;
+$font-size-h4: 2rem;
+$font-size-h5: 1.8rem;
+$font-size-h6: 1.6rem;
+
+$font-bold: 700;
+$font-bolder: 1000;
+
+/*--color---------------------------------------------------------------*/
+
+$color-branding: (
+  scale0: #dedede,
+  scale1: #bfc3ba,
+  scale2: #a9aca9,
+  scale3: #60495a,
+  scale4: #3f3244,
+  scale5: #2f2235
+);
+
+$color-scale0: map-get($color-branding, scale0);
+$color-scale1: map-get($color-branding, scale1);
+$color-scale2: map-get($color-branding, scale2);
+$color-scale3: map-get($color-branding, scale3);
+$color-scale4: map-get($color-branding, scale4);
+$color-scale5: map-get($color-branding, scale5);
+
+$color-networks: (
+  instagram: #566cfe,
+  twitter: #007ebf,
+  github: #000000,
+  linkedin: #1a2e88,
+  codepen: #000000
+);
+
+$color-instagram: map-get($color-networks, instagram);
+$color-twitter: map-get($color-networks, twitter);
+$color-github: map-get($color-networks, github);
+$color-linkedin: map-get($color-networks, linkedin);
+$color-codepen: map-get($color-networks, codepen);
+
+/* layout
+---------------------------------------------------------------*/
+
+$layout-desktop: 960px;
+
+/* $mq
+---------------------------------------------------------------*/
+
+$mq-tablet: 800px;
+$mq-mobile: 600px;
+$mq-mobile-sm: 400px;
