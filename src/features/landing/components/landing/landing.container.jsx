@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-class LoginContainer extends Component {
+class LandingContainer extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Login</h1>
+        <h1>Landing</h1>
       </React.Fragment>
     )
   }
 }
 
 export {
-  LoginContainer
+  LandingContainer
 }
