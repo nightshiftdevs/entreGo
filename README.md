@@ -52,13 +52,13 @@ In case you need to desactivate the virtual env you can do it with:
 exit
 ```
 
-Then go to the ```./backend/entrego```.
+Then go to ```./backend/entrego```.
 Migrate for the first time if you didn't it:
 
 ```bash
 pipenv run migrate
 ```
-You can run the server with
+For run the server go to ```./backend/entrego``` and use:
 
 ```bash
 pipenv run server
