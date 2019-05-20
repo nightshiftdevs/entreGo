@@ -9,20 +9,20 @@ class DriverFormContainer extends Component {
       //driver information
       firstName: '',
       lastName: '',
-      birthDate: '',
       email: '',
-      adress: '',
       cellphone: '',
+      birthDate: '',
+      address: '',
       password: '',
       password2: '',
-      bankAccount: '',
+      bankAccount: '', // need to validate this information
       photo: '', // after test need to send information like a real photo
       // vehicle information
-      licensePlate: '',
+      licensePlate: '', // need to validate this information
+      cargoVolume: '',
       brand: '',
       color: '',
       photo: '', // after test need to be generated automatically with brand & color information
-      cargoVolume: '',
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

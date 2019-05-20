@@ -14,7 +14,11 @@ function UIinput(props) {
     placeholder,
     value,
     onChange,
-    margin = "normal"
+    margin = "normal",
+    fullWidth = true,
+    variant = "outlined",
+    required = true
+
   } = props;
   return (
     <TextField
@@ -28,6 +32,9 @@ function UIinput(props) {
       value={value}
       onChange={onChange}
       margin={margin}
+      fullWidth={fullWidth}
+      variant={variant}
+      required={required}
     />
   )
 }

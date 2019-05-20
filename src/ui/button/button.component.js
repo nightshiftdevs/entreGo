@@ -2,7 +2,6 @@ import React from "react";
 import Button from '@material-ui/core/Button';
 import './button.component.scss';
 
-
 function UIbutton(props) {
   const {
     className,
@@ -11,7 +10,9 @@ function UIbutton(props) {
     variant,
     type = "button",
     children,
-    color
+    color,
+    fullWidth,
+    component
   } = props;
   return (
     <Button
@@ -21,6 +22,8 @@ function UIbutton(props) {
       variant={variant}
       type={type}
       color={color}
+      fullWidth={fullWidth}
+      component={component}
     >
       {children}
     </Button>

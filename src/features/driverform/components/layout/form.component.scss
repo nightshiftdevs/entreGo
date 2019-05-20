@@ -1,0 +1,17 @@
+.form {
+  margin: auto;
+  max-width: 600px;
+
+  .fields {
+    margin: 20px 0;
+    .row {
+      display: flex;
+      &.photo{
+        margin: 20px 0;
+      }
+      .space-between {
+        padding: 10px;
+      }
+    }
+  }
+}
