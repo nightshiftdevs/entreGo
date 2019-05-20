@@ -4,7 +4,9 @@ import './main.component.scss'
 function Main(props) {
   const { children } = props;
   return (
-    <main>main{children}</main>
+    <main className="main">
+    {children}
+    </main>
   )
 }
 

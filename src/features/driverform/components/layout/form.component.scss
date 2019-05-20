@@ -3,7 +3,7 @@
   max-width: 600px;
 
   .fields {
-    margin: 20px 0;
+    padding: 80px 0 0 0;
     .row {
       display: flex;
       &.photo{
@@ -12,6 +12,12 @@
       .space-between {
         padding: 10px;
       }
+    }
+    .upload-input{
+      display: none;
+    }
+    .upload-button{
+      width: 100%;
     }
   }
 }

@@ -1,13 +1,14 @@
 /*--font---------------------------------------------------------------*/
 
-$font-open: "Open Sans";
-$font-arial: "Arial";
-
+$font-open: 'Open Sans';
+$font-montserrat: 'Montserrat';
+$font-arial: 'Arial';
 $font-size-base: 62.5%; /* 10px*/
 $font-size-global: 1.6rem;
 $font-size-littlest: 1rem;
 $font-size-little: 1.2rem;
 $font-size-normal: 1.4rem;
+$font-size-big: 2.2rem;
 $font-size-h1: 3.2rem;
 $font-size-h2: 2.6rem;
 $font-size-h3: 2.4rem;
@@ -21,7 +22,7 @@ $font-bolder: 1000;
 /*--color---------------------------------------------------------------*/
 
 $color-branding: (
-  scale0: #dedede,
+  scale0: #fff,
   scale1: #bfc3ba,
   scale2: #a9aca9,
   scale3: #60495a,

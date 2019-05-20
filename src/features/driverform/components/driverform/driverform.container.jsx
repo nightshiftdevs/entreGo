@@ -16,13 +16,13 @@ class DriverFormContainer extends Component {
       password: '',
       password2: '',
       bankAccount: '', // need to validate this information
-      photo: '', // after test need to send information like a real photo
+      userPhoto: '', // after test need to send information like a real photo
       // vehicle information
       licensePlate: '', // need to validate this information
       cargoVolume: '',
       brand: '',
       color: '',
-      photo: '', // after test need to be generated automatically with brand & color information
+      vehiclePhoto: '', // after test need to be generated automatically with brand & color information
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

@@ -4,8 +4,7 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import './form.component.scss'
 import {
   UIbutton,
-  UIinput,
-  UItextarea,
+  UIinput
 } from '../../../../ui';
 
 function FormComponent(props) {
@@ -36,10 +35,20 @@ function FormComponent(props) {
           <UIinput name="bankAccount" value={props.bankAccount} label="Insert your bank account" onChange={props.handleChange}></UIinput>
         </div>
         <div className="row photo">
-          <UIbutton variant="contained" color="default" component="span" fullWidth={true}>
-            Upload your Photo &nbsp;
+          <input className="upload-input"
+            name="userPhoto"
+            value={props.userPhoto}
+            accept="image/*"
+            id="contained-button-file-user"
+            multiple
+            type="file"
+          />
+          <label htmlFor="contained-button-file-user" className="upload-button">
+            <UIbutton variant="contained" component="span" fullWidth={true}>
+              Upload your photo &nbsp;
             <CloudUploadIcon />
-          </UIbutton>
+            </UIbutton>
+          </label>
         </div>
 
         <div className="row">
@@ -53,10 +62,20 @@ function FormComponent(props) {
           <UIinput name="color" value={props.password2} label="Vehicle color" onChange={props.handleChange}></UIinput>
         </div>
         <div className="row photo">
-          <UIbutton variant="contained" color="default" component="span" fullWidth={true}>
-            Upload your Vehicle Photo &nbsp;
+          <input className="upload-input"
+            name="vehiclePhoto"
+            value={props.vehiclePhoto}
+            accept="image/*"
+            id="contained-button-file-vehicle"
+            multiple
+            type="file"
+          />
+          <label htmlFor="contained-button-file-vehicle" className="upload-button">
+            <UIbutton variant="contained" component="span" fullWidth={true}>
+              Upload your vehicle photo &nbsp;
             <CloudUploadIcon />
-          </UIbutton>
+            </UIbutton>
+          </label>
         </div>
 
       </div>

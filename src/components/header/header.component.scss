@@ -1,3 +1,31 @@
+@import "../../assets/styles/imports";
+
 .header {
-  margin: 0 0 20px 0;
+  width: 100%;
+  padding: 40px 0;
+  position: fixed;
+  font-family: $font-open; // why is necessary to do this?
+  color: $color-scale0;
+  z-index: 9;
+  .inside-container {
+    display: flex;
+    justify-content: space-between;
+    .header-logo {
+      color: $color-scale0;
+      font-family: $font-montserrat;
+      font-size: $font-size-big;
+      font-weight: $font-bold;
+    }
+    .header-nav{
+      display: flex;
+      li{
+        color: $color-scale2;
+        padding: 5px 20px;
+        &:hover{
+          color: $color-scale0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
