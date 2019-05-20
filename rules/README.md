@@ -52,13 +52,13 @@ For css elements use **lowercase-with-hyphen**.
 }
 ```
 
-In the db user **UPPERCASE** for tables name and **lowercase_with_underscore** for columns.
+In the db user **UPPERCASE** for tables name and **lowerCamelCase** for columns.
 
 ```js
 CREATE TABLE USERS(
-  first_column nvarchar(50),
-  other_column nvarchar(50),
-  last_column nvarchar(50)
+  firstColumn nvarchar(50),
+  otherColumn nvarchar(50),
+  lastColumn nvarchar(50)
 );
 ```
 
