@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { FormComponent } from '../'
+import { requestCreateDriver } from '../../store/actions'
 
 class DriverFormContainer extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class DriverFormContainer extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.createDriver = this.createDriver.bind(this);
   }
 
   handleChange(e) {
@@ -37,10 +39,16 @@ class DriverFormContainer extends Component {
       [name]: value
     });
   }
-  
+  createDriver() {
+    const { dispatch } = this.props;
+    dispatch(requestCreateDriver(this.state));
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     console.log('state', this.state)
+    this.createDriver();
+
   }
 
   onMouseUp() {
