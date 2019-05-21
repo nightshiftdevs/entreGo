@@ -7,7 +7,7 @@ header {
   z-index: 9;
   position: absolute;
   transition: all 0.7s ease;
-  &.header-background{
+  &.header-background {
     position: fixed;
     background: $color-scale4;
     transition: all 0.7s ease;
@@ -22,12 +22,12 @@ header {
       font-size: $font-size-big;
       font-weight: $font-bold;
     }
-    .header-nav{
+    .header-nav {
       display: flex;
-      li{
+      li {
         color: $color-scale2;
         padding: 5px 20px;
-        &:hover{
+        &:hover {
           color: $color-scale0;
           cursor: pointer;
         }
