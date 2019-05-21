@@ -6,14 +6,14 @@ import {
   Footer
 } from '../../../../components';
 
-import { DriverFormContainer } from "../driverform/driverform.container";
+import { CreateDriver } from "../driverform/driverform.container";
 
 function DriverFormLayout() {
   return (
     <div>
       <Header />
       <Main>
-        <DriverFormContainer />
+        <CreateDriver />
       </Main>
       <Footer />
     </div>

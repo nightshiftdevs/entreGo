@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 import { FormComponent } from '../'
 import { requestCreateDriver } from '../../store/actions'
 
@@ -40,6 +40,7 @@ class DriverFormContainer extends Component {
     });
   }
   createDriver() {
+    console.log(this.props);
     const { dispatch } = this.props;
     dispatch(requestCreateDriver(this.state));
   }
@@ -66,6 +67,8 @@ class DriverFormContainer extends Component {
   }
 }
 
+const CreateDriver = connect()(DriverFormContainer)
+
 export {
-  DriverFormContainer
+  CreateDriver
 }

@@ -1,9 +1,10 @@
-import UserService from '../../../api/userService';
+import UserService from '../api/userService';
 
 import {
   SAVE_DRIVER,
   SAVE_ALL_DRIVERS
-} from './constants';
+} from './consts';
+
 
 const saveDriver = (response) => {
   return {
