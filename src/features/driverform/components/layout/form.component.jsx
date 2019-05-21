@@ -22,7 +22,7 @@ function FormComponent(props) {
           <UIinput name="cellphone" value={props.cellphone} label="Cellphone" onChange={props.handleChange}></UIinput>
         </div>
         <div className="row">
-          <UIinput name="birthDate" value={props.birthDate} label="Birth Date" onChange={props.handleChange}></UIinput>
+          <UIinput name="birthDate" value={props.birthDate} label="Birth Date" placeholder="YYYY-MM-DD" onChange={props.handleChange}></UIinput>
           <span className="space-between" />
           <UIinput name="address" value={props.address} label="Address" onChange={props.handleChange}></UIinput>
         </div>

@@ -27,6 +27,8 @@ header {
       li {
         color: $color-scale2;
         padding: 5px 20px;
+        font-family: $font-open;
+        font-size: $font-size-little;
         &:hover {
           color: $color-scale0;
           cursor: pointer;

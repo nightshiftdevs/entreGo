@@ -8,9 +8,11 @@ class LandingContainer extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="gradient-img">
-          <span className="gradient" />
-          <img className="landing-img-0" src={cargoTruck} />
+        <div className="landing-page">
+          <div className="gradient-img">
+            <span className="gradient" />
+            <img className="landing-img-0" src={cargoTruck} />
+          </div>
           <div className="about">
             <div className="about-summary">
               <div className="inside-container">
@@ -39,7 +41,7 @@ class LandingContainer extends Component {
             </div>
           </div>
         </div>
-      </React.Fragment>
+      </React.Fragment >
     )
   }
 }

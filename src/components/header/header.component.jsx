@@ -20,9 +20,9 @@ class Header extends React.Component {
     window.addEventListener('scroll', this.handleScroll);
   }
 
-  componentWillUnmount(){
-   
-}
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
 
   render() {
     return (
