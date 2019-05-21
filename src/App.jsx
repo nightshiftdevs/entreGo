@@ -3,10 +3,16 @@ import "./assets/styles/main.scss";
 
 import { Routes } from './routes';
 
+import { Provider } from 'react-redux';
+
+import { store } from './stores';
+
 export function App() {
   return (
     <div className="Wrapper">
-      <Routes />
+      <Provider store={store}>
+        <Routes />
+      </Provider>
     </div>
-  ) 
+  )
 }

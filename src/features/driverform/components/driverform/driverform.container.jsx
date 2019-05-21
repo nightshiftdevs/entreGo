@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 import { FormComponent } from '../'
+import { requestCreateDriver } from '../../store/actions'
 
 class DriverFormContainer extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class DriverFormContainer extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.createDriver = this.createDriver.bind(this);
   }
 
   handleChange(e) {
@@ -37,10 +39,17 @@ class DriverFormContainer extends Component {
       [name]: value
     });
   }
-  
+  createDriver() {
+    console.log(this.props);
+    const { dispatch } = this.props;
+    dispatch(requestCreateDriver(this.state));
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     console.log('state', this.state)
+    this.createDriver();
+
   }
 
   onMouseUp() {
@@ -58,6 +67,8 @@ class DriverFormContainer extends Component {
   }
 }
 
+const CreateDriver = connect()(DriverFormContainer)
+
 export {
-  DriverFormContainer
+  CreateDriver
 }
