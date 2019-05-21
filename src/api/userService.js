@@ -3,7 +3,7 @@ import { Service } from './Service';
 class UserService extends Service {
   createUser(body) {
     return this.request({
-      url: `drivers`,
+      url: `drivers/`,
       method: 'POST',
       body,
       headers: {

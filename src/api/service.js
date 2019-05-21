@@ -1,3 +1,5 @@
+const entreService = 'http://127.0.0.1:8000'
+
 class Service {
   async request({url, method = 'GET', body = {}, headers = {}}) {
     const config = {
@@ -10,7 +12,7 @@ class Service {
       delete config.body
     }
 
-    const response = await fetch(`http://localhost:3000/${url}`, config)
+    const response = await fetch(`${entreService}/${url}`, config)
     .then(response => response.json());
 
     return response

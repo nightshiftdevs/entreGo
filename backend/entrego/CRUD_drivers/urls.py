@@ -6,7 +6,7 @@ from CRUD_drivers import views
 
 app_name = 'CRUD_drivers'
 urlpatterns = [
-    path('driversList/', views.DriversList.as_view(), name='drivers_list'),
-    path('driversDetail/<int:pk>/', views.DriversDetails.as_view(), name='drivers_detail'),
+    path('drivers/', views.DriversList.as_view(), name='drivers_list'),
+    path('drivers/<int:pk>/', views.DriversDetails.as_view(), name='drivers_detail'),
     ]
 
