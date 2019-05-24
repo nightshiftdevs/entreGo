@@ -59,4 +59,39 @@
       }
     }
   }
+
+  .services {
+    margin: 20px 0 0 0;
+    .underline-effect {
+      width: 100%;
+      background-image: linear-gradient(120deg, $color-scale5 0%, $color-scale5 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 1.5em;
+      background-position: 100% 0;
+      transition: background-size 0.7s ease-in;
+      &:hover {
+        background-size: 100% 100%;
+        color: $color-scale0;
+        transition: all 0.7s ease;
+        p,
+        h2 {
+          color: $color-scale0;
+          transition: all 0.3s ease;
+        }
+      }
+      &:not(:hover) {
+        p,
+        h2 {
+          color: $color-scale5;
+          transition: all 0.5s ease;
+        }
+      }
+      h2 {
+        padding: 60px 0 0 0;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+      }
+    }
+  }
 }

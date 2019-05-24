@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
+import { gradientEffect } from '../../../../helpers/effects/underline'
+
 import './landing.container.scss'
 import cargoTruck from '../../../../assets/img/cargoTruck.jpg'
 import cargoTruck2 from '../../../../assets/img/cargoTruck2.jpg'
 
 class LandingContainer extends Component {
+  constructor(props) {
+    super(props);
+    gradientEffect();
+  }
   render() {
     return (
       <React.Fragment>
@@ -13,7 +19,7 @@ class LandingContainer extends Component {
             <span className="gradient" />
             <img className="landing-img-0" src={cargoTruck} />
           </div>
-          <div className="about">
+          <section className="about">
             <div className="about-summary">
               <div className="inside-container">
                 <h2 className="subtitle">e n t r e G o</h2>
@@ -39,7 +45,20 @@ class LandingContainer extends Component {
                 </p>
               </div>
             </div>
-          </div>
+          </section>
+
+          <section className="services">
+            <div className="underline-effect">
+              <h2 className="title">S E R V I C E S</h2>
+              <p className="service-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                 tempora aliquid ab cupiditate ut hic enim corporis, reiciendis sunt omnis,
+                 nostrum quia officiis aut in voluptatem.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                 tempora aliquid ab cupiditate ut hic enim corporis, reiciendis sunt omnis,
+                 nostrum quia officiis aut in voluptatem.</p>
+              <br />
+            </div>
+          </section>
         </div>
       </React.Fragment >
     )
