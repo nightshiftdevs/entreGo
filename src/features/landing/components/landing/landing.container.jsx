@@ -17,8 +17,13 @@ class LandingContainer extends Component {
         <div className="landing-page">
           <div className="gradient-img">
             <span className="gradient" />
-            <img className="landing-img-0" src={cargoTruck} />
+            <img className="landing-img-0" src={cargoTruck} alt="Cargo truck" />
+            <div className="register-login">
+              <button className="btn btn-register">R E G I S T E R</button>
+              <button className="btn">L O G I N</button>
+            </div>
           </div>
+
           <section className="about">
             <div className="about-summary">
               <div className="inside-container">
@@ -34,14 +39,13 @@ class LandingContainer extends Component {
             <div className="about-detail">
               <div className="gradient-img-1">
                 <span className="gradient-1" />
-                <img className="landing-img-1" src={cargoTruck2} />
+                <img className="landing-img-1" src={cargoTruck2} alt="Cargo truck" />
               </div>
               <div className="about-detail-text">
                 <h2 className="title">WHY entreGo?</h2>
                 <p>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam autem harum perferendis,
-                  cupiditate et eos non omnis voluptatibus vitae ipsum commodi sapiente repudiandae tenetur mollitia,
-                  fugiat incidunt iure repellendus minus! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  cupiditate et eos non omnis voluptatibus vitae ipsum commodi sapiente repudiandae tenetur mollitia.
                 </p>
               </div>
             </div>
@@ -50,13 +54,16 @@ class LandingContainer extends Component {
           <section className="services">
             <div className="underline-effect">
               <h2 className="title">S E R V I C E S</h2>
-              <p className="service-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+              <div className="inside-container service-text"> 
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
                  tempora aliquid ab cupiditate ut hic enim corporis, reiciendis sunt omnis,
                  nostrum quia officiis aut in voluptatem.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
-                 tempora aliquid ab cupiditate ut hic enim corporis, reiciendis sunt omnis,
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                   tempora aliquid ab cupiditate ut hic enim corporis, reiciendis sunt omnis,
                  nostrum quia officiis aut in voluptatem.</p>
-              <br />
+                <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+              </div>
+
             </div>
           </section>
         </div>

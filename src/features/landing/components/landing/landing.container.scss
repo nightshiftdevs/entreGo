@@ -14,6 +14,41 @@
       position: absolute;
       background: linear-gradient(to bottom, $color-scale5, rgba($color-scale5, 0));
     }
+    .register-login {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 35%;
+
+      .btn {
+        margin: 30px 0;
+        padding: 15px 45px;
+        color: $color-scale5;
+        right: 0;
+        border: solid 2px $color-scale5;
+        border-left: 0px;
+        border-bottom-right-radius: 25px;
+        background: none;
+        font-weight: $font-bold;
+        font-size: $font-size-normal;
+        &.btn-register {
+          color: $color-scale0!important;
+          background: $color-scale4!important;
+          border: solid 2px $color-scale4;
+        }
+        &:hover {
+          color: $color-scale0;
+          background: $color-scale5;
+          transition: all 0.5s ease;
+          border-top-right-radius: 25px;
+        }
+        &:not(:hover) {
+          color: $color-scale5;
+          background: none;
+          transition: all 0.5s ease;
+        }
+      }
+    }
   }
 
   .about {
@@ -61,36 +96,38 @@
   }
 
   .services {
-    margin: 20px 0 0 0;
     .underline-effect {
       width: 100%;
       background-image: linear-gradient(120deg, $color-scale5 0%, $color-scale5 100%);
       background-repeat: no-repeat;
-      background-size: 100% 1.5em;
+      background-size: 100% 0em;
       background-position: 100% 0;
-      transition: background-size 0.7s ease-in;
+      transition: background-size 1.5s ease-in;
       &:hover {
         background-size: 100% 100%;
         color: $color-scale0;
-        transition: all 0.7s ease;
+        transition: all 1s ease;
         p,
         h2 {
           color: $color-scale0;
-          transition: all 0.3s ease;
+          transition: all 1s ease;
         }
       }
       &:not(:hover) {
         p,
         h2 {
           color: $color-scale5;
-          transition: all 0.5s ease;
+          transition: all 1s ease;
         }
       }
       h2 {
-        padding: 60px 0 0 0;
+        padding: 60px 0 30px 0;
         text-align: center;
         display: inline-block;
         width: 100%;
+      }
+      .service-text {
+        line-height: 24px;
       }
     }
   }
