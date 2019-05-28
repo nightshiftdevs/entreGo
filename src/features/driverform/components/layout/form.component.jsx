@@ -59,7 +59,7 @@ function FormComponent(props) {
         <div className="row">
           <UIinput name="brand" value={props.brand} label="Vehicle brand" onChange={props.handleChange}></UIinput>
           <span className="space-between" />
-          <UIinput name="color" value={props.password2} label="Vehicle color" onChange={props.handleChange}></UIinput>
+          <UIinput name="color" value={props.color} label="Vehicle color" onChange={props.handleChange}></UIinput>
         </div>
         <div className="row photo">
           <input className="upload-input"
