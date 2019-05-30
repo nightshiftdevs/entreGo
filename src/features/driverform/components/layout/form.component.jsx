@@ -22,7 +22,7 @@ function FormComponent(props) {
           <UIinput name="cellphone" value={props.cellphone} label="Cellphone" onChange={props.handleChange}></UIinput>
         </div>
         <div className="row">
-          <UIinput name="birthDate" value={props.birthDate} label="Birth Date" onChange={props.handleChange}></UIinput>
+          <UIinput name="birthDate" value={props.birthDate} label="Birth Date" placeholder="YYYY-MM-DD" onChange={props.handleChange}></UIinput>
           <span className="space-between" />
           <UIinput name="address" value={props.address} label="Address" onChange={props.handleChange}></UIinput>
         </div>
@@ -59,7 +59,7 @@ function FormComponent(props) {
         <div className="row">
           <UIinput name="brand" value={props.brand} label="Vehicle brand" onChange={props.handleChange}></UIinput>
           <span className="space-between" />
-          <UIinput name="color" value={props.password2} label="Vehicle color" onChange={props.handleChange}></UIinput>
+          <UIinput name="color" value={props.color} label="Vehicle color" onChange={props.handleChange}></UIinput>
         </div>
         <div className="row photo">
           <input className="upload-input"

@@ -1,6 +1,7 @@
 import React from "react";
 import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
+
 import './input.component.scss';
 
 function UIinput(props) {

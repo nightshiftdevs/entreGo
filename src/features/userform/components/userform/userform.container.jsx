@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 
-import { LogComponent } from '../'
+import { FormComponent } from '..'
 
-class LoginContainer extends Component {
+class UserFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: ''
+      firstName: '',
+      lastName: '',
+      cellphone: '',
+      email: '',
+      password: '',
+      password2: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,7 +26,7 @@ class LoginContainer extends Component {
       [name]: value
     });
   }
-  
+
   handleSubmit(e) {
     e.preventDefault();
     console.log('state', this.state)
@@ -37,12 +41,12 @@ class LoginContainer extends Component {
   render() {
     return (
       <React.Fragment>
-        <LogComponent handleSubmit={(e) => { this.handleSubmit(e) }} handleChange={(e) => { this.handleChange(e) }} />
+        <FormComponent handleSubmit={(e) => { this.handleSubmit(e) }} handleChange={(e) => { this.handleChange(e) }} />
       </React.Fragment>
     )
   }
 }
 
 export {
-  LoginContainer
+  UserFormContainer
 }
