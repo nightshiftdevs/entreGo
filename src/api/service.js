@@ -1,4 +1,4 @@
-const entreService = 'http://127.0.0.1:8000'
+const entreService = 'http://localhost:3000'
 
 class Service {
   async request({url, method = 'GET', body = {}, headers = {}}) {

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import { LogComponent } from '../'
+import { requestLogin } from '../../middlewares/middlewares'
 
-class LoginContainer extends Component {
+class LoginContainerr extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,9 +25,15 @@ class LoginContainer extends Component {
     });
   }
   
+  requestLogin() {
+    const { dispatch } = this.props;
+    dispatch(requestLogin(1));
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    console.log('state', this.state)
+    console.log('state', this.state);
+    this.requestLogin();
   }
 
   onMouseUp() {
@@ -42,6 +50,8 @@ class LoginContainer extends Component {
     )
   }
 }
+
+const LoginContainer = connect()(LoginContainerr)
 
 export {
   LoginContainer
