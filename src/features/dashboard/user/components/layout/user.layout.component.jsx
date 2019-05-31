@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class UserDashboardLayout extends Component {
+class UserDashboardLayout extends Component {
   render() {
     return (
       <div>
@@ -9,3 +9,7 @@ export default class UserDashboardLayout extends Component {
     )
   }
 }
+
+export {
+  UserDashboardLayout
+};

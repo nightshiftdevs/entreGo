@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 
-export default class DriverDashboardLayout extends Component {
+class DriverDashboardLayout extends Component {
   render() {
     return (
       <div>
-        Hola driver
+        <h1>Hola driver</h1>
       </div>
     )
   }
 }
+
+export {
+  DriverDashboardLayout
+};

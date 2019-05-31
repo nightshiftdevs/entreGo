@@ -1,5 +1,6 @@
 export const initialState = {
-  user: {},
-  isLoggedIn: false,
-  error: null
+  token: localStorage.getItem('token'),
+  isAuthenticated: null,
+  isLoading: false,
+  user: null
 }

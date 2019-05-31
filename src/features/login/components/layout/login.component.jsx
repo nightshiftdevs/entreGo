@@ -6,14 +6,14 @@ import {
   Footer
 } from '../../../../components';
 
-import { LoginContainer } from '../login/login.container'
+import { Login } from '../login/login.container'
 
 function LoginLayout() {
   return (
     <div>
       <Header />
       <Main>
-        <LoginContainer />
+        <Login />
       </Main>
       <Footer />
     </div>

@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+
+// To connect the login action with our component
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../store/actions'
 
 import { LogComponent } from '../'
-import { requestLogin } from '../../middlewares/middlewares'
 
-class LoginContainerr extends Component {
+class LoginContainer extends Component {
+  /* static propTypes = {
+    login: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+  } */
   constructor(props) {
     super(props);
     this.state = {
       username: '',
       password: ''
-    }
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -33,7 +41,7 @@ class LoginContainerr extends Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log('state', this.state);
-    this.requestLogin();
+    this.props.login(this.state.username, this.state.password);
   }
 
   onMouseUp() {
@@ -43,6 +51,9 @@ class LoginContainerr extends Component {
   }
 
   render() {
+    if(this.props.isAuthenticated){
+      return <Redirect to="/dashboard/driver" />;
+    }
     return (
       <React.Fragment>
         <LogComponent handleSubmit={(e) => { this.handleSubmit(e) }} handleChange={(e) => { this.handleChange(e) }} />
@@ -51,8 +62,12 @@ class LoginContainerr extends Component {
   }
 }
 
-const LoginContainer = connect()(LoginContainerr)
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+const Login = connect(mapStateToProps, { login })(LoginContainer)
 
 export {
-  LoginContainer
+  Login
 }

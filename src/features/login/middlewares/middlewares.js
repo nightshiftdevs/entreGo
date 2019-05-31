@@ -1,4 +1,4 @@
-import AuthService from '../../../api/auth/auth.service';
+/* import AuthService from '../../../api/auth/auth.service';
 import { login } from '../store/actions';
 import history from '../../../api/core/history'
 
@@ -20,4 +20,4 @@ const requestLogin = (id) => {
 
 export {
   requestLogin
-}
+} */
