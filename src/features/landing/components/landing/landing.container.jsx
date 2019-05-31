@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
+
 import { gradientEffect } from '../../../../helpers/effects/underline'
 
 import './landing.container.scss'
 import cargoTruck from '../../../../assets/img/cargoTruck.jpg'
 import cargoTruck2 from '../../../../assets/img/cargoTruck2.jpg'
+import cargoTruck3 from '../../../../assets/img/cargoTruck3.jpg'
+import cargoTruck4 from '../../../../assets/img/cargoTruck4.jpg'
+import cargoTruck5 from '../../../../assets/img/cargoTruck5.jpg'
 
 class LandingContainer extends Component {
   constructor(props) {
@@ -54,18 +60,101 @@ class LandingContainer extends Component {
           <section className="services">
             <div className="underline-effect">
               <h2 className="title">S E R V I C E S</h2>
-              <div className="inside-container service-text"> 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
-                 tempora aliquid ab cupiditate ut hic enim corporis, reiciendis sunt omnis,
-                 nostrum quia officiis aut in voluptatem.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
-                   tempora aliquid ab cupiditate ut hic enim corporis, reiciendis sunt omnis,
-                 nostrum quia officiis aut in voluptatem.</p>
+              <div className="inside-container service-text">
+                <div className="services-types">
+                  <div className="service-description">
+                    <h4>S E R V I C E 1</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                      tempora aliquid.</p>
+                  </div>
+                  <div className="service-description">
+                    <h4>S E R V I C E 1</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                     tempora aliquid.</p>
+                  </div>
+                </div>
+                <div className="services-types">
+                  <div className="service-description">
+                    <h4>S E R V I C E 2</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                      tempora aliquid.</p>
+                  </div>
+                  <div className="service-description">
+                    <h4>S E R V I C E 2</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                     tempora aliquid.</p>
+                  </div>
+                </div>
+                <div className="services-types">
+                  <div className="service-description">
+                    <h4>S E R V I C E 3</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                      tempora aliquid.</p>
+                  </div>
+                  <div className="service-description">
+                    <h4>S E R V I C E 3</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                     tempora aliquid.</p>
+                  </div>
+                </div>
+
+
+
+
                 <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
               </div>
+            </div>
 
+            <div className="services-imgs">
+              <div className="gradient-img-2">
+                <span className="gradient-2" />
+                <img className="landing-img-2" src={cargoTruck3} alt="Cargo truck" />
+              </div>
+              <div className="gradient-img-2">
+                <span className="gradient-2" />
+                <img className="landing-img-2" src={cargoTruck4} alt="Cargo truck" />
+              </div>
+              <div className="gradient-img-2">
+                <span className="gradient-2" />
+                <img className="landing-img-2" src={cargoTruck5} alt="Cargo truck" />
+              </div>
             </div>
           </section>
+
+          <section className="work-with-us">
+            <h2 className="title">W O R K &nbsp; W I T H &nbsp; U S</h2>
+            <div className="benefit">
+              <div className="benefit-icon">
+                <FontAwesomeIcon icon={faDollarSign} />
+              </div>
+              <div className="benefit-text">
+                <h4>B E N E F I T 1</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                   tempora aliquid.</p>
+              </div>
+            </div>
+            <div className="benefit">
+              <div className="benefit-text">
+                <h4>B E N E F I T 2</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                   tempora aliquid.</p>
+              </div>
+              <div className="benefit-icon">
+                <FontAwesomeIcon icon={faDollarSign} />
+              </div>
+            </div>
+            <div className="benefit">
+              <div className="benefit-icon">
+                <FontAwesomeIcon icon={faDollarSign} />
+              </div>
+              <div className="benefit-text">
+                <h4>B E N E F I T 1</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
+                   tempora aliquid.</p>
+              </div>
+            </div>
+          </section>
+
         </div>
       </React.Fragment >
     )
