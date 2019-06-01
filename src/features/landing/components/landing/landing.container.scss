@@ -166,7 +166,8 @@
 
   .work-with-us {
     .title {
-      padding: 50px;
+      font-size: $font-size-subtitle;
+      padding: 40px;
       background: $color-scale3;
       color: $color-scale0;
       margin: 0;
@@ -196,12 +197,66 @@
         height: 100%;
         text-align: center;
         h4,
-        p{
+        p {
           margin: 15px 30px;
           max-width: 600px;
           line-height: 20px;
         }
       }
     }
+  }
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  background: $color-scale3;
+  padding: 50px;
+  .statistics-type {
+    text-align: center;
+    .statistics-number {
+      color: $color-scale0;
+      font-weight: $font-bolder;
+      font-size: $font-size-title;
+      font-family: $font-montserrat;
+    }
+    .statistics-label {
+      color: $color-scale1;
+      font-family: $font-montserrat;
+    }
+  }
+}
+
+.contact{
+  padding: 40px;
+  .contact-text{
+    width: 50%;
+    line-height: 28px;
+    .contact-data{
+      display: flex;
+      justify-content: space-around;
+      margin: 50px 0;
+      .contact-personal{
+        margin: 0 10px;
+        .contact-personal-text{
+          margin: 0;
+          line-height: 22px;
+          text-align: center;
+        }
+        .contact-icon{
+          margin: 0 10px 0 0;
+        }
+      }
+    }
+  }
+}
+
+.foot-logo{
+  padding: 80px 0;
+  background: $color-scale3;
+  text-align: center;
+  .max-logo{
+    font-size: $font-size-biggest;
+    color: $color-scale0;
   }
 }

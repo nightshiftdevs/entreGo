@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDollarSign } from '@fortawesome/free-solid-svg-icons'
+import {
+  faDollarSign,
+  faLocationArrow,
+  faPhone,
+  faEnvelope,
+  faClock
+} from '@fortawesome/free-solid-svg-icons'
 
 import { gradientEffect } from '../../../../helpers/effects/underline'
 
@@ -148,11 +155,65 @@ class LandingContainer extends Component {
                 <FontAwesomeIcon icon={faDollarSign} />
               </div>
               <div className="benefit-text">
-                <h4>B E N E F I T 1</h4>
+                <h4>B E N E F I T 3</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, iusto. Iste facere a,
                    tempora aliquid.</p>
               </div>
             </div>
+          </section>
+
+          <section className="statistics">
+            <div className="statistics-type">
+              <p className="statistics-number">150 K+</p>
+              <p className="statistics-label">Satisfied Users</p>
+            </div>
+            <div className="statistics-type">
+              <p className="statistics-number">15 K+</p>
+              <p className="statistics-label">Happy Drivers</p>
+            </div>
+            <div className="statistics-type">
+              <p className="statistics-number">800 K+</p>
+              <p className="statistics-label">Completed Shipments</p>
+            </div>
+            <div className="statistics-type">
+              <p className="statistics-number">20 K+</p>
+              <p className="statistics-label">Founding</p>
+            </div>
+          </section>
+
+          <section className="contact">
+            <div className="contact-text">
+              <h2 className="subtitle">C O N T A C T</h2>
+              <p className="bold">Doubts? Contact with us!</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam autem harum perferendis,
+                cupiditate et eos non omnis voluptatibus vitae ipsum commodi sapiente repudiandae tenetur mollitia.
+              </p>
+              <div className="contact-data">
+                <div className="contact-personal">
+                  <p className="contact-personal-text"><FontAwesomeIcon className="contact-icon" icon={faLocationArrow} />Recavarren 111, Floor 7</p>
+                  <p className="contact-personal-text">Miraflores, Lima</p>
+                </div>
+                <div className="contact-personal">
+                  <p className="contact-personal-text"><FontAwesomeIcon className="contact-icon" icon={faPhone} />(51) - 943484768</p>
+                  <p className="contact-personal-text">&nbsp; &nbsp; &nbsp; &nbsp;(51) - 957276765</p>
+                </div>
+              </div>
+              <div className="contact-data">
+                <div className="contact-personal">
+                  <p className="contact-personal-text"><FontAwesomeIcon className="contact-icon" icon={faEnvelope} />entrego.supp@gmail.com</p>
+                  <p className="contact-personal-text">&nbsp; &nbsp; &nbsp; &nbsp;app.entrego@gmail.com</p>
+                </div>
+                <div className="contact-personal">
+                  <p className="contact-personal-text"><FontAwesomeIcon className="contact-icon" icon={faClock} />M-F: 9AM - 5PM</p>
+                  <p className="contact-personal-text">&nbsp; &nbsp; &nbsp; &nbsp;Sa: 10AM - 1PM</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="foot-logo">
+            <h2 className="max-logo">e n t r e G o</h2>
           </section>
 
         </div>
