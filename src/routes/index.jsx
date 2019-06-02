@@ -4,14 +4,14 @@ import { LandingLayout } from "../features/landing";
 import { LoginLayout } from "../features/login";
 import { DriverFormLayout } from "../features/driverform";
 import { UserFormLayout } from "../features/userform";
-import { DriverDashboardLayout } from "../features/dashboard";
+import { DriverDashboard } from "../features/dashboard";
 import PrivateRoute from '../components/privateRoute/privateRoute.component';
 
 function Routes() {
   return (
     <Router>
       <Switch>
-        <PrivateRoute path="/dashboard/driver" component={DriverDashboardLayout} />
+        <PrivateRoute path="/dashboard/driver" component={DriverDashboard} />
         <Route path="/register/driver" component={DriverFormLayout} />
         <Route path="/register/user" component={UserFormLayout} />
         <Route path="/login" component={LoginLayout} />

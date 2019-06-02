@@ -6,7 +6,7 @@ import {
   Footer
 } from '../../../../components';
 
-import { Login } from '../login/login.container'
+import { Login } from '../login/login.container';
 
 function LoginLayout() {
   return (

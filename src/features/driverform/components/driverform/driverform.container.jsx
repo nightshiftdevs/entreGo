@@ -12,6 +12,9 @@ class DriverFormContainer extends Component {
       firstName: '',
       lastName: '',
       email: '',
+      dni: '45454545',
+      genre: 'female',
+      roleUser: '2',
       cellphone: '',
       birthDate: '',
       address: '',
@@ -41,7 +44,6 @@ class DriverFormContainer extends Component {
     });
   }
   createDriver() {
-    console.log(this.props);
     const { dispatch } = this.props;
     dispatch(requestCreateDriver(this.state));
   }

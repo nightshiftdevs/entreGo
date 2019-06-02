@@ -1,22 +1,6 @@
 import { initialState } from './state';
 import { types } from './constants'
 
-/* const loginReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.LOGIN_REQUEST: {
-      const { payload: { response } } = action;
-
-      return Object.assign({}, state, {
-        user: response,
-        isLoggedIn: true
-      });
-
-    }
-    default:
-      return state
-  }
-} */
-
 function auth (state = initialState, action) {
   switch (action.type) {
     case types.USER_LOADING:
@@ -33,6 +17,7 @@ function auth (state = initialState, action) {
         }
         case types.LOGIN_SUCCESS:
           localStorage.setItem('token', action.payload.token);
+          console.log(localStorage)
           return {
             ...state,
             ...action.payload,
@@ -41,6 +26,7 @@ function auth (state = initialState, action) {
           }
         case types.AUTH_ERROR:
         case types.LOGIN_FAILED:
+        case types.LOGOUT_SUCESS:
           localStorage.removeItem('token');
           return {
             ...state,

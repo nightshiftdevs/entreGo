@@ -8,11 +8,10 @@ import { login } from '../../store/actions'
 
 import { LogComponent } from '../'
 
+// test
+import {Alerts} from '../../../../components'
+
 class LoginContainer extends Component {
-  /* static propTypes = {
-    login: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool
-  } */
   constructor(props) {
     super(props);
     this.state = {
@@ -33,11 +32,6 @@ class LoginContainer extends Component {
     });
   }
   
-  requestLogin() {
-    const { dispatch } = this.props;
-    dispatch(requestLogin(1));
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     console.log('state', this.state);
@@ -57,9 +51,15 @@ class LoginContainer extends Component {
     return (
       <React.Fragment>
         <LogComponent handleSubmit={(e) => { this.handleSubmit(e) }} handleChange={(e) => { this.handleChange(e) }} />
+        <Alerts />
       </React.Fragment>
     )
   }
+}
+
+LoginContainer.propTypes = {
+    login: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
 }
 
 const mapStateToProps = state => ({
@@ -71,3 +71,4 @@ const Login = connect(mapStateToProps, { login })(LoginContainer)
 export {
   Login
 }
+
