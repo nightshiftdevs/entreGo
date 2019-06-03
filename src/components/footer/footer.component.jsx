@@ -10,6 +10,7 @@ function Footer() {
       <Link to="/login">Login</Link>
       <Link to="/register/driver">Driver register</Link>
       <Link to="/register/user">User register</Link>
+      <Link to="/dashboard/driver">Driver Dashboard</Link>
     </footer>
   )
 }

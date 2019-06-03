@@ -1,13 +1,14 @@
-import UserService from '../../../api/userService';
+import { UserService, userUrls } from '../../../api';
+
+const userService = new UserService();
 
 import {
-  SAVE_DRIVER,
-  SAVE_ALL_DRIVERS
+  driverTypes
 } from './constants';
 
 const saveDriver = (response) => {
   return {
-    type: SAVE_DRIVER,
+    type: driverTypes.SAVE_DRIVER,
     payload: {
       response
     }
@@ -16,7 +17,7 @@ const saveDriver = (response) => {
 
 const saveAllDrivers = (response) => {
   return {
-    type: SAVE_ALL_DRIVERS,
+    type: driverTypes.SAVE_ALL_DRIVERS,
     payload: {
       response
     }
@@ -25,7 +26,7 @@ const saveAllDrivers = (response) => {
 
 const error = (err) => {
   return {
-    type: SAVE_ALL_DRIVERS,
+    type: driverTypes.SAVE_ALL_DRIVERS,
     payload: {
       err
     }
@@ -34,18 +35,16 @@ const error = (err) => {
 
 const requestCreateDriver = (body) => {
   return (dispatch, getState) => {
-    console.log('getState_main', getState())
-    UserService
-      .createUser(JSON.stringify(body))
+    userService
+      .createUser(userUrls.createUsers, body)
       .then(response => {
-        dispatch(saveDriver(response));
-        dispatch(saveAllDrivers(response))
-
+        dispatch(saveDriver(body));
+        dispatch(saveAllDrivers(body));
       }).catch((err) => {
         dispatch(error(err))
       })
   }
-}
+};
 
 export {
   saveDriver,
