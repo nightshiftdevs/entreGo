@@ -57,21 +57,21 @@
       background: $color-transparent5;
       border-top-left-radius: 25px;
       border-bottom-left-radius: 25px;
-      transition: all 0.7s ease;
+      transition: all 1s ease;
       .fields {
         padding: 0;
       }
     }
     .register-user {
-      display: none;
+      width: 500px;
       position: absolute;
-      top: 35%;
-      right: 0;
+      top: 30%;
+      right: -500px; 
       padding: 20px 25px 30px;
       background: $color-transparent5;
       border-top-left-radius: 25px;
       border-bottom-left-radius: 25px;
-      transition: all 0.7s ease;
+      transition: all 1s ease;
       .fields {
         padding: 0;
       }
@@ -293,7 +293,8 @@
     background: $color-scale0;
     border-radius: 5px;
   }
-  .login-component-button {
+  .login-component-button,
+  .register-component-button {
     margin: 15px 0 0 0 !important;
     background: $color-scale3 !important;
     font-size: $font-size-little !important;

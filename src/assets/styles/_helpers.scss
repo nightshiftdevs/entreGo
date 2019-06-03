@@ -1,13 +1,18 @@
-.inside-container{
+.inside-container {
   padding: 0 40px;
   margin: auto;
 }
 
-.display-none{
+.display-none {
   display: none;
 }
 
-.slide-from-right{
+.slide-from-right {
   transform: translateX(-350px);
-  transition: all 0.7s ease;
+  transition: all 1s ease;
+}
+
+.slide-from-right-max {
+  transform: translateX(-500px);
+  transition: all 1s ease;
 }

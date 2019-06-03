@@ -31,7 +31,6 @@ const loadUser = () => (dispatch, getState) => {
       'content-Type': 'application/json'
     }
   };
-  console.log('current token',token);
   // If token, add to headers config
   if (token!=='null') {
     config.headers['Authorization'] = `Bearer ${token}`;
@@ -39,7 +38,6 @@ const loadUser = () => (dispatch, getState) => {
   
   authService.getToken(authUrls.getTokenUrl, config)
   .then(res => {
-    console.log('USER_LOADED WITH WRONG TOKEN', res.data);
     dispatch({
       type: types.USER_LOADED,
       payload: res.data

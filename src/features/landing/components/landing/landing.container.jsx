@@ -30,7 +30,8 @@ class LandingContainer extends Component {
   }
 
   componentDidMount() {
-    addClassToEvent('js_login', 'login-user', 'slide-from-right')
+    addClassToEvent('js_register', 'register-user', 'slide-from-right-max', 'login-user', 'slide-from-right')
+    addClassToEvent('js_login', 'login-user', 'slide-from-right', 'register-user', 'slide-from-right-max')
   }
 
   render() {
