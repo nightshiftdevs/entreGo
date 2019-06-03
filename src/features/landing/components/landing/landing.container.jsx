@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
+import { addClassToEvent } from '../../../../helpers/dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDollarSign,
@@ -19,13 +20,19 @@ import cargoTruck3 from '../../../../assets/img/cargoTruck3.jpg'
 import cargoTruck4 from '../../../../assets/img/cargoTruck4.jpg'
 import cargoTruck5 from '../../../../assets/img/cargoTruck5.jpg'
 
-import {LoginLayout} from '../../../login'
+import { LoginLayout } from '../../../login'
+import { UserFormLayout } from '../../../userform';
 
 class LandingContainer extends Component {
   constructor(props) {
     super(props);
     gradientEffect();
   }
+
+  componentDidMount() {
+    addClassToEvent('js_login', 'login-user', 'slide-from-right')
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -34,11 +41,14 @@ class LandingContainer extends Component {
             <span className="gradient" />
             <img className="landing-img-0" src={cargoTruck} alt="Cargo truck" />
             <div className="register-login">
-              <button className="btn btn-register">R E G I S T E R</button>
-              <button className="btn">L O G I N</button>
+              <button className="btn btn-register js_register">R E G I S T E R</button>
+              <button className="btn js_login">L O G I N</button>
             </div>
             <div className="login-user">
               <LoginLayout />
+            </div>
+            <div className="register-user">
+              <UserFormLayout />
             </div>
           </div>
 
@@ -109,9 +119,6 @@ class LandingContainer extends Component {
                      tempora aliquid.</p>
                   </div>
                 </div>
-
-
-
 
                 <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
               </div>

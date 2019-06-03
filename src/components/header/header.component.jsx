@@ -11,7 +11,7 @@ class Header extends React.Component {
     this.state = {};
     this.handleScroll = this.handleScroll.bind(this);
 
-    //addJump(aboutJump,about);
+
   }
 
   handleScroll() {
@@ -22,6 +22,11 @@ class Header extends React.Component {
     const el = document.querySelector('header');
     this.setState({ top: el.offsetTop, height: el.offsetHeight });
     window.addEventListener('scroll', this.handleScroll);
+    addJump('homeJump', 'landing-page')
+    addJump('aboutJump', 'about', -92);
+    addJump('servicesJump', 'services', -92);
+    addJump('workJump', 'work-with-us', -92);
+    addJump('contactJump', 'contact', -92);
   }
 
   componentWillUnmount() {

@@ -1,8 +1,10 @@
 import jump from 'jump.js';
 
-export function addJump(fromClass, toClass) {
-  classSelect = document.querySelector(`.${fromClass}`);
+export function addJump(fromClass, toClass, offsetJump) {
+  const classSelect = document.querySelector(`.${fromClass}`);
   classSelect.addEventListener('click', () => {
-    jump(`.${toClass}`);
+    jump(`.${toClass}`,{
+      offset: offsetJump
+    });
   });
 }

@@ -37,3 +37,11 @@ export function removeClassCollection(collection, className) {
     removeClass(collection[i], className);
   }
 }
+
+export function addClassToEvent(eventClass, selectClass, newClass) {
+  const classEvent = document.querySelector(`.${eventClass}`);
+  classEvent.addEventListener('click', () => {
+    const classSelect = document.querySelector(`.${selectClass}`);
+    classSelect.classList.toggle(`${newClass}`);
+  });
+}

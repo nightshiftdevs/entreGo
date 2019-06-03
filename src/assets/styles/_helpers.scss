@@ -6,3 +6,8 @@
 .display-none{
   display: none;
 }
+
+.slide-from-right{
+  transform: translateX(-350px);
+  transition: all 0.7s ease;
+}

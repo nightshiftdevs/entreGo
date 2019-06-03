@@ -52,14 +52,26 @@
     .login-user {
       position: absolute;
       top: 35%;
+      right: -350px;
+      padding: 20px 25px 30px;
+      background: $color-transparent5;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      transition: all 0.7s ease;
+      .fields {
+        padding: 0;
+      }
+    }
+    .register-user {
+      display: none;
+      position: absolute;
+      top: 35%;
       right: 0;
       padding: 20px 25px 30px;
       background: $color-transparent5;
       border-top-left-radius: 25px;
       border-bottom-left-radius: 25px;
-      .form {
-        opacity: 1;
-      }
+      transition: all 0.7s ease;
       .fields {
         padding: 0;
       }
@@ -277,7 +289,7 @@
 }
 
 .form {
-  .ui-input{
+  .ui-input {
     background: $color-scale0;
     border-radius: 5px;
   }
