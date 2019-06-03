@@ -11,7 +11,7 @@ import { LogComponent } from '../'
 // test
 import {Alerts} from '../../../../components'
 
-class LoginContainer extends Component {
+class LoginLogic extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,7 +57,7 @@ class LoginContainer extends Component {
   }
 }
 
-LoginContainer.propTypes = {
+LoginLogic.propTypes = {
     login: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool
 }
@@ -66,9 +66,9 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-const Login = connect(mapStateToProps, { login })(LoginContainer)
+const LoginContainer = connect(mapStateToProps, { login })(LoginLogic)
 
 export {
-  Login
+  LoginContainer
 }
 
