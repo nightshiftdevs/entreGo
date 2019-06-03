@@ -49,6 +49,21 @@
         }
       }
     }
+    .login-user {
+      position: absolute;
+      top: 35%;
+      right: 0;
+      padding: 20px 25px 30px;
+      background: $color-transparent5;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      .form {
+        opacity: 1;
+      }
+      .fields {
+        padding: 0;
+      }
+    }
   }
 
   .about {
@@ -205,58 +220,70 @@
       }
     }
   }
-}
 
-.statistics {
-  display: flex;
-  justify-content: space-around;
-  background: $color-scale3;
-  padding: 50px;
-  .statistics-type {
-    text-align: center;
-    .statistics-number {
-      color: $color-scale0;
-      font-weight: $font-bolder;
-      font-size: $font-size-title;
-      font-family: $font-montserrat;
-    }
-    .statistics-label {
-      color: $color-scale1;
-      font-family: $font-montserrat;
+  .statistics {
+    display: flex;
+    justify-content: space-around;
+    background: $color-scale3;
+    padding: 50px;
+    .statistics-type {
+      text-align: center;
+      .statistics-number {
+        color: $color-scale0;
+        font-weight: $font-bolder;
+        font-size: $font-size-title;
+        font-family: $font-montserrat;
+      }
+      .statistics-label {
+        color: $color-scale1;
+        font-family: $font-montserrat;
+      }
     }
   }
-}
 
-.contact{
-  padding: 40px;
-  .contact-text{
-    width: 50%;
-    line-height: 28px;
-    .contact-data{
-      display: flex;
-      justify-content: space-around;
-      margin: 50px 0;
-      .contact-personal{
-        margin: 0 10px;
-        .contact-personal-text{
-          margin: 0;
-          line-height: 22px;
-          text-align: center;
-        }
-        .contact-icon{
-          margin: 0 10px 0 0;
+  .contact {
+    padding: 40px;
+    .contact-text {
+      width: 50%;
+      line-height: 28px;
+      .contact-data {
+        display: flex;
+        justify-content: space-around;
+        margin: 50px 0;
+        .contact-personal {
+          margin: 0 10px;
+          .contact-personal-text {
+            margin: 0;
+            line-height: 22px;
+            text-align: center;
+          }
+          .contact-icon {
+            margin: 0 10px 0 0;
+          }
         }
       }
     }
   }
+
+  .foot-logo {
+    padding: 80px 0;
+    background: $color-scale3;
+    text-align: center;
+    .max-logo {
+      font-size: $font-size-biggest;
+      color: $color-scale0;
+    }
+  }
 }
 
-.foot-logo{
-  padding: 80px 0;
-  background: $color-scale3;
-  text-align: center;
-  .max-logo{
-    font-size: $font-size-biggest;
-    color: $color-scale0;
+.form {
+  .ui-input{
+    background: $color-scale0;
+    border-radius: 5px;
+  }
+  .login-component-button {
+    margin: 15px 0 0 0 !important;
+    background: $color-scale3 !important;
+    font-size: $font-size-little !important;
   }
 }

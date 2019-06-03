@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDollarSign,
   faLocationArrow,
   faPhone,
   faEnvelope,
   faClock
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons';
 
 import { gradientEffect } from '../../../../helpers/effects/underline'
 
@@ -18,6 +18,8 @@ import cargoTruck2 from '../../../../assets/img/cargoTruck2.jpg'
 import cargoTruck3 from '../../../../assets/img/cargoTruck3.jpg'
 import cargoTruck4 from '../../../../assets/img/cargoTruck4.jpg'
 import cargoTruck5 from '../../../../assets/img/cargoTruck5.jpg'
+
+import {LoginLayout} from '../../../login'
 
 class LandingContainer extends Component {
   constructor(props) {
@@ -34,6 +36,9 @@ class LandingContainer extends Component {
             <div className="register-login">
               <button className="btn btn-register">R E G I S T E R</button>
               <button className="btn">L O G I N</button>
+            </div>
+            <div className="login-user">
+              <LoginLayout />
             </div>
           </div>
 

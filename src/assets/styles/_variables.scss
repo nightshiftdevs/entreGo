@@ -1,8 +1,8 @@
 /*--font---------------------------------------------------------------*/
 
-$font-open: 'Open Sans';
-$font-montserrat: 'Montserrat';
-$font-arial: 'Arial';
+$font-open: "Open Sans";
+$font-montserrat: "Montserrat";
+$font-arial: "Arial";
 $font-size-base: 62.5%; /* 10px*/
 $font-size-global: 1.6rem;
 $font-size-littlest: 1rem;
@@ -39,6 +39,22 @@ $color-scale2: map-get($color-branding, scale2);
 $color-scale3: map-get($color-branding, scale3);
 $color-scale4: map-get($color-branding, scale4);
 $color-scale5: map-get($color-branding, scale5);
+
+$color-branding-transparent: (
+  scale0: rgba(255, 255, 255, 0.6),
+  scale1: rgba(191, 195, 186, 0.6),
+  scale2: rgba(169, 172, 169, 0.6),
+  scale3: rgba(96, 73, 90, 0.6),
+  scale4: rgba(63, 50, 68, 0.6),
+  scale5: rgba(47, 34, 53, 0.6)
+);
+
+$color-transparent0: map-get($color-branding-transparent, scale0);
+$color-transparent1: map-get($color-branding-transparent, scale1);
+$color-transparent2: map-get($color-branding-transparent, scale2);
+$color-transparent3: map-get($color-branding-transparent, scale3);
+$color-transparent4: map-get($color-branding-transparent, scale4);
+$color-transparent5: map-get($color-branding-transparent, scale5);
 
 $color-networks: (
   instagram: #566cfe,
