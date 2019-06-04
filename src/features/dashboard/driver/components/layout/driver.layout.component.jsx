@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../../../login/store/actions'
+import {MapLayout} from '../../../../../components';
 
 class DriverDashboardLayout extends Component {
   render() {
@@ -25,6 +26,7 @@ class DriverDashboardLayout extends Component {
       <div>
         <h1>Hola driver</h1>
         {isAuthenticated ? authLinks : guestLinks}
+        <MapLayout />
       </div>
     )
   }
