@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-import { addClass, removeClass } from '../../helpers/dom'
+import { addJump } from '../../helpers/jump'
+
 import './header.component.scss'
 
 class Header extends React.Component {
@@ -8,6 +10,8 @@ class Header extends React.Component {
     super(props);
     this.state = {};
     this.handleScroll = this.handleScroll.bind(this);
+
+
   }
 
   handleScroll() {
@@ -18,6 +22,11 @@ class Header extends React.Component {
     const el = document.querySelector('header');
     this.setState({ top: el.offsetTop, height: el.offsetHeight });
     window.addEventListener('scroll', this.handleScroll);
+    addJump('homeJump', 'landing-page')
+    addJump('aboutJump', 'about', -92);
+    addJump('servicesJump', 'services', -92);
+    addJump('workJump', 'work-with-us', -92);
+    addJump('contactJump', 'contact', -92);
   }
 
   componentWillUnmount() {
@@ -28,14 +37,14 @@ class Header extends React.Component {
     return (
       <header className={this.state.scroll > this.state.top ? "header-background" : ""}>
         <div className="inside-container">
-          <a className="header-logo" href="">entreGo</a>
+          <Link className="header-logo" to="/home">entreGo</Link>
           <nav>
             <ul className="header-nav">
-              <li><a href="http://" target="_blank" rel="noopener noreferrer"></a>H O M E</li>
-              <li><a href="http://" target="_blank" rel="noopener noreferrer"></a>A B O U T</li>
-              <li><a href="http://" target="_blank" rel="noopener noreferrer"></a>S E R V I C E S</li>
-              <li><a href="http://" target="_blank" rel="noopener noreferrer"></a>W O R K &nbsp; W I T H &nbsp; U S</li>
-              <li><a href="http://" target="_blank" rel="noopener noreferrer"></a>C O N T A C T</li>
+              <li className="homeJump">H O M E</li>
+              <li className="aboutJump">A B O U T</li>
+              <li className="servicesJump">S E R V I C E S</li>
+              <li className="workJump">W O R K &nbsp; W I T H &nbsp; U S</li>
+              <li className="contactJump">C O N T A C T</li>
             </ul>
           </nav>
         </div>

@@ -12,14 +12,12 @@ class DriverFormContainer extends Component {
       firstName: '',
       lastName: '',
       email: '',
-      dni: '45454545',
-      genre: 'female',
-      roleUser: '2',
       cellphone: '',
       birthDate: '',
       address: '',
       password: '',
       password2: '',
+      dni: '',
       bankAccount: '', // need to validate this information
       userPhoto: '', // after test need to send information like a real photo
       // vehicle information

@@ -27,7 +27,7 @@ function FormComponent(props) {
           <UIinput name="password2" type="password" value={props.password2} label="Confirm Password" onChange={props.handleChange}></UIinput>
         </div>
       </div>
-      <UIbutton name="button" type="submit" variant="contained" color="primary" fullWidth={true}>Submit</UIbutton>
+      <UIbutton className="login-component-button" name="button" type="submit" variant="contained" color="primary" fullWidth={true}>R E G I S T E R</UIbutton>
 
     </form>
   );

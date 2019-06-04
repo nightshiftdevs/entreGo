@@ -32,8 +32,8 @@
         font-weight: $font-bold;
         font-size: $font-size-normal;
         &.btn-register {
-          color: $color-scale0!important;
-          background: $color-scale4!important;
+          color: $color-scale0 !important;
+          background: $color-scale4 !important;
           border: solid 2px $color-scale4;
         }
         &:hover {
@@ -47,6 +47,33 @@
           background: none;
           transition: all 0.5s ease;
         }
+      }
+    }
+    .login-user {
+      position: absolute;
+      top: 35%;
+      right: -350px;
+      padding: 20px 25px 30px;
+      background: $color-transparent5;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      transition: all 1s ease;
+      .fields {
+        padding: 0;
+      }
+    }
+    .register-user {
+      width: 500px;
+      position: absolute;
+      top: 30%;
+      right: -500px; 
+      padding: 20px 25px 30px;
+      background: $color-transparent5;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      transition: all 1s ease;
+      .fields {
+        padding: 0;
       }
     }
   }
@@ -108,14 +135,16 @@
         color: $color-scale0;
         transition: all 1s ease;
         p,
-        h2 {
+        h2,
+        h4 {
           color: $color-scale0;
           transition: all 1s ease;
         }
       }
       &:not(:hover) {
         p,
-        h2 {
+        h2,
+        h4 {
           color: $color-scale5;
           transition: all 1s ease;
         }
@@ -127,8 +156,147 @@
         width: 100%;
       }
       .service-text {
+        margin: auto;
+        max-width: 1400px;
         line-height: 24px;
+        display: flex;
+
+        .services-types {
+          padding: 30px;
+          .service-description {
+            padding: 30px 0;
+            h4 {
+              text-align: center;
+            }
+          }
+        }
       }
     }
+    .services-imgs {
+      display: flex;
+      .gradient-img-2 {
+        position: relative;
+        width: calc(100% / 3);
+        .landing-img-2 {
+          height: 500px;
+        }
+        .gradient-2 {
+          bottom: 0;
+          width: 100%;
+          height: 50%;
+          position: absolute;
+          background: linear-gradient(to top, $color-scale5, rgba($color-scale5, 0));
+        }
+      }
+    }
+  }
+
+  .work-with-us {
+    .title {
+      font-size: $font-size-subtitle;
+      padding: 40px;
+      background: $color-scale3;
+      color: $color-scale0;
+      margin: 0;
+      text-align: center;
+    }
+    .benefit {
+      display: flex;
+      width: 100%;
+      height: 400px;
+      .benefit-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background: $color-scale4;
+        color: $color-scale1;
+        font-size: 200px;
+        text-align: center;
+      }
+      .benefit-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        h4,
+        p {
+          margin: 15px 30px;
+          max-width: 600px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  .statistics {
+    display: flex;
+    justify-content: space-around;
+    background: $color-scale3;
+    padding: 50px;
+    .statistics-type {
+      text-align: center;
+      .statistics-number {
+        color: $color-scale0;
+        font-weight: $font-bolder;
+        font-size: $font-size-title;
+        font-family: $font-montserrat;
+      }
+      .statistics-label {
+        color: $color-scale1;
+        font-family: $font-montserrat;
+      }
+    }
+  }
+
+  .contact {
+    padding: 40px;
+    .contact-text {
+      width: 50%;
+      line-height: 28px;
+      .contact-data {
+        display: flex;
+        justify-content: space-around;
+        margin: 50px 0;
+        .contact-personal {
+          margin: 0 10px;
+          .contact-personal-text {
+            margin: 0;
+            line-height: 22px;
+            text-align: center;
+          }
+          .contact-icon {
+            margin: 0 10px 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  .foot-logo {
+    padding: 80px 0;
+    background: $color-scale3;
+    text-align: center;
+    .max-logo {
+      font-size: $font-size-biggest;
+      color: $color-scale0;
+    }
+  }
+}
+
+.form {
+  .ui-input {
+    background: $color-scale0;
+    border-radius: 5px;
+  }
+  .login-component-button,
+  .register-component-button {
+    margin: 15px 0 0 0 !important;
+    background: $color-scale3 !important;
+    font-size: $font-size-little !important;
   }
 }
