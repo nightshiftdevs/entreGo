@@ -25,7 +25,7 @@ class LeafletContainer extends Component {
       <Marker position={position}>
         <Popup>
           <span>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            Hola!. <br /> Roxana.
           </span>
         </Popup>
       </Marker>
