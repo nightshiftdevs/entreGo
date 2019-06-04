@@ -9,6 +9,7 @@ function Footer() {
       <Link to="/home">Landing</Link>
       <Link to="/register/driver">Driver register</Link>
       <Link to="/dashboard/driver">Driver Dashboard</Link>
+      <Link to="/access/map">Map</Link>
     </footer>
   )
 }

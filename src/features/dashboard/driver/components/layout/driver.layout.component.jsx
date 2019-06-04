@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../../../login/store/actions'
-
 
 class DriverDashboardLayout extends Component {
   render() {
@@ -16,7 +15,10 @@ class DriverDashboardLayout extends Component {
     );
     
     const guestLinks = (
-      <Link to="/login">Login</Link>
+      <Fragment>
+        <Link to="/login">Login</Link>
+      </Fragment>
+      
     );
 
     return (
