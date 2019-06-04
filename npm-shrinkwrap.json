@@ -3841,8 +3841,7 @@
     "fast-deep-equal": {
       "version": "2.0.1",
       "resolved": "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz",
-      "integrity": "sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=",
-      "dev": true
+      "integrity": "sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk="
     },
     "fast-json-stable-stringify": {
       "version": "2.0.0",
@@ -7921,6 +7920,17 @@
       "version": "16.8.6",
       "resolved": "https://registry.npmjs.org/react-is/-/react-is-16.8.6.tgz",
       "integrity": "sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA=="
+    },
+    "react-leaflet": {
+      "version": "2.3.0",
+      "resolved": "https://registry.npmjs.org/react-leaflet/-/react-leaflet-2.3.0.tgz",
+      "integrity": "sha512-LaTkopN3rpMWzg2/ev/Ryn5K528ORrf3BdpnH7Qz2HYj+c9pw331wMOQPp6ILV3PYz0T1G6Foz+B2GDz59C10Q==",
+      "requires": {
+        "@babel/runtime": "^7.4.4",
+        "fast-deep-equal": "^2.0.1",
+        "hoist-non-react-statics": "^3.3.0",
+        "warning": "^4.0.3"
+      }
     },
     "react-lifecycles-compat": {
       "version": "3.0.4",

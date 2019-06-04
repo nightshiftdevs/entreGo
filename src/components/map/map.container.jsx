@@ -1,39 +1,32 @@
-import React, { useEffect, useRef } from "react";
-import L from "leaflet";
+import React from "react";
+import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 
 const styleMap1 = 'http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg'
 const styleMap2 = 'http://a.tile.stamen.com/toner/{z}/{x}/{y}.png';
 const styleMap3 = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
 
-function Map({ markerPosition }) {
-  // create map
-  const mapRef = useRef(null);
-  useEffect(() => {
-    mapRef.current = L.map('map-template', {
-      center: [49.8419, 24.0315],
-      zoom: 13,
-      layers: [
-        L.tileLayer(styleMap2)
-      ]
-    });
-  }, []);
+function MapContainer() {
+  const [position, setPosition] = React.useState([0, 0]);
 
-  // add marker
-  const markerRef = useRef(null);
-  useEffect(
-    
-    () => {
-      if (markerRef.current) {
-        markerRef.current.setLatLng(markerPosition);
-      } else {
-        markerRef.current = L.marker(markerPosition).addTo(mapRef.current);
-      }
-    },
-    [markerPosition]
+  React.useEffect(() => {
+    const watchID = navigator.geolocation.watchPosition(pos => {
+      setPosition([pos.coords.latitude, pos.coords.longitude]);
+    });
+    return () => {
+      navigator.geolocation.clearWatch(watchID);
+    };
+  }, [setPosition]);
+
+  const map = (
+    <Map id="map-template" center={position} zoom={13}>
+      <TileLayer
+        url={styleMap2}
+      />
+      <Marker position={position} />
+    </Map>
   );
 
-  return <div id="map-template" />;
+  return map;
 }
 
-export default Map;
-
+export default MapContainer;
