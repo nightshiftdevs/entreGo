@@ -17,6 +17,7 @@ class DriverFormContainer extends Component {
       address: '',
       password: '',
       password2: '',
+      dni: '',
       bankAccount: '', // need to validate this information
       userPhoto: '', // after test need to send information like a real photo
       // vehicle information
@@ -41,7 +42,6 @@ class DriverFormContainer extends Component {
     });
   }
   createDriver() {
-    console.log(this.props);
     const { dispatch } = this.props;
     dispatch(requestCreateDriver(this.state));
   }

@@ -15,7 +15,7 @@ function LogComponent(props) {
         <span className="space-between" />
         <UIinput name="password" type="password" value={props.password} label="Password" onChange={props.handleChange}></UIinput>
       </div>
-      <UIbutton name="button" type="submit" variant="contained" color="primary" fullWidth={true}>Submit</UIbutton>
+      <UIbutton className="login-component-button" name="button" type="submit" variant="contained" color="primary" fullWidth={true}>L O G I N</UIbutton>
 
     </form>
   );

@@ -33,6 +33,8 @@ function FormComponent(props) {
         </div>
         <div className="row">
           <UIinput name="bankAccount" value={props.bankAccount} label="Insert your bank account" onChange={props.handleChange}></UIinput>
+          <span className="space-between"></span>
+          <UIinput name="dni" value={props.dni} label="Insert your DNI" onChange={props.handleChange}></UIinput>
         </div>
         <div className="row photo">
           <input className="upload-input"
