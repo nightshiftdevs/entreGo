@@ -44,6 +44,7 @@ function FormComponent(props) {
             id="contained-button-file-user"
             multiple
             type="file"
+            onChange={props.handleChange}
           />
           <label htmlFor="contained-button-file-user" className="upload-button">
             <UIbutton variant="contained" component="span" fullWidth={true}>
@@ -71,6 +72,7 @@ function FormComponent(props) {
             id="contained-button-file-vehicle"
             multiple
             type="file"
+            onChange={props.handleChange}
           />
           <label htmlFor="contained-button-file-vehicle" className="upload-button">
             <UIbutton variant="contained" component="span" fullWidth={true}>

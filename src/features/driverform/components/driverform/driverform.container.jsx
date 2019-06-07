@@ -34,7 +34,7 @@ class DriverFormContainer extends Component {
 
   handleChange(e) {
     const target = e.target;
-    const value = target.value;
+    const value = target.type === 'file' ? target.files[0] : target.value;
     const name = target.name;
 
     this.setState({
@@ -47,10 +47,9 @@ class DriverFormContainer extends Component {
   }
 
   handleSubmit(e) {
+    console.log(this.state);
     e.preventDefault();
-    console.log('state', this.state)
     this.createDriver();
-
   }
 
   onMouseUp() {
