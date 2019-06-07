@@ -6,7 +6,6 @@ const path = require('path');
 let jwt = require('jsonwebtoken');
 let config = require('../config/config');
 let middleware = require('../middleware/middleware');
-let handlersCars = require('../handlers/handlers')
 
 // Connect to our database
 const connection = mysql.createConnection({
@@ -105,10 +104,10 @@ class HandleDrivers {
       params.password,
       params.roleUser])
 
-      return res.status(200).json({
-        response: req.body,
-        message: 'Driver created successfully!'
-      });
+    return res.status(200).json({
+      response: req.body,
+      message: 'Driver created successfully!'
+    });
 
   };
 
@@ -117,6 +116,43 @@ class HandleDrivers {
     res.end(JSON.stringify(results));
   }
 };
+
+class HandlersCars {
+
+  registerCars(req, res) {
+    res.json({ body: req.body })
+    console.log(req.body);
+    /* let params = req.body;
+    console.log(params);
+    connection.query(sqlInsertCars,
+      [params.codCar,
+      params.licensePlate,
+      params.cargoVolume,
+      params.brand,
+      params.color,
+      params.vehiclePhoto
+     ])
+
+      return res.status(200).json({
+        response: req.body,
+        message: 'Car created successfully!'
+      });
+ */
+  };
+
+  errors(error, results, fields) {
+    if (error) throw error;
+    res.end(JSON.stringify(results));
+  }
+};
+
+const multer = require('multer');
+
+const upload = multer({
+  limits: {
+    fileSize: 4 * 1024 * 1024,
+  }
+});
 
 // Starting point of the server
 function main() {
@@ -132,6 +168,8 @@ function main() {
 
   let handlers = new HandlerGenerator();
   let handlersDrivers = new HandleDrivers();
+  let handlersCars = new HandlersCars();
+
   const port = process.env.PORT || 3000;
   app.use(bodyParser.urlencoded({ // Middleware
     extended: true
@@ -146,7 +184,7 @@ function main() {
 
   // EndPoints, Routes & Handlers for DRIVERS REGISTER
   app.post('/api/register/drivers', handlersDrivers.register, handlersDrivers.errors); // Will return a success message
-  app.post('/api/register/cars', handlersCars.registerCars, handlersCars.errors); // Will return a success message
+  app.post('/api/register/cars', upload.single('image'), handlersCars.registerCars); // Will return a success message
 }
 
 main();
