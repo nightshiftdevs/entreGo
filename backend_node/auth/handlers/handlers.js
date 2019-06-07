@@ -1,16 +1,14 @@
-const fs = require('fs');
-
-
 
 // Stored procedures
-const sqlInsert = `CALL USP_CREATECARS(?,?,?,?,?)`;
+const sqlInsertCars = `CALL USP_CREATECARS(?,?,?,?,?)`;
 
 class HandlersCars {
 
   registerCars(req, res) {
-    let params = req.body;
+    console.log(req.body);
+    /* let params = req.body;
     console.log(params);
-    connection.query(sqlInsert,
+    connection.query(sqlInsertCars,
       [params.codCar,
       params.licensePlate,
       params.cargoVolume,
@@ -23,7 +21,7 @@ class HandlersCars {
         response: req.body,
         message: 'Car created successfully!'
       });
-
+ */
   };
 
   errors(error, results, fields) {
