@@ -6,6 +6,7 @@ const path = require('path');
 let jwt = require('jsonwebtoken');
 let config = require('../config/config');
 let middleware = require('../middleware/middleware');
+let handlersCars = require('../handlers/handlers')
 
 // Connect to our database
 const connection = mysql.createConnection({
@@ -91,7 +92,6 @@ class HandlerGenerator {
 }
 
 class HandleDrivers {
-  
 
   register(req, res) {
     let params = req.body;
@@ -146,7 +146,7 @@ function main() {
 
   // EndPoints, Routes & Handlers for DRIVERS REGISTER
   app.post('/api/register/drivers', handlersDrivers.register, handlersDrivers.errors); // Will return a success message
-
+  app.post('/api/register/cars', handlersCars.registerCars, handlersCars.errors); // Will return a success message
 }
 
 main();
