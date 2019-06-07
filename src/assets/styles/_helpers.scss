@@ -23,3 +23,19 @@
   width: 100%;
   top: 0;
 }
+
+.form {
+  .ui-input {
+    background: $color-scale0;
+    border-radius: 5px;
+  }
+  .login-component-btn,
+  .register-component-btn {
+    margin: 15px 0 0 0 !important;
+    background: $color-scale3 !important;
+    font-size: $font-size-little !important;
+  }
+  .register-driver-btn {
+    margin: 15px 0 60px 0 !important;
+  }
+}

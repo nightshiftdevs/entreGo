@@ -81,9 +81,8 @@ function FormComponent(props) {
             </UIbutton>
           </label>
         </div>
-
       </div>
-      <UIbutton name="button" type="submit" variant="contained" color="primary" fullWidth={true}>Submit</UIbutton>
+      <UIbutton className="register-component-btn register-driver-btn" name="button" type="submit" variant="contained" color="primary" fullWidth={true}>R E G I S T E R</UIbutton>
 
     </form>
   );

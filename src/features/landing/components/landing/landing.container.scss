@@ -308,16 +308,3 @@
     }
   }
 }
-
-.form {
-  .ui-input {
-    background: $color-scale0;
-    border-radius: 5px;
-  }
-  .login-component-button,
-  .register-component-button {
-    margin: 15px 0 0 0 !important;
-    background: $color-scale3 !important;
-    font-size: $font-size-little !important;
-  }
-}
