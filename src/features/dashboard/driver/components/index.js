@@ -1,1 +1,1 @@
-export * from './layout/driver.layout.component';
+export * from './layout/driver.component';

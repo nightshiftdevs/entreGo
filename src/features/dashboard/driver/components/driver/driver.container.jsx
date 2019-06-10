@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../../../login/store/actions'
-import {MapLayout} from '../../../../../components';
+import { OrderContainer } from '../order/order.container'
 
-class DriverDashboardLayout extends Component {
+import './driver.container.scss'
+
+class DriverDashboardContainer extends Component {
   render() {
     const { isAuthenticated, user } = this.props.auth;
 
@@ -14,25 +16,24 @@ class DriverDashboardLayout extends Component {
         Logout
       </button>
     );
-    
+
     const guestLinks = (
       <Fragment>
         <Link to="/login">Login</Link>
       </Fragment>
-      
+
     );
 
     return (
       <div>
-        <h1>Hola driver</h1>
         {isAuthenticated ? authLinks : guestLinks}
-        <MapLayout />
+        <OrderContainer />
       </div>
     )
   }
 }
 
-DriverDashboardLayout.propTypes = {
+DriverDashboardContainer.propTypes = {
   auth: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired
 }
@@ -41,7 +42,7 @@ const mapStateToProps = state => ({
   auth: state.auth
 })
 
-const DriverDashboard = connect(mapStateToProps, { logout })(DriverDashboardLayout)
+const DriverDashboard = connect(mapStateToProps, { logout })(DriverDashboardContainer)
 
 export {
   DriverDashboard
