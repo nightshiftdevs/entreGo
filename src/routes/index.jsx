@@ -9,7 +9,7 @@ function Routes() {
   return (
     <Router>
       <Switch>
-        <Route path="/dashboard/driver" component={DriverLayout} />
+        <PrivateRoute path="/dashboard/driver" component={DriverLayout} />
         <Route path="/register/driver" component={DriverFormLayout} />
         <Route exact path="/" component={LandingLayout} />
         <Redirect exact from="/" to="/home" />

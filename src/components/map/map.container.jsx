@@ -18,7 +18,7 @@ function MapContainer() {
   }, [setPosition]);
 
   const map = (
-    <Map className="map-template-1" center={position} zoom={13}>
+    <Map className="map-template-1" center={position} zoom={13} zoomControl={false} attributionControl={false}>
       <TileLayer
         url={styleMap2}
       />

@@ -28,6 +28,7 @@ class DriverDashboardContainer extends Component {
       <div>
         {isAuthenticated ? authLinks : guestLinks}
         <OrderContainer />
+        <OrderContainer />
       </div>
     )
   }
