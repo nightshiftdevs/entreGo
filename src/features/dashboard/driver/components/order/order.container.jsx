@@ -40,7 +40,7 @@ class OrderContainer extends Component {
             <p className="order-data-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima in, atque, iste sed autem</p>
           </div>
           <div className="order-btn">
-            <UIbutton className="order-accept-btn" name="button" variant="contained" color="primary"><FontAwesomeIcon icon={faHandHoldingUsd} /> 19.95 S/. ACCEPT</UIbutton>
+            <UIbutton className="order-accept-btn" name="button" variant="contained" color="primary"><FontAwesomeIcon icon={faHandHoldingUsd} />&nbsp; 19.95 $ ACCEPT</UIbutton>
             <UIbutton className="order-cancel-btn" name="button" color="default">CANCEL</UIbutton>
           </div>
         </div>

@@ -7,6 +7,10 @@
   display: none;
 }
 
+.margin-auto {
+  margin: auto;
+}
+
 .slide-from-right {
   transform: translateX(-350px);
   transition: all 1s ease;
