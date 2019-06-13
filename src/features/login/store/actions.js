@@ -24,7 +24,7 @@ const loadUser = () => (dispatch, getState) => {
 
   // Get token from state
   const token = getState().auth.token
- 
+
   // Headers
   const config = {
     headers: {
@@ -32,23 +32,23 @@ const loadUser = () => (dispatch, getState) => {
     }
   };
   // If token, add to headers config
-  if (token!=='null') {
+  if (token !== 'null') {
     config.headers['Authorization'] = `Bearer ${token}`;
   }
-  
-  authService.getToken(authUrls.getTokenUrl, config)
-  .then(res => {
-    dispatch({
-      type: types.USER_LOADED,
-      payload: res.data
+
+  authService.checkToken(authUrls.checkTokenUrl, config)
+    .then(res => {
+      dispatch({
+        type: types.USER_LOADED,
+        payload: res.data
+      });
+    }).catch(err => {
+      console.log('error in catch', err);
+      dispatch({
+        type: types.AUTH_ERROR
+      });
+      dispatch(returnErrors(err.response.data, err.response.status));
     });
-  }).catch(err => {
-    console.log('error in catch', err);
-    dispatch({
-      type: types.AUTH_ERROR
-    });
-    dispatch(returnErrors(err.response.data, err.response.status));
-  });
 }
 
 // LOGIN USER
@@ -62,20 +62,20 @@ const login = (username, password) => dispatch => {
   // Request Body
   const body = JSON.stringify({ username, password })
 
-  authService.checkToken(authUrls.checkTokenUrl, body, config)
+  authService.getToken(authUrls.getTokenUrl, body, config)
     .then(res => {
-      dispatch(createMessage({Loggedin: "Bienvenido!"}));
+      dispatch(createMessage({ Loggedin: "Bienvenido!" }));
       dispatch({
         type: types.LOGIN_SUCCESS,
         payload: res.data
       });
-      
+
     }).catch(err => {
       dispatch({
         type: types.LOGIN_FAILED
       });
       dispatch(returnErrors(err.response.data, err.response.status));
-   
+
     });
 }
 
