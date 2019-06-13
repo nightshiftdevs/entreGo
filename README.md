@@ -47,6 +47,7 @@ npm run dev
 ```
 
 Now you can see the project connected & working on http://localhost:8080/
+
 Server will run on http://localhost:3000/
 
 ## Dev team
