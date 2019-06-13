@@ -2,17 +2,17 @@ import React from "react";
 import { HashRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import { LandingLayout } from "../features/landing";
 import { DriverFormLayout } from "../features/driverform";
-import { DriverDashboard } from "../features/dashboard";
-import { LeafletContainer } from "../features/leaflet-map";
+import { DriverLayout, OrderLayout, Order2Layout } from "../features/dashboard";
 import PrivateRoute from '../components/privateRoute/privateRoute.component';
 
 function Routes() {
   return (
     <Router>
       <Switch>
-        <PrivateRoute path="/dashboard/driver" component={DriverDashboard} />
+        <Route path="/dashboard/driver/order-2" component={Order2Layout} />
+        <Route path="/dashboard/driver/order-1" component={OrderLayout} />
+        <Route path="/dashboard/driver" component={DriverLayout} />
         <Route path="/register/driver" component={DriverFormLayout} />
-        <Route exact path="/access/map" component={LeafletContainer} />
         <Route exact path="/" component={LandingLayout} />
         <Redirect exact from="/" to="/home" />
       </Switch>

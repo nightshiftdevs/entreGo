@@ -1,3 +1,30 @@
+@import "../../assets/styles/imports";
+
 .footer {
-  margin: 20px 0 0 0;
+  padding: 80px 0 40px;
+  background: $color-scale5;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 40px 0;
+    li {
+      margin: 0 20px;
+      a {
+        color: $color-scale1;
+        font-size: $font-size-bigger;
+        &:hover {
+          color: $color-scale0;
+        }
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    color: $color-scale0;
+    font-family: $font-montserrat;
+    b {
+      font-family: $font-montserrat;
+    }
+  }
 }

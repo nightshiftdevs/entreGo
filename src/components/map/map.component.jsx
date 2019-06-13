@@ -1,15 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
 import MapContainer from "./map.container";
 
 function MapLayout() {
 
   return (
-    <div>
+    <Fragment>
       <MapContainer />
-    </div>
+    </Fragment>
   );
 }
 
-export{
+export {
   MapLayout
 }
