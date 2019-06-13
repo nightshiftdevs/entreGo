@@ -12,7 +12,8 @@ function UIbutton(props) {
     children,
     color,
     fullWidth,
-    component
+    component,
+    to
   } = props;
   return (
     <Button
@@ -24,6 +25,7 @@ function UIbutton(props) {
       color={color}
       fullWidth={fullWidth}
       component={component}
+      to={to}
     >
       {children}
     </Button>

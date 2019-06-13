@@ -33,7 +33,7 @@ class DriverDashboardContainer extends Component {
           <FontAwesomeIcon icon={faTruck} />
           &nbsp; S T A R T &nbsp; N O W
         </Link>
-        <div className="gradient-img">
+        <div className="gradient-img-driver">
           <span className="gradient" />
           <img className="driver-img-0" src={cargoTruck4} alt="Cargo truck" />
         </div>

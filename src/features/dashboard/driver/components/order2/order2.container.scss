@@ -1,0 +1,32 @@
+@import "../../../../../assets/styles/imports";
+
+.order-2 {
+  margin: auto;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  height: 100%;
+  max-width: 600px;
+  background: $color-scale0;
+  border-radius: 45px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.5);
+  .order-btn-2 {
+    display: flex;
+    justify-content: center;
+    .order-accept-btn,
+    .order-cancel-btn {
+      padding: 12px 0 !important;
+      font-size: $font-size-normal !important;
+      font-family: $font-montserrat !important;
+    }
+    .order-accept-btn {
+      border-bottom-left-radius: 25px !important;
+      background: $color-scale3 !important;
+    }
+    .order-cancel-btn {
+      border-bottom-right-radius: 25px !important;
+      color: $color-scale3 !important;
+    }
+  }
+}

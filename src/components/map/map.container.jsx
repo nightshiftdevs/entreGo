@@ -25,7 +25,7 @@ function MapContainer() {
       <Marker position={position} />
     </Map>
   );
-
+  console.log('update-map', position);
   return map;
 }
 
