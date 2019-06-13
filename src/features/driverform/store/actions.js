@@ -36,7 +36,7 @@ const error = (err) => {
 const requestCreateDriver = (body) => {
   return (dispatch, getState) => {
     userService
-      .createUser(userUrls.createUsers, body)
+      .createUser(userUrls.createDrivers, body)
       .then(response => {
         dispatch(saveDriver(body));
         dispatch(saveAllDrivers(body));
