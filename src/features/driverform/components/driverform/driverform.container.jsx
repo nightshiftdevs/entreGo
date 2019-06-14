@@ -41,15 +41,16 @@ class DriverFormContainer extends Component {
       [name]: value
     });
   }
-  createDriver() {
+  createDriver(e) {
     const { dispatch } = this.props;
-    dispatch(requestCreateDriver(this.state));
+    const fd = new FormData(e.target);
+    dispatch(requestCreateDriver(fd));
   }
 
   handleSubmit(e) {
-    console.log(this.state);
+    
     e.preventDefault();
-    this.createDriver();
+    this.createDriver(e);
   }
 
   onMouseUp() {

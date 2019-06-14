@@ -5,12 +5,12 @@
 
 module.exports = {
     'connection': {
-        'host': 'localhost',
-        'user': 'root',
-        'password': '',
-        'database': 'entregodb'
+        'host': 'sql10.freesqldatabase.com',
+        'user': 'sql10295478',
+        'password': 'QI6E42E5j5',
+        'database': 'sql10295478'
     },
-    'database': 'entregodb'
+    'database': 'sql10295478'
 };
 
 /* -------------------------------------------
