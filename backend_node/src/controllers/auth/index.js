@@ -12,6 +12,7 @@ let router = express.Router();
 router.post('/sign-in', authService.signIn);
 router.get('/sign-out', authService.signOut);
 router.post('/sign-up-drivers', authService.signUpDrivers);
+router.post('/sign-up-clients', authService.signUpClients);
 router.get('/userStatus', tokenInHeaders, verifyToken);
 
 router.get('/sign-up', (req, res) => {

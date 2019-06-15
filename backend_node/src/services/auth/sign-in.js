@@ -15,17 +15,17 @@ const jwt = require('jsonwebtoken');
 
 const login = async (req, res) => {
   try {
-    let username = await req.body.username;
+    
+    let username = await req.body.username.toString();
     let password = await req.body.password;
-
+    
     if (username && password) {
-      db.query('SELECT * FROM accounts WHERE username = ? AND password = ?',
+      db.query(`SELECT * FROM USERS WHERE password ='${password}' AND email ='${username}'`,
         [username, password], function (error, results, fields) {
           if (results.length > 0) {
             let token = jwt.sign({ username: username }, config.JWT.secret, {
               expiresIn: config.JWT.expiresIn
             });
-
             res.json({
               user: {
                 success: true,

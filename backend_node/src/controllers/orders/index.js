@@ -4,13 +4,12 @@ const express = require('express');
 // Middlewares
 
 // Services
-const orderService = require('../../services/users');
+const orderService = require('../../services/orders');
 
 module.exports = () => {
     let router = express.Router();
 
-    router.get('/', orderService.getOrders);
-    router.get('/:id', orderService.getOrderById);
+    router.get('/new', orderService.createOrder);
    
     return router;
 }

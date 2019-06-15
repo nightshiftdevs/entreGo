@@ -18,7 +18,8 @@
     "mongoose": "^5.5.14",
     "morgan": "^1.9.1",
     "mysql": "^2.17.1",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
