@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { MapLayout } from '../../../../../components';
+import { MapDriver1Layout } from '../../../../../components';
 
 import './order.container.scss'
 
@@ -22,7 +22,7 @@ class OrderContainer extends Component {
   render() {
     return (
       <div className="order">
-        <MapLayout />
+        <MapDriver1Layout />
         <div>
           <div className="order-user">
             <img className="order-data-userphoto" src={userPlaceHolder} alt="user photo" />

@@ -5,7 +5,7 @@ const styleMap1 = 'http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg'
 const styleMap2 = 'http://a.tile.stamen.com/toner/{z}/{x}/{y}.png';
 const styleMap3 = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
 
-function MapContainer() {
+function MapDriver2Container() {
   const [position, setPosition] = React.useState([0, 0]);
 
   React.useEffect(() => {
@@ -18,7 +18,7 @@ function MapContainer() {
   }, [setPosition]);
 
   const map = (
-    <Map className="map-template-1" center={position} zoom={13} zoomControl={false} attributionControl={false}>
+    <Map className="map-template-2" center={position} zoom={13} zoomControl={false} attributionControl={false}>
       <TileLayer
         url={styleMap2}
       />
@@ -29,4 +29,4 @@ function MapContainer() {
   return map;
 }
 
-export default MapContainer;
+export default MapDriver2Container;
