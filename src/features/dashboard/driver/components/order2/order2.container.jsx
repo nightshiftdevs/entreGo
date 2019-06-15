@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { MapLayout } from '../../../../../components';
+import { Link } from 'react-router-dom';
+import { MapDriver2Layout } from '../../../../../components';
 
 import './order2.container.scss'
-
-import userPlaceHolder from '../../../../../assets/img/userplaceholder.png'
 
 import {
   UIbutton
@@ -11,20 +10,18 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faMapMarkerAlt,
   faTruck,
-  faGlasses,
-  faHandHoldingUsd
 } from '@fortawesome/free-solid-svg-icons';
 
 class Order2Container extends Component {
   render() {
     return (
       <div className="order-2">
-        <MapLayout />
+        <MapDriver2Layout />
         <div>
           <div className="order-btn-2">
-            <UIbutton className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>I ARRIVED</UIbutton>
+            <UIbutton component={Link} to="/dashboard/driver/order-3" className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
+            I ARRIVED &nbsp;<FontAwesomeIcon icon={faTruck} /></UIbutton>
             <UIbutton className="order-cancel-btn" name="button" color="default" fullWidth={true}>CANCEL</UIbutton>
           </div>
         </div>
