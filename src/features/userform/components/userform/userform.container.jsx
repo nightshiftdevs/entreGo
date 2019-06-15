@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { FormComponent } from '..'
+import userPlaceHolder from '../../../../assets/img/userplaceholder.png'
 
 class UserFormContainer extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class UserFormContainer extends Component {
       cellphone: '',
       email: '',
       password: '',
-      password2: ''
+      password2: '',
+      userPhoto: userPlaceHolder
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
