@@ -13,16 +13,16 @@ class DriverFormContainer extends Component {
       lastName: '',
       email: '',
       cellphone: '',
-      birthDate: '',
+      birthDate: '1999-05-30',
       address: '',
       password: '',
       password2: '',
-      dni: '',
+      dni: 0,
       bankAccount: '', // need to validate this information
       userPhoto: '', // after test need to send information like a real photo
       // vehicle information
       licensePlate: '', // need to validate this information
-      cargoVolume: '',
+      cargoVolume: 0,
       brand: '',
       color: '',
       vehiclePhoto: '', // after test need to be generated automatically with brand & color information
