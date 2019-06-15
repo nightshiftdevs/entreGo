@@ -1,11 +1,11 @@
 import { Service } from '../core/coreService';
 
 class AuthService {
-  getToken(url, config) {
+  checkToken(url, config) {
     return Service.get(url,config);
   };
 
-  checkToken(url, config, body) {
+  getToken(url, config, body) {
     return Service.post(url,config,body);
   };
 

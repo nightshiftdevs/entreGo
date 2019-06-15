@@ -1,0 +1,11 @@
+@import "../../assets/styles/imports";
+
+.aside {
+  min-width: 25vw;
+  min-height: 100vh;
+  background: $color-scale4;
+
+  .text-test {
+    color: $color-scale0;
+  }
+}

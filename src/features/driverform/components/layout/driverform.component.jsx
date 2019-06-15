@@ -1,23 +1,31 @@
-import React from "react";
+import React, { Component } from "react";
 
 import {
-  Header,
+  Header2,
   Main,
   Footer
 } from '../../../../components';
 
 import { CreateDriver } from "../driverform/driverform.container";
 
-function DriverFormLayout() {
-  return (
-    <div>
-      <Header />
-      <Main>
-        <CreateDriver />
-      </Main>
-      <Footer />
-    </div>
-  )
+class DriverFormLayout extends Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <div>
+        <Header2 />
+        <Main>
+          <CreateDriver />
+        </Main>
+        <Footer />
+      </div>
+    )
+  }
+
 };
 
 export {

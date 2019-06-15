@@ -7,6 +7,10 @@
   display: none;
 }
 
+.margin-auto {
+  margin: auto;
+}
+
 .slide-from-right {
   transform: translateX(-350px);
   transition: all 1s ease;
@@ -15,4 +19,20 @@
 .slide-from-right-max {
   transform: translateX(-500px);
   transition: all 1s ease;
+}
+
+.form {
+  .ui-input {
+    background: $color-scale0;
+    border-radius: 5px;
+  }
+  .login-component-btn,
+  .register-component-btn {
+    margin: 15px 0 0 0 !important;
+    background: $color-scale3 !important;
+    font-size: $font-size-little !important;
+  }
+  .register-driver-btn {
+    margin: 15px 0 60px 0 !important;
+  }
 }

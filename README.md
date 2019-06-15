@@ -1,4 +1,4 @@
-# entreGo
+# 🚛 entreGo 
 
 App per-to-peer, connect people who need to transport clothing merchandise with people who have cargo vehicle.
 
@@ -12,64 +12,43 @@ You will need to have:
 
 ```
 npm (Node Package Manager)
-python 3
-pip (Python Package Manager)
-```
-Also we recommend the use of pipenv so install it
-
-```bash
-pip install pipenv 
 ```
 
 ### Installing
 
 How to get a development env running:
 
-Install npm packages in the ```root``` folder.
+Install front-end dependencies in the ```root``` folder.
 
 ```bash
 npm i
 ```
 
-Then go to to the folder ```./backend``` and install the virtual env with the pip packages.
+Then go to to the folder ```./backend_node``` and install the dependencies.
 
 ```bash
-PIPENV_VENV_IN_PROJECT=true pipenv install
+npm i
 ```
 
 Whit this you install all devDependencies and dependencies the project need.
 
 ## Run the project
 
-This project use django as backend so you need to run the server, first of all active your virtual env, so in ```./backend``` folder use:
+This project use NodeJs as backend so you need to run the server, so in ```./backend_node``` folder use:
 
 ```bash
-pipenv shell
-```
-In case you need to desactivate the virtual env you can do it with:
-
-```bash
-exit
+npm run server
 ```
 
-Then go to ```./backend/entrego```.
-Migrate for the first time if you didn't it:
-
-```bash
-pipenv run migrate
-```
-For run the server go to ```./backend/entrego``` and use:
-
-```bash
-pipenv run server
-```
-This is all for the backend side, for see the project now you just need to:
+This is all for the backend side, for see the project now you just need to go to the ```root``` folder :
 
 ```bash
 npm run dev
 ```
 
 Now you can see the project connected & working on http://localhost:8080/
+
+Server will run on http://localhost:3000/
 
 ## Dev team
 

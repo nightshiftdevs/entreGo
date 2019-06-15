@@ -44,6 +44,7 @@ function FormComponent(props) {
             id="contained-button-file-user"
             multiple
             type="file"
+            onChange={props.handleChange}
           />
           <label htmlFor="contained-button-file-user" className="upload-button">
             <UIbutton variant="contained" component="span" fullWidth={true}>
@@ -71,6 +72,7 @@ function FormComponent(props) {
             id="contained-button-file-vehicle"
             multiple
             type="file"
+            onChange={props.handleChange}
           />
           <label htmlFor="contained-button-file-vehicle" className="upload-button">
             <UIbutton variant="contained" component="span" fullWidth={true}>
@@ -79,9 +81,8 @@ function FormComponent(props) {
             </UIbutton>
           </label>
         </div>
-
       </div>
-      <UIbutton name="button" type="submit" variant="contained" color="primary" fullWidth={true}>Submit</UIbutton>
+      <UIbutton className="register-component-btn register-driver-btn" name="button" type="submit" variant="contained" color="primary" fullWidth={true}>R E G I S T E R</UIbutton>
 
     </form>
   );

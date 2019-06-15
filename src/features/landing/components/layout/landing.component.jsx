@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 import {
   Header,
@@ -8,16 +8,24 @@ import {
 
 import { LandingContainer } from '../landing/landing.container'
 
-function LandingLayout() {
-  return (
-    <div>
-      <Header />
-      <Main>
-        <LandingContainer />
-      </Main>
-      <Footer />
-    </div>
-  )
+class LandingLayout extends Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <Main>
+          <LandingContainer />
+        </Main>
+        <Footer />
+      </div>
+    )
+  }
+
 };
 
 export {

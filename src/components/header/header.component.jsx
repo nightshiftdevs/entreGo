@@ -37,7 +37,7 @@ class Header extends React.Component {
     return (
       <header className={this.state.scroll > this.state.top ? "header-background" : ""}>
         <div className="inside-container">
-          <Link className="header-logo" to="/home">entreGo</Link>
+          <Link className="header-logo" to="/">entreGo</Link>
           <nav>
             <ul className="header-nav">
               <li className="homeJump">H O M E</li>

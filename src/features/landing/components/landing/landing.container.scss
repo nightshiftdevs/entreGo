@@ -66,7 +66,7 @@
       width: 500px;
       position: absolute;
       top: 30%;
-      right: -500px; 
+      right: -500px;
       padding: 20px 25px 30px;
       background: $color-transparent5;
       border-top-left-radius: 25px;
@@ -200,6 +200,27 @@
       margin: 0;
       text-align: center;
     }
+    .start-to-work {
+      display: flex;
+      justify-content: center;
+      padding: 40px 0;
+      background: $color-scale5;
+      &:hover {
+        .btn-work {
+          transform: scale(1.05);
+        }
+      }
+      .btn-work {
+        display: inline-block;
+        font-family: $font-montserrat;
+        color: $color-scale0;
+        font-size: $font-size-big;
+        font-weight: $font-bolder;
+        padding: 20px 40px;
+        border: 6px solid $color-scale0;
+        transition: all 0.7s ease;
+      }
+    }
     .benefit {
       display: flex;
       width: 100%;
@@ -285,18 +306,5 @@
       font-size: $font-size-biggest;
       color: $color-scale0;
     }
-  }
-}
-
-.form {
-  .ui-input {
-    background: $color-scale0;
-    border-radius: 5px;
-  }
-  .login-component-button,
-  .register-component-button {
-    margin: 15px 0 0 0 !important;
-    background: $color-scale3 !important;
-    font-size: $font-size-little !important;
   }
 }
