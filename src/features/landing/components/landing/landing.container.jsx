@@ -22,6 +22,7 @@ import cargoTruck5 from '../../../../assets/img/cargoTruck5.jpg'
 
 import { LoginLayout } from '../../../login'
 import { UserFormLayout } from '../../../userform';
+import { driver } from '../../../../helpers/urls';
 
 class LandingContainer extends Component {
   constructor(props) {
@@ -144,7 +145,7 @@ class LandingContainer extends Component {
           <section className="work-with-us">
             <h2 className="title">W O R K &nbsp; W I T H &nbsp; U S</h2>
             <div className="start-to-work">
-              <Link to="/register/driver" className="btn-work">S T A R T &nbsp; N O W !</Link>
+              <Link to={driver.register} className="btn-work">S T A R T &nbsp; N O W !</Link>
             </div>
             <div className="benefit">
               <div className="benefit-icon">
