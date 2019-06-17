@@ -1,0 +1,55 @@
+@import "../../../../../assets/styles/imports";
+
+.order-5 {
+  margin: auto;
+  margin-top: 40px;
+  height: 100%;
+  max-width: 600px;
+  background: $color-scale0;
+  border-radius: 45px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.5);
+  .total-earned {
+    padding: 80px 30px;
+    text-align: center;
+    .border-earned-money {
+      display: inline-block;
+      margin: 40px 0 0 0;
+      background-color: $color-scale3;
+      border: 8px solid $color-scale3;
+      border-radius: 30px;
+    }
+    .earned-money {
+      display: inline-flex;
+      margin: 0;
+      padding: 10px 20px;
+      color: $color-scale0;
+      background-color: $color-scale3;
+      border: 3px solid $color-scale0;
+      border-radius: 25px;
+      font-size: $font-size-biggest;
+      font-weight: $font-bolder;
+    }
+    .check-circle {
+      font-size: 100px !important;
+      margin: 30px 0 0 0;
+      font-size: $font-size-biggest;
+      color: $color-scale4;
+      animation: rotate 3s infinite;
+    }
+  }
+  .order-btn-5 {
+    display: flex;
+    justify-content: center;
+    .order-accept-btn {
+      padding: 12px 0 !important;
+      font-size: $font-size-normal !important;
+      font-family: $font-montserrat !important;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 25px !important;
+      border-bottom-right-radius: 25px !important;
+      background: $color-scale3 !important;
+    }
+  }
+}

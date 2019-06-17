@@ -1,6 +1,6 @@
 @import "../../../../../assets/styles/imports";
 
-.order-2 {
+.order-3 {
   margin: auto;
   margin-top: 40px;
   height: 100%;
@@ -10,7 +10,14 @@
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.5);
-  .order-btn-2 {
+  .terms-conditions{
+    padding: 30px 45px;
+    line-height: 18px;
+    h2{
+      text-decoration: underline;
+    }
+  }
+  .order-btn-3 {
     display: flex;
     justify-content: center;
     .order-accept-btn,

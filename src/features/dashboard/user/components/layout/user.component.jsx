@@ -8,7 +8,6 @@ class UserLayout extends Component {
   render() {
     return (
       <div>
-        Hola user
         <OrderUserContainer />
         <div className="user-order">
           <MapUser1Layout />
