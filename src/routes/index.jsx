@@ -13,7 +13,7 @@ function Routes() {
         <PrivateRoute path="/dashboard/driver/order-4" component={Order4Layout} />
         <PrivateRoute path="/dashboard/driver/order-3" component={Order3Layout} />
         <PrivateRoute path="/dashboard/driver/order-2" component={Order2Layout} />
-        <PrivaetRoute path="/dashboard/driver/order-1" component={OrderLayout} />
+        <PrivateRoute path="/dashboard/driver/order-1" component={OrderLayout} />
         <Route path="/dashboard/user" component={UserLayout} />
         <PrivateRoute path="/dashboard/driver" component={DriverLayout} />
         <Route path="/register/driver" component={DriverFormLayout} />
