@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { FormComponent } from '..'
+import { FormComponent } from '../layout/form.component'
 
-class OrderFormContainer extends Component {
+class OrderUserContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,5 +47,5 @@ class OrderFormContainer extends Component {
 }
 
 export {
-  OrderFormContainer
+  OrderUserContainer
 }
