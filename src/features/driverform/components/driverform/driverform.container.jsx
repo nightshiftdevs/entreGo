@@ -13,16 +13,16 @@ class DriverFormContainer extends Component {
       lastName: '',
       email: '',
       cellphone: '',
-      birthDate: '',
+      birthDate: '1999-05-30',
       address: '',
       password: '',
       password2: '',
-      dni: '',
+      dni: 0,
       bankAccount: '', // need to validate this information
       userPhoto: '', // after test need to send information like a real photo
       // vehicle information
       licensePlate: '', // need to validate this information
-      cargoVolume: '',
+      cargoVolume: 0,
       brand: '',
       color: '',
       vehiclePhoto: '', // after test need to be generated automatically with brand & color information
@@ -41,15 +41,16 @@ class DriverFormContainer extends Component {
       [name]: value
     });
   }
-  createDriver() {
+  createDriver(e) {
     const { dispatch } = this.props;
-    dispatch(requestCreateDriver(this.state));
+    const fd = new FormData(e.target);
+    dispatch(requestCreateDriver(fd));
   }
 
   handleSubmit(e) {
-    console.log(this.state);
+    
     e.preventDefault();
-    this.createDriver();
+    this.createDriver(e);
   }
 
   onMouseUp() {

@@ -6,6 +6,7 @@
 */
 
 const tokenInHeaders = (req, res, next) => {
+    console.log('bearer',req.headers['authorization']);
     const header = req.headers['authorization'];
 
     if (typeof header !== undefined) {
