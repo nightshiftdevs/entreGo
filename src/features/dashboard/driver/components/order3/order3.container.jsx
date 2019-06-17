@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './order3.container.scss'
 import { driver } from '../../../../../helpers/urls';
+import cargoTruck from '../../../../../assets/img/cargoTruck.jpg'
 
 import {
   UIbutton
@@ -18,8 +19,12 @@ class Order3Container extends Component {
   render() {
     return (
       <div className="order-3">
+        <div className="gradient-img-driver-order">
+          <span className="gradient" />
+          <img className="driver-img-1" src={cargoTruck} alt="Cargo truck" />
+        </div>
         <div className="terms-conditions">
-          <h2>Terms & conditions <FontAwesomeIcon icon={faTruck} /></h2>
+          <h2>Terms & conditions &nbsp; &nbsp; &nbsp; &nbsp;<FontAwesomeIcon icon={faTruck} /></h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam tempore aspernatur repudiandae ipsam earum
           iure dignissimos odit voluptate? Eius commodi necessitatibus consequatur velit? Pariatur esse nemo cumque porro, error voluptates.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam tempore aspernatur repudiandae ipsam earum
