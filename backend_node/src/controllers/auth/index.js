@@ -6,7 +6,6 @@ const {tokenInHeaders, verifyToken} = require('../../Authentication');
 
 // Services
 const authService = require('../../services/auth');
-const authService = require('../../services/auth');
 
 let router = express.Router();
 
