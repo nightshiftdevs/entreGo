@@ -15,10 +15,4 @@ router.post('/sign-up-drivers', authService.signUpDrivers);
 router.post('/sign-up-clients', authService.signUpClients);
 router.get('/userStatus', tokenInHeaders, verifyToken);
 
-router.get('/sign-up', (req, res) => {
-    res.json({
-        msg: 'Hola'
-    })
-});
-
 module.exports = router;

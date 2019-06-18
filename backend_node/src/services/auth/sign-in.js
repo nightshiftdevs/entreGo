@@ -32,7 +32,8 @@ const login = async (req, res) => {
                 message: 'Authentication successful!',
                 id: results[0].id,
                 username: results[0].username,
-                email: results[0].email
+                email: results[0].email,
+                roleID:  results[0].roleID
               },
               token: token
             });

@@ -17,10 +17,10 @@ function auth (state = initialState, action) {
         }
         case types.LOGIN_SUCCESS:
           localStorage.setItem('token', action.payload.token);
-          console.log('saving',localStorage)
           return {
             ...state,
             ...action.payload,
+            roleID: action.payload.user.roleID,
             isAuthenticated: true,
             isLoading: false
           }
