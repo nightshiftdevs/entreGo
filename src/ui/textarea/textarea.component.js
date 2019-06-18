@@ -10,7 +10,10 @@ function UItextarea(props) {
     label,
     value,
     onChange,
-    rowsMax = '4'
+    rowsMax = '4',
+    fullWidth = true,
+    variant = "outlined",
+    required = true
   } = props;
   return (
     <TextField
@@ -22,6 +25,9 @@ function UItextarea(props) {
       onChange={onChange}
       multiline
       rowsMax={rowsMax}
+      fullWidth={fullWidth}
+      variant={variant}
+      required={required}
     >
     </TextField>
   )

@@ -14,6 +14,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMapMarkerAlt,
+  faLocationArrow,
   faTruck,
   faGlasses,
   faHandHoldingUsd
@@ -30,8 +31,12 @@ class OrderContainer extends Component {
             <p className="order-data-client">A really really long name</p>
           </div>
           <div className="order-data">
-            <p className="order-data-label"><FontAwesomeIcon icon={faMapMarkerAlt} /> Dest. address:</p>
-            <p className="order-data-content">My final destination is too long so I can test how will it look Dpto. 1504</p>
+            <p className="order-data-label"><FontAwesomeIcon icon={faMapMarkerAlt} /> Start address:</p>
+            <p className="order-data-content">My start destination is too long so I can test how will it look Dpto. 1504</p>
+          </div>
+          <div className="order-data">
+            <p className="order-data-label"><FontAwesomeIcon icon={faLocationArrow} /> Dest. address:</p>
+            <p className="order-data-content">My final destination is too long so I can test how will it look</p>
           </div>
           <div className="order-data">
             <p className="order-data-label"><FontAwesomeIcon icon={faTruck} /> Cargo volume:</p>

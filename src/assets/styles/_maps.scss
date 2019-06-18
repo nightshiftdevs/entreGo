@@ -1,5 +1,5 @@
 .map-template-1 {
-  height: 230px;
+  min-height: 230px;
   min-width: 220px;
   top: 0;
   border-top-left-radius: 20px;
@@ -14,10 +14,18 @@
   border-top-right-radius: 20px;
 }
 
-.map-template-4 {
+.map-template-3 {
   height: 80vh;
   min-width: 220px;
   top: 0;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+}
+
+.map-template-4 {
+  height: 35vh;
+  min-width: 220px;
+  top: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }

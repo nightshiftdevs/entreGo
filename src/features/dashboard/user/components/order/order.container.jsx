@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 
-import { FormComponent } from '..'
+import { OrderComponent } from '../layout/order.component'
+import { MapUser1Layout } from '../../../../../components'
 
-class OrderFormContainer extends Component {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTruck
+} from '@fortawesome/free-solid-svg-icons';
+
+class OrderDashboardContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
-      cellphone: '',
-      email: '',
-      password: '',
-      password2: ''
+      startAdress: '',
+      destinationAdress: '',
+      cargoVolume: '',
+      obs: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,6 +33,7 @@ class OrderFormContainer extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log('state order', this.state)
   }
 
   onMouseUp() {
@@ -39,13 +44,15 @@ class OrderFormContainer extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <FormComponent handleSubmit={(e) => { this.handleSubmit(e) }} handleChange={(e) => { this.handleChange(e) }} />
-      </React.Fragment>
+      <div className="user-order">
+        <h2>Start your cargo <FontAwesomeIcon icon={faTruck} /></h2>
+        <OrderComponent handleSubmit={(e) => { this.handleSubmit(e) }} handleChange={(e) => { this.handleChange(e) }} />
+        <MapUser1Layout />
+      </div>
     )
   }
 }
 
 export {
-  OrderFormContainer
+  OrderDashboardContainer
 }
