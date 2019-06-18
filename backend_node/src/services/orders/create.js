@@ -1,78 +1,35 @@
 const express = require('express');
+const router = express.Router();
+const db = require('../../../configs/db')
 
-const create = () => async (req,res,next) => {
-  try {
-    const {
-      ClientID,
-      codDRIVER,
-      cod_send,
-      date_order,
-      observation,
-      cod_client,
-      cod_send
-    } = req.body;
+router.get('/order', (req, res) => {
+  res.send('display order')
+})
 
-    if (ClientID === undefined || ClientID === '') {
-      return res.status(422).json({
-          'code': 'REQUIRED_FIELD_MISSING',
-          'description': 'ClientID is required',
-          'field': 'ClientID'
-      });
-    }
+router.post('/order', async(req, res) => {
+  const { 
+    clientId,
+    codDriver,
+    cod_send,
+    date_order,
+    observation } = req.body;
+});
 
-    if (codDRIVER === undefined || codDRIVER === '') {
-      return res.status(422).json({
-          'code': 'REQUIRED_FIELD_MISSING',
-          'description': 'observation is required',
-          'field': 'observation'
-      });
-    }
+  const newOrder = {
+    clientId,
+    codDriver,
+    cod_send,
+    date_order,
+    observation
+  };
 
-    if (cod_send === undefined || cod_send === '') {
-      return res.status(422).json({
-          'code': 'REQUIRED_FIELD_MISSING',
-          'description': 'observation is required',
-          'field': 'observation'
-      });
-    }
+  await db.query('INSERT INTO ORDERS set ?', [newOrder]);
+  res.send('received')
 
-    if (date_order === undefined || date_order === '') {
-      return res.status(422).json({
-          'code': 'REQUIRED_FIELD_MISSING',
-          'description': 'order is required',
-          'field': 'name'
-      });
-    }
 
-    if (observation === undefined || observation === '') {
-      return res.status(422).json({
-          'code': 'REQUIRED_FIELD_MISSING',
-          'description': 'observation is required',
-          'field': 'observation'
-      });
-    }
-
-    if (cod_client === undefined || cod_client === '') {
-      return res.status(422).json({
-          'code': 'REQUIRED_FIELD_MISSING',
-          'description': 'observation is required',
-          'field': 'observation'
-      });
-    }   
-
-    if (cod_send === undefined || observation === '') {
-      return res.status(422).json({
-          'code': 'REQUIRED_FIELD_MISSING',
-          'description': 'observation is required',
-          'field': 'observation'
-      });
-    }
-  }catch (error) {
-    return res.status(500).json({
-      'code': 'SERVER_ERROR',
-      'descripcion': 'something went wrong, Please try again'
-    });
-  }
-}
+router.get('/', async (req, res => {
+  const order = await db.query('SELECT * FROM order');
+  res.send('')
+}))
 
 module.exports = create;
