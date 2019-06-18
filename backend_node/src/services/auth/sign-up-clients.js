@@ -19,12 +19,11 @@ const signUpClients = async (req, res) => {
     firstName = client.firstName,
     lastName = client.lastName,
     cellphone = client.cellphone,
-    dni = 12121212,
     clientPhoto = 'dummydummy',
     bankAccount = 'dummydummy';
   
-  let sql = 'CALL sp_client_create(?,?,?,?,?,?,?,?,?)';
-  db.query(sql, [password, email, roleID, firstName, lastName, cellphone, dni, clientPhoto, bankAccount], function (error, results, fields) {
+  let sql = 'CALL sp_client_create(?,?,?,?,?,?,?,?)';
+  db.query(sql, [password, email, roleID, firstName, lastName, cellphone, clientPhoto, bankAccount], function (error, results, fields) {
     if (error) throw error;
     else {
       res.json({

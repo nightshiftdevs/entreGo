@@ -2,7 +2,7 @@
                  MODULE DEPENDENCIES
   ---------------------------------------------     
 */
-
+const config = require('../../configs/config/index');
 const jwt = require('jsonwebtoken');
 
 /**
@@ -13,28 +13,21 @@ const jwt = require('jsonwebtoken');
 */
 
 const verifyToken = (req, res) => {
-    try {
-        //verify the JWT token generated for the user
-        jwt.verify(req.token, config.secret, (err, authorizedData) => {
-            if (err) {
-                //If error send Forbidden (403)
-                console.log('ERROR: Could not connect to the protected route');
-                res.sendStatus(403);
-            } else {
-                //If token is successfully verified, we can send the autorized data 
-                res.json({
-                    message: 'Successfully logged in',
-                    authorizedData
-                });
-                console.log('SUCCESS: Connected to protected route');
-            }
-        });
-    } catch (error) {
-        return res.status(500).json({
-            'code': 'SERVER_ERROR',
-            'description': 'something went wrong, Please try again'
-        });
+  //verify the JWT token generated for the user
+  jwt.verify(req.token, config.JWT.secret, (err, authorizedData) => {
+    if (err) {
+      //If error send Forbidden (403)
+      console.log('ERROR: Could not connect to the protected route');
+      res.sendStatus(403);
+    } else {
+      //If token is successfully verified, we can send the autorized data 
+      res.json({
+        message: 'Successfully logged in',
+        authorizedData
+      });
+      console.log('SUCCESS: Connected to protected route');
     }
+  });
 };
 
 module.exports = verifyToken;

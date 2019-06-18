@@ -45,9 +45,12 @@ class LoginLogic extends Component {
   }
 
   render() {
-    if(this.props.isAuthenticated){
+    if(this.props.isAuthenticated && this.props.role == 2){
       return <Redirect to="/dashboard/driver" />;
-    }
+    } else if (this.props.isAuthenticated && this.props.role == 1) {
+      return <Redirect to="/dashboard/user" />;
+    } 
+    
     return (
       <React.Fragment>
         <LogComponent handleSubmit={(e) => { this.handleSubmit(e) }} handleChange={(e) => { this.handleChange(e) }} />
@@ -63,7 +66,8 @@ LoginLogic.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  role: state.auth.roleID
 });
 
 const LoginContainer = connect(mapStateToProps, { login })(LoginLogic)

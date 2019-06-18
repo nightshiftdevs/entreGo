@@ -48,7 +48,6 @@ class DriverFormContainer extends Component {
   }
 
   handleSubmit(e) {
-    
     e.preventDefault();
     this.createDriver(e);
   }
@@ -68,7 +67,7 @@ class DriverFormContainer extends Component {
   }
 }
 
-const CreateDriver = connect()(DriverFormContainer)
+const CreateDriver = connect()(DriverFormContainer);
 
 export {
   CreateDriver

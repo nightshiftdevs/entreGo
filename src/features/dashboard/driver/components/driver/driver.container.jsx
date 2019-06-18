@@ -14,22 +14,22 @@ class DriverDashboardContainer extends Component {
   render() {
     const { isAuthenticated, user } = this.props.auth;
 
-    /*  const authLinks = (
-       <button onClick={this.props.logout}>
-         Logout
+    const authLinks = (
+      <button onClick={this.props.logout}>
+        Logout
        </button>
-     );
- 
-     const guestLinks = (
-       <Fragment>
-         {<Link to="/login">Login</Link>}
-       </Fragment>
- 
-       {isAuthenticated ? authLinks : guestLinks} // esto va en el div render
-     ); */
+    );
+
+    const guestLinks = (
+      <Fragment>
+        {<Link to="/login">Login</Link>}
+      </Fragment>
+    );
 
     return (
+
       <div className="driver-dashboard">
+        {isAuthenticated ? authLinks : guestLinks}
         <Link to={driver.order1} className="driver-start-btn">
           <FontAwesomeIcon icon={faTruck} />
           &nbsp; S T A R T &nbsp; N O W

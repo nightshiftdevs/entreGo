@@ -35,15 +35,14 @@ const loadUser = () => (dispatch, getState) => {
   if (token !== 'null') {
     config.headers['Authorization'] = `Bearer ${token}`;
   }
-
-  authService.checkToken(authUrls.checkTokenUrl, config)
+  
+  authService.checkToken('/api/v1/auth/userStatus', config)
     .then(res => {
       dispatch({
         type: types.USER_LOADED,
         payload: res.data
       });
     }).catch(err => {
-      console.log('error in catch', err);
       dispatch({
         type: types.AUTH_ERROR
       });
@@ -59,6 +58,7 @@ const login = (username, password) => dispatch => {
       'content-Type': 'application/json'
     }
   }
+  
   // Request Body
   const body = JSON.stringify({ username, password })
 
@@ -69,7 +69,7 @@ const login = (username, password) => dispatch => {
         type: types.LOGIN_SUCCESS,
         payload: res.data
       });
-
+      console.log(res.data);
     }).catch(err => {
       dispatch({
         type: types.LOGIN_FAILED

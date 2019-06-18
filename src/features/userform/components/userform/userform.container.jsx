@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+// To connect to our global store
+import { connect } from 'react-redux';
+import { requestCreateClient } from '../../store/actions'
 
 import { FormComponent } from '..'
 import userPlaceHolder from '../../../../assets/img/userplaceholder.png'
 
-class UserFormContainer extends Component {
+class UserContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,8 +32,14 @@ class UserFormContainer extends Component {
     });
   }
 
+  createClient(e) {
+    const { dispatch } = this.props;
+    dispatch(requestCreateClient(this.state));
+  }
+
   handleSubmit(e) {
     e.preventDefault();
+    this.createClient(e);
   }
 
   onMouseUp() {
@@ -47,6 +56,8 @@ class UserFormContainer extends Component {
     )
   }
 }
+
+const UserFormContainer = connect()(UserContainer);
 
 export {
   UserFormContainer
