@@ -1,5 +1,6 @@
-const deleteOrder = require('./delete');
+    
+const createOrder = require('./create');
 
 module.exports = {
-    deleteOrder,    
+    createOrder
 }

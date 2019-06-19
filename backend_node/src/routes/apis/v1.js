@@ -14,6 +14,5 @@ let router = express.Router();
 router.use('/users', userController);
 router.use('/auth', authController);
 router.use('/orders', ordersController);
-/* router.use('/orders', ordersController); */
 
 module.exports = router;

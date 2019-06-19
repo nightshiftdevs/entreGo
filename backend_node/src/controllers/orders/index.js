@@ -6,9 +6,10 @@ const express = require('express');
 // Services
 const orderService = require('../../services/orders');
 
+module.exports = () => {
+    let router = express.Router();
 
-let router = express.Router();
-
-router.get('/delete/:id', orderService.deleteOrder);
-
-module.exports = router;
+    router.get('/new', orderService.createOrder);
+   
+    return router;
+}
