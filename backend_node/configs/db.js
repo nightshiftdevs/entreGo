@@ -4,18 +4,18 @@
  */
 
 module.exports = {
-    'connection': {
-        'host': 'sql10.freesqldatabase.com',
-        'user': 'sql10295478',
-        'password': 'QI6E42E5j5',
-        'database': 'sql10295478'
-    },
-    'database': 'sql10295478'
+  'connection': {
+    'host': '',
+    'user': '',
+    'password': '',
+    'database': ''
+  },
+  'database': ''
 };
 
 /* -------------------------------------------
                  MONGODB SET UP
-  ---------------------------------------------     
+  ---------------------------------------------
  */
 
 /* const mongoose = require('mongoose');
