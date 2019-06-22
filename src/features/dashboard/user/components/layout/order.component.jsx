@@ -21,7 +21,7 @@ function OrderComponent(props) {
           <UItextarea name="obs" type="obs" value={props.obs} label="Product observations" onChange={props.handleChange}></UItextarea>
         </div>
       </div>
-      <UIbutton className="register-component-btn" name="button" type="submit" variant="contained" color="primary" fullWidth={true}>E N C A R G O</UIbutton>
+      <UIbutton className="user-btn" name="button" type="submit" variant="contained" color="primary" fullWidth={true}>E N T R E G O</UIbutton>
     </form>
   );
 }

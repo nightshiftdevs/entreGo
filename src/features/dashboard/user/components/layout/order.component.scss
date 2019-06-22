@@ -1,3 +1,5 @@
+@import "../../../../../assets/styles/imports";
+
 .user-order {
   margin: auto;
   margin-top: 10vh;
@@ -6,15 +8,21 @@
   max-width: 600px;
   border-radius: 20px;
   box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.5);
-  h2{
+  h2 {
     margin: 10px 20px;
   }
-  .fields{
+  .fields {
     margin: 0 20px;
     padding: 0;
     .ui-textarea,
-    .ui-input{
+    .ui-input {
       margin: 10px 0 0 0;
     }
+  }
+  .user-btn {
+    margin: 15px 0 0 0 !important;
+    background: $color-scale3 !important;
+    font-size: $font-size-little !important;
+    border-radius: 0 !important;
   }
 }

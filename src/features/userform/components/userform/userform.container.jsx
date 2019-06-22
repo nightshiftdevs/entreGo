@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { requestCreateClient } from '../../store/actions'
 
 import { FormComponent } from '..'
+import { addClassToEvent, addRemoveClass } from '../../../../helpers/dom'
 import userPlaceHolder from '../../../../assets/img/userplaceholder.png'
 
 class UserContainer extends Component {
@@ -39,7 +40,11 @@ class UserContainer extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    addRemoveClass('login-user', 'slide-from-right', 'register-user', 'slide-from-right-max')
+    console.log('state', this.state);
+
     this.createClient(e);
+    // e.target.reset();
   }
 
   onMouseUp() {

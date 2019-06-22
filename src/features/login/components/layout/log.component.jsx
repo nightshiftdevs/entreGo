@@ -9,7 +9,7 @@ import {
 
 function LogComponent(props) {
   return (
-    <form className="form" onSubmit={props.handleSubmit}>
+    <form className="form log-form" onSubmit={props.handleSubmit}>
       <div className="fields">
         <UIinput name="username" value={props.username} label="Username" onChange={props.handleChange}></UIinput>
         <span className="space-between" />

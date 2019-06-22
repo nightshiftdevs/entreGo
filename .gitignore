@@ -1,8 +1,9 @@
 #frontend
 node_modules
-dist
+
 #backend
 .vscode/
+db.js
 
 # Icon must end with two \r
 Icon

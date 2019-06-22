@@ -30,7 +30,22 @@ Then go to to the folder ```./backend_node``` and install the dependencies.
 npm i
 ```
 
-Whit this you install all devDependencies and dependencies the project need.
+Now you have all devDependencies and dependencies the project need.
+
+Then create a ```db.js``` file on ```./backend_node/configs``` with the next pattern:
+
+```js
+module.exports = {
+  'connection': {
+    'host': '',
+    'user': '',
+    'password': '',
+    'database': ''
+  },
+  'database': ''
+};
+```
+System works with sql database
 
 ## Run the project
 

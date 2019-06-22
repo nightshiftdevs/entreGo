@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import history from '../../../../../history';
+import { client } from '../../../../../helpers/urls';
 import { OrderComponent } from '../layout/order.component'
 import { MapUser1Layout } from '../../../../../components'
 
@@ -33,7 +35,7 @@ class OrderDashboardContainer extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('state order', this.state)
+    history.push(client.order2)
   }
 
   onMouseUp() {
