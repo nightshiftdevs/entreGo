@@ -9,7 +9,7 @@ import {
 
 function FormComponent(props) {
   return (
-    <form className="form" onSubmit={props.handleSubmit}>
+    <form className="form user-form js_registerSubmit" onSubmit={props.handleSubmit}>
       <div className="fields">
         <div className="row">
           <UIinput name="firstName" value={props.firstName} label="First Name" onChange={props.handleChange}></UIinput>
@@ -28,7 +28,6 @@ function FormComponent(props) {
         </div>
       </div>
       <UIbutton className="register-component-btn" name="button" type="submit" variant="contained" color="primary" fullWidth={true}>R E G I S T E R</UIbutton>
-
     </form>
   );
 }

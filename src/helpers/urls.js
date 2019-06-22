@@ -8,6 +8,15 @@ const driver = {
   order5: '/dashboard/driver/order-5',
 }
 
+const client = {
+  dashboard: '/dashboard/user',
+  order2: '/dashboard/user/order-2',
+  order3: '/dashboard/user/order-3',
+  order4: '/dashboard/user/order-4',
+  order5: '/dashboard/user/order-5',
+}
+
 export {
-  driver
+  driver,
+  client
 }
