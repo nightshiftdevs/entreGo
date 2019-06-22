@@ -14,6 +14,9 @@ const jwt = require('jsonwebtoken');
 
 const verifyToken = (req, res) => {
   //verify the JWT token generated for the user
+  console.log('ACCESO TOKEN',config.JWT.secret);
+  console.log('TOKEN',req.token);
+
   jwt.verify(req.token, config.JWT.secret, (err, authorizedData) => {
     if (err) {
       //If error send Forbidden (403)

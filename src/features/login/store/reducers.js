@@ -6,7 +6,8 @@ function auth (state = initialState, action) {
     case types.USER_LOADING:
       return {
         ...state,
-        isLoading: true
+        isLoading: true,
+        roleID: action.payload
       }
       case types.USER_LOADED:
         return {
@@ -17,6 +18,8 @@ function auth (state = initialState, action) {
         }
         case types.LOGIN_SUCCESS:
           localStorage.setItem('token', action.payload.token);
+          localStorage.setItem('roleID', action.payload.user.roleID);
+          console.log('action payload',action.payload);
           return {
             ...state,
             ...action.payload,
@@ -28,6 +31,7 @@ function auth (state = initialState, action) {
         case types.LOGIN_FAILED:
         case types.LOGOUT_SUCESS:
           localStorage.removeItem('token');
+          localStorage.removeItem('roleID');
           return {
             ...state,
             token: null,

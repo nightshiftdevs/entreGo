@@ -5,12 +5,12 @@
 
 module.exports = {
     'connection': {
-        'host': 'sql10.freesqldatabase.com',
-        'user': 'sql10295478',
-        'password': 'QI6E42E5j5',
-        'database': 'sql10295478'
+        'host': 'us-cdbr-iron-east-02.cleardb.net',
+        'user': 'ba8f37c16ea739',
+        'password': '18890183',
+        'database': 'heroku_dd9692e3ef68768'
     },
-    'database': 'sql10295478'
+    'database': 'heroku_dd9692e3ef68768'
 };
 
 /* -------------------------------------------
