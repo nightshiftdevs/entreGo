@@ -41,6 +41,7 @@ class OrderClient2Container extends Component {
           <div className="order-btn-2">
             <UIbutton component={Link} to={client.order3} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
               PAY &nbsp;<FontAwesomeIcon icon={faMoneyBillAlt} /></UIbutton>
+            <UIbutton className="order-cancel-btn" name="button" color="default" fullWidth={true}>CANCEL</UIbutton>
           </div>
         </div>
       </div>
