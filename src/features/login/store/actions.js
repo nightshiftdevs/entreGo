@@ -24,10 +24,8 @@ const loadUser = () => (dispatch, getState) => {
     type: types.USER_LOADING,
     payload: localStorage.getItem('roleID')
   });
-
   // Get token from state
   const token = getState().auth.token
- 
   // Headers
   const config = {
     headers: {

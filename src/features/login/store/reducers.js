@@ -19,7 +19,6 @@ function auth (state = initialState, action) {
         case types.LOGIN_SUCCESS:
           localStorage.setItem('token', action.payload.token);
           localStorage.setItem('roleID', action.payload.user.roleID);
-          console.log('action payload',action.payload);
           return {
             ...state,
             ...action.payload,
