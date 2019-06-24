@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
-import './order3.container.scss'
+import './order5.container.scss'
 import { driver } from '../../../../../helpers/urls';
 import cargoTruck from '../../../../../assets/img/cargoTruck.jpg'
 
@@ -15,13 +15,13 @@ import {
   faFileUpload
 } from '@fortawesome/free-solid-svg-icons';
 
-class Order3Container extends Component {
+class OrderClient5Container extends Component {
   render() {
     return (
-      <div className="order-3">
+      <div className="order-5">
         <div className="gradient-img-driver-order">
           <span className="gradient" />
-          <img className="driver-img-1" src={cargoTruck} alt="Cargo truck" />
+          <img className="driver-img-5" src={cargoTruck} alt="Cargo truck" />
         </div>
         <div className="terms-conditions">
           <h2>Terms & conditions &nbsp; &nbsp; &nbsp; &nbsp;<FontAwesomeIcon icon={faTruck} /></h2>
@@ -36,7 +36,7 @@ class Order3Container extends Component {
         </div>
 
         <div>
-          <div className="order-btn-3">
+          <div className="order-btn-5">
             <UIbutton component={Link} to={driver.order4} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
               ACCEPT & SEND &nbsp;<FontAwesomeIcon icon={faFileUpload} /></UIbutton>
             <UIbutton className="order-cancel-btn" name="button" color="default" fullWidth={true}>CANCEL</UIbutton>
@@ -48,5 +48,5 @@ class Order3Container extends Component {
 }
 
 export {
-  Order3Container
+  OrderClient5Container
 }

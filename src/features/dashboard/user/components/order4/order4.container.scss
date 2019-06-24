@@ -1,6 +1,6 @@
 @import "../../../../../assets/styles/imports";
 
-.order-3 {
+.order-4{
   position: relative;
   margin: auto;
   margin-top: 40px;
@@ -12,7 +12,7 @@
   .gradient-img-driver-order {
     position: absolute;
     top: 0;
-    .driver-img-1 {
+    .driver-img-4 {
       object-fit: cover;
       height: 80px;
       width: 100%;
@@ -39,7 +39,7 @@
       text-decoration: underline;
     }
   }
-  .order-btn-3 {
+  .order-btn-4 {
     display: flex;
     justify-content: center;
     .order-accept-btn,
