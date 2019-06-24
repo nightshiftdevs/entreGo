@@ -20,11 +20,12 @@ const authService = new AuthService();
 // CHECK TOKEN & LOAD USER
 const loadUser = () => (dispatch, getState) => {
   // User Loading
-  dispatch({ type: types.USER_LOADING });
-
+  dispatch({
+    type: types.USER_LOADING,
+    payload: localStorage.getItem('roleID')
+  });
   // Get token from state
   const token = getState().auth.token
-
   // Headers
   const config = {
     headers: {
@@ -35,7 +36,7 @@ const loadUser = () => (dispatch, getState) => {
   if (token !== 'null') {
     config.headers['Authorization'] = `Bearer ${token}`;
   }
-  
+
   authService.checkToken('/api/v1/auth/userStatus', config)
     .then(res => {
       dispatch({
@@ -58,7 +59,7 @@ const login = (username, password) => dispatch => {
       'content-Type': 'application/json'
     }
   }
-  
+
   // Request Body
   const body = JSON.stringify({ username, password })
 
