@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { MapDriver2Layout } from '../../../../../components';
+import { MapDriver3Layout } from '../../../../../components';
 import userPlaceHolder from '../../../../../assets/img/userplaceholder.png'
 import vehiclePlaceHolder from '../../../../../assets/img/vehicleplaceholder.png'
 
-import './order3.container.scss'
+import './order6.container.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,7 +12,7 @@ import {
   faShippingFast
 } from '@fortawesome/free-solid-svg-icons';
 
-class OrderClient3Container extends Component {
+class OrderClient6Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,8 +22,8 @@ class OrderClient3Container extends Component {
 
   render() {
     return (
-      <div className="order-3">
-        <MapDriver2Layout />
+      <div className="order-6">
+        <MapDriver3Layout />
         <div>
           <div className="order-driver">
             <img className="order-data-driverphoto" src={userPlaceHolder} alt="user photo" />
@@ -52,5 +52,5 @@ class OrderClient3Container extends Component {
 }
 
 export {
-  OrderClient3Container
+  OrderClient6Container
 }

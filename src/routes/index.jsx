@@ -12,7 +12,11 @@ import {
   Order5Layout,
   UserLayout,
   OrderClient2Layout,
-  OrderClient3Layout
+  OrderClient3Layout,
+  OrderClient4Layout,
+  OrderClient5Layout,
+  OrderClient6Layout,
+  OrderClient7Layout
 } from "../features/dashboard";
 import PrivateRoute from '../components/privateRoute/privateRoute.component';
 
@@ -26,6 +30,10 @@ function Routes() {
         <PrivateRoute path="/dashboard/driver/order-2" component={Order2Layout} />
         <PrivateRoute path="/dashboard/driver/order-1" component={OrderLayout} />
         <PrivateRoute path="/dashboard/driver" component={DriverLayout} />
+        <Route path="/dashboard/user/order-7" component={OrderClient7Layout} />
+        <Route path="/dashboard/user/order-6" component={OrderClient6Layout} />
+        <Route path="/dashboard/user/order-5" component={OrderClient5Layout} />
+        <Route path="/dashboard/user/order-4" component={OrderClient4Layout} />
         <Route path="/dashboard/user/order-3" component={OrderClient3Layout} />
         <Route path="/dashboard/user/order-2" component={OrderClient2Layout} />
         <Route path="/dashboard/user" component={UserLayout} />

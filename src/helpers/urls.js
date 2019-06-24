@@ -14,6 +14,8 @@ const client = {
   order3: '/dashboard/user/order-3',
   order4: '/dashboard/user/order-4',
   order5: '/dashboard/user/order-5',
+  order6: '/dashboard/user/order-6',
+  order7: '/dashboard/user/order-7'
 }
 
 export {
