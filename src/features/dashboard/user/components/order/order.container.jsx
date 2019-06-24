@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 
+import './order.container.scss'
 import history from '../../../../../history';
 import { client } from '../../../../../helpers/urls';
+import cargoTruck from '../../../../../assets/img/cargoTruck.jpg'
+
 import { OrderComponent } from '../layout/order.component'
 import { MapUser1Layout } from '../../../../../components'
 
@@ -47,7 +50,13 @@ class OrderDashboardContainer extends Component {
   render() {
     return (
       <div className="user-order">
-        <h2>Start your cargo <FontAwesomeIcon icon={faTruck} /></h2>
+        <div className="gradient-img-driver-order">
+          <span className="gradient" />
+          <img className="driver-img-1" src={cargoTruck} alt="Cargo truck" />
+        </div>
+        <div className="order-title">
+          <h2>Start your cargo &nbsp; &nbsp; &nbsp; &nbsp;<FontAwesomeIcon icon={faTruck} /></h2>
+        </div>
         <OrderComponent handleSubmit={(e) => { this.handleSubmit(e) }} handleChange={(e) => { this.handleChange(e) }} />
         <MapUser1Layout />
       </div>

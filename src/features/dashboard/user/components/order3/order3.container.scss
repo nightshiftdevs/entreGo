@@ -10,23 +10,43 @@
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.5);
-  .order-btn-3 {
+  .map-template-2 {
+    height: 60vh;
+  }
+  .order-driver {
     display: flex;
-    justify-content: center;
-    .order-accept-btn,
-    .order-cancel-btn {
-      padding: 12px 0 !important;
-      font-size: $font-size-normal !important;
-      font-family: $font-montserrat !important;
+    align-items: center;
+    margin: 20px;
+    .order-data-driver {
+      font-size: $font-size-normal-big;
+      font-family: $font-montserrat;
+      font-weight: $font-bold;
     }
-    .order-accept-btn {
-      border-top-left-radius: 0 !important;
-      border-bottom-left-radius: 25px !important;
-      background: $color-scale3 !important;
+    .order-data-driverphoto {
+      margin: 0 20px 0 0;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
     }
-    .order-cancel-btn {
-      border-bottom-right-radius: 25px !important;
-      color: $color-scale3 !important;
+    .order-data-content {
+      color: $color-scale4;
+      font-size: $font-size-normal;
+      font-weight: $font-bold;
+    }
+    .order-data-vehiclephoto{
+      margin: 0 20px 0 0;
+      height: 70px;
+    }
+    .order-data {
+      display: flex;
+      .order-data-label {
+        white-space: nowrap;
+        font-weight: bold;
+        margin: 0 10px 0 0;
+      }
+      .order-data-content {
+        font-weight: normal;
+      }
     }
   }
 }
