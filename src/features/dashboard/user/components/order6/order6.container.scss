@@ -1,0 +1,52 @@
+@import "../../../../../assets/styles/imports";
+
+.order-6 {
+  margin: auto;
+  margin-top: 40px;
+  height: 100%;
+  max-width: 600px;
+  background: $color-scale0;
+  border-radius: 45px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.5);
+  .map-template-2 {
+    height: 60vh;
+  }
+  .order-driver {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    .order-data-driver {
+      font-size: $font-size-normal-big;
+      font-family: $font-montserrat;
+      font-weight: $font-bold;
+    }
+    .order-data-driverphoto {
+      margin: 0 20px 0 0;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    .order-data-content {
+      color: $color-scale4;
+      font-size: $font-size-normal;
+      font-weight: $font-bold;
+    }
+    .order-data-vehiclephoto{
+      margin: 0 20px 0 0;
+      height: 70px;
+    }
+    .order-data {
+      display: flex;
+      .order-data-label {
+        white-space: nowrap;
+        font-weight: bold;
+        margin: 0 10px 0 0;
+      }
+      .order-data-content {
+        font-weight: normal;
+      }
+    }
+  }
+}

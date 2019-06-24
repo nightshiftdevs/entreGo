@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
 import './order5.container.scss'
-import { driver } from '../../../../../helpers/urls';
+import { client } from '../../../../../helpers/urls';
 import cargoTruck from '../../../../../assets/img/cargoTruck.jpg'
 
 import {
@@ -37,7 +37,7 @@ class OrderClient5Container extends Component {
 
         <div>
           <div className="order-btn-5">
-            <UIbutton component={Link} to={driver.order4} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
+            <UIbutton component={Link} to={client.order6} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
               ACCEPT & SEND &nbsp;<FontAwesomeIcon icon={faFileUpload} /></UIbutton>
             <UIbutton className="order-cancel-btn" name="button" color="default" fullWidth={true}>CANCEL</UIbutton>
           </div>
