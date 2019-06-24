@@ -14,7 +14,7 @@
     top: 0;
     .driver-img-4 {
       object-fit: cover;
-      height: 80px;
+      height: 60vh;
       width: 100%;
       border-top-left-radius: 25px;
       border-top-right-radius: 25px;
@@ -29,14 +29,15 @@
       border-top-right-radius: 25px;
     }
   }
-  .terms-conditions {
+  .order-title {
     position: relative;
-    padding: 30px 45px;
-    line-height: 18px;
+    padding: 30px 45px 20px;
+    text-align: center;
+    
     h2 {
-      margin: 0 0 40px 0;
+      margin: 80px 0;
       color: $color-scale0;
-      text-decoration: underline;
+      font-size: $font-size-biggest;
     }
   }
   .order-btn-4 {

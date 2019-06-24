@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
 import './order4.container.scss'
-import { driver } from '../../../../../helpers/urls';
+import { client } from '../../../../../helpers/urls';
 import cargoTruck from '../../../../../assets/img/cargoTruck.jpg'
 
 import {
@@ -11,8 +11,7 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTruck,
-  faFileUpload
+  faTruck
 } from '@fortawesome/free-solid-svg-icons';
 
 class OrderClient4Container extends Component {
@@ -23,25 +22,19 @@ class OrderClient4Container extends Component {
           <span className="gradient" />
           <img className="driver-img-4" src={cargoTruck} alt="Cargo truck" />
         </div>
-        <div className="terms-conditions">
-          <h2>Terms & conditions &nbsp; &nbsp; &nbsp; &nbsp;<FontAwesomeIcon icon={faTruck} /></h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam tempore aspernatur repudiandae ipsam earum
-          iure dignissimos odit voluptate? Eius commodi necessitatibus consequatur velit? Pariatur esse nemo cumque porro, error voluptates.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam tempore aspernatur repudiandae ipsam earum
-          iure dignissimos odit voluptate? Eius commodi necessitatibus consequatur velit? Pariatur esse nemo cumque porro, error voluptates.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam tempore aspernatur repudiandae ipsam earum
-          iure dignissimos odit voluptate? Eius commodi necessitatibus consequatur velit? Pariatur esse nemo cumque porro, error voluptates.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam tempore aspernatur repudiandae ipsam earum
-          iure dignissimos odit voluptate? Eius commodi necessitatibus consequatur velit? Pariatur esse nemo cumque porro, error voluptates.</p>
+        <div className="order-title">
+          <h2>Your</h2>
+          <h2>driver is</h2>
+          <h2>here !</h2>
         </div>
-
         <div>
           <div className="order-btn-4">
-            <UIbutton component={Link} to={driver.order4} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
-              ACCEPT & SEND &nbsp;<FontAwesomeIcon icon={faFileUpload} /></UIbutton>
-            <UIbutton className="order-cancel-btn" name="button" color="default" fullWidth={true}>CANCEL</UIbutton>
+            <UIbutton component={Link} to={client.order5} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
+              ACCEPT &nbsp;<FontAwesomeIcon icon={faTruck} /></UIbutton>
           </div>
         </div>
+
+       
       </div>
     );
   }
