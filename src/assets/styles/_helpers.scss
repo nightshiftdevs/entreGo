@@ -21,6 +21,23 @@
   transition: all 1s ease;
 }
 
+.main-dashboard {
+  position: relative;
+  width: 100%;
+  &::after {
+    content: "";
+    background: url("https://cdn.pixabay.com/photo/2016/11/23/18/20/maps-1854199_1280.jpg");
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+}
+
+
 .form {
   .ui-input {
     background: $color-scale0;

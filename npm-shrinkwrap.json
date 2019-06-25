@@ -8444,8 +8444,7 @@
     "resolve-url": {
       "version": "0.2.1",
       "resolved": "https://registry.npmjs.org/resolve-url/-/resolve-url-0.2.1.tgz",
-      "integrity": "sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=",
-      "dev": true
+      "integrity": "sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo="
     },
     "restore-cursor": {
       "version": "2.0.0",

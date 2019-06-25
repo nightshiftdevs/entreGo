@@ -4,8 +4,6 @@
   display: flex;
 
   .main-dashboard {
-    width: 100%;
-    background: $color-scale0;
     .driver-dashboard {
       display: flex;
       flex-direction: column;
@@ -30,7 +28,6 @@
       .gradient-img-driver {
         position: absolute;
         bottom: 0;
-        left: 25vw;
         .driver-img-0 {
           object-fit: cover;
           height: 400px;
