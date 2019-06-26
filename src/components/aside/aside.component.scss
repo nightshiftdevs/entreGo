@@ -1,11 +1,61 @@
 @import "../../assets/styles/imports";
 
 .aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   min-width: 25vw;
   min-height: 100vh;
+  padding: 20px;
   background: $color-scale4;
 
-  .text-test {
+  .title-text {
+    text-align: center;
     color: $color-scale0;
+    margin: 0;
+  }
+  .personal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    .personal-userphoto {
+      display: block;
+      width: 12vw;
+      margin: 0 0 20px 0;
+      border-radius: 100%;
+      border: 2px solid $color-scale0;
+    }
+    .personal-data {
+      color: $color-scale0;
+      font-size: $font-size-normal-big;
+      font-weight: $font-bolder;
+      &.star-rate {
+        color: $color-scale1;
+        font-size: $font-size-normal;
+      }
+    }
+  }
+  .settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    border-bottom: 1px solid $color-scale0;
+    border-top: 1px solid $color-scale0;
+    .btn-settings {
+      display: inline-block;
+      border-bottom: 1px solid $color-scale0;
+      color: $color-scale0;
+      padding: 20px 0 10px 0;
+      font-weight: $font-bolder;
+    }
+  }
+  .btn-logout{
+    color: $color-scale0;
+    display: flex;
+    justify-content: center;
+    font-weight: $font-bolder;
   }
 }
