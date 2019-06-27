@@ -10,7 +10,12 @@ import {
   faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
 
-class Aside extends Component {
+// @1.-To connect this component to logout action and global state store
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../../features/login/store/actions';
+
+class AsideComponent extends Component {
 
   constructor(props) {
     super(props);
@@ -18,7 +23,10 @@ class Aside extends Component {
       driverRate: '4.5',
     }
   }
+
   render() {
+    // @1.- To connect this component to logout action
+
     return (
       <aside className="aside">
         <h1 className="title-text">entreGo</h1>
@@ -38,12 +46,21 @@ class Aside extends Component {
             </ul>
           </nav>
         </div>
-
-        <Link className="btn-logout"><FontAwesomeIcon icon={faSignOutAlt} />&nbsp;LOGOUT</Link>
-      </aside>
+        <Link to='/' onClick={this.props.logout} className="btn-logout"><FontAwesomeIcon icon={faSignOutAlt} />&nbsp;LOGOUT</Link>      </aside>
     );
   }
 }
+
+AsideComponent.propTypes = {
+  auth: PropTypes.object.isRequired,
+  logout: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+
+const Aside = connect(mapStateToProps, { logout })(AsideComponent)
 
 export {
   Aside
