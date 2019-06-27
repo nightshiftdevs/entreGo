@@ -121,7 +121,6 @@ class LandingContainer extends Component {
                      tempora aliquid.</p>
                   </div>
                 </div>
-
                 <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
               </div>
             </div>
