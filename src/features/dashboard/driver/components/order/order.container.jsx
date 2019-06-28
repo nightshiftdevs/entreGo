@@ -21,14 +21,34 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 class OrderContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: 'Ricardo',
+      orderID: '123',
+      roleID: '2',
+      isDone: false,
+      inRoom: false
+    }
+    this.takeOrder = this.takeOrder.bind(this);
+  }
+
+  takeOrder() {
+    this.setState({
+      isDone: true,
+      inRoom: true
+    });
+  };
+
   render() {
+
     return (
       <div className="order">
         <MapDriver1Layout />
         <div>
           <div className="order-user">
             <img className="order-data-userphoto" src={userPlaceHolder} alt="user photo" />
-            <p className="order-data-client">A really really long name</p>
+            <p className="order-data-client">{this.state.username}</p>
           </div>
           <div className="order-data">
             <p className="order-data-label"><FontAwesomeIcon icon={faMapMarkerAlt} /> Start address:</p>
@@ -48,7 +68,7 @@ class OrderContainer extends Component {
           </div>
           <div className="order-btn">
             <UIbutton component={Link} to={driver.order2} className="order-accept-btn" name="button" variant="contained" color="primary"><FontAwesomeIcon icon={faHandHoldingUsd} />&nbsp; $ 19.95 - ACCEPT</UIbutton>
-            <UIbutton className="order-cancel-btn" name="button" color="default">CANCEL</UIbutton>
+            <UIbutton className="order-cancel-btn" name="button" color="default" onClick={this.takeOrder}>CANCEL</UIbutton>
           </div>
         </div>
       </div>
