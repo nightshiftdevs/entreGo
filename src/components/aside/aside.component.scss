@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
+
     .personal-userphoto {
       display: block;
       width: 12vw;
@@ -41,18 +41,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 0;
+    padding: 20px 0 40px;
     border-bottom: 1px solid $color-scale0;
     border-top: 1px solid $color-scale0;
     .btn-settings {
+      position: relative;
       display: inline-block;
-      border-bottom: 1px solid $color-scale0;
       color: $color-scale0;
       padding: 20px 0 10px 0;
       font-weight: $font-bolder;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 90%;
+        height: 2px !important;
+        width: 40%;
+        left: 30%;
+        background-color: $color-scale0;
+        transition: 0.4s ease-out all 0.1s;
+      }
+      &:hover::after {
+        width: 130%;
+        left: -15%;
+        transition: 0.5s ease all;
+      }
     }
   }
-  .btn-logout{
+  .btn-logout {
     color: $color-scale0;
     display: flex;
     justify-content: center;

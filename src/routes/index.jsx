@@ -36,7 +36,7 @@ function Routes() {
         <Route path="/dashboard/user/order-4" component={OrderClient4Layout} />
         <Route path="/dashboard/user/order-3" component={OrderClient3Layout} />
         <Route path="/dashboard/user/order-2" component={OrderClient2Layout} />
-        <PrivateRoute path="/dashboard/user" component={UserLayout} />
+        <Route path="/dashboard/user" component={UserLayout} />
         <Route path="/register/driver" component={DriverFormLayout} />
         <Route exact path="/" component={LandingLayout} />
         <Redirect exact from="/" to="/home" />
