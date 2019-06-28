@@ -6,11 +6,10 @@ const express = require('express');
 // Services
 const orderService = require('../../services/orders');
 
-module.exports = () => {
-    let router = express.Router();
+let router = express.Router();
 
-    router.get('/new', orderService.createOrder);
-   
-    return router;
-}
+router.get('/list', orderService.createOrder);
+
+module.exports = router;
+
 

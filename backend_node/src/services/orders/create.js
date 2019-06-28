@@ -3,9 +3,6 @@
   ---------------------------------------------     
 */
 
-const config = require('../../../configs/config/index');
-const jwt = require('jsonwebtoken');
-
 /**
   * @desc generates token when users sign-in
   * @param req the request
@@ -18,12 +15,11 @@ const sql = 'call sp_list_orders';
 const list = async (req, res) => {
   try {
     db.query(sql, function (error, results, fields) {
-      console.log(results);
+      if (error) throw error;
       res.json({
-        user: {
-          roleID: results[0].roleID
-        },
-        token: token
+        orders: {
+          list: results[0]
+        }
       });
     })
   } catch (error) {
