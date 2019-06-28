@@ -20,7 +20,7 @@ class LoginLogic extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  };
 
   handleChange(e) {
     const target = e.target;
@@ -30,19 +30,19 @@ class LoginLogic extends Component {
     this.setState({
       [name]: value
     });
-  }
+  };
   
   handleSubmit(e) {
     e.preventDefault();
     console.log('state', this.state);
     this.props.login(this.state.username, this.state.password);
-  }
+  };
 
   onMouseUp() {
     this.setState({
       log: [`onMouseUp`, ...this.state.log]
     })
-  }
+  };
 
   render() {
     if(this.props.isAuthenticated && this.props.role == 2){
@@ -74,5 +74,5 @@ const LoginContainer = connect(mapStateToProps, { login })(LoginLogic)
 
 export {
   LoginContainer
-}
+};
 
