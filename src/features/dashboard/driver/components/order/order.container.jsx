@@ -24,7 +24,6 @@ class OrderContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: 'Ricardo',
       orderID: '123',
       roleID: '2',
       isDone: false,
@@ -39,7 +38,7 @@ class OrderContainer extends Component {
       inRoom: true
     });
   };
-
+  
   render() {
 
     return (
@@ -48,26 +47,26 @@ class OrderContainer extends Component {
         <div>
           <div className="order-user">
             <img className="order-data-userphoto" src={userPlaceHolder} alt="user photo" />
-            <p className="order-data-client">{this.state.username}</p>
+            <p className="order-data-client">{this.props.firstName} {this.props.lastName}</p>
           </div>
           <div className="order-data">
             <p className="order-data-label"><FontAwesomeIcon icon={faMapMarkerAlt} /> Start address:</p>
-            <p className="order-data-content">My start destination is too long so I can test how will it look Dpto. 1504</p>
+            <p className="order-data-content">{this.props.startAddress}</p>
           </div>
           <div className="order-data">
             <p className="order-data-label"><FontAwesomeIcon icon={faLocationArrow} /> Dest. address:</p>
-            <p className="order-data-content">My final destination is too long so I can test how will it look</p>
+            <p className="order-data-content">{this.props.endAddress}</p>
           </div>
           <div className="order-data">
             <p className="order-data-label"><FontAwesomeIcon icon={faTruck} /> Cargo volume:</p>
-            <p className="order-data-content">245 m3</p>
+            <p className="order-data-content">{this.props.packageVolume} m3</p>
           </div>
           <div className="order-data">
             <p className="order-data-label"><FontAwesomeIcon icon={faGlasses} /> Observation:</p>
-            <p className="order-data-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima in, atque, iste sed autem</p>
+            <p className="order-data-content">{this.props.observations}</p>
           </div>
           <div className="order-btn">
-            <UIbutton component={Link} to={driver.order2} className="order-accept-btn" name="button" variant="contained" color="primary"><FontAwesomeIcon icon={faHandHoldingUsd} />&nbsp; $ 19.95 - ACCEPT</UIbutton>
+            <UIbutton component={Link} to={driver.order2} className="order-accept-btn" name="button" variant="contained" color="primary"><FontAwesomeIcon icon={faHandHoldingUsd} />&nbsp; $ {this.props.cost} - ACCEPT</UIbutton>
             <UIbutton className="order-cancel-btn" name="button" color="default" onClick={this.takeOrder}>CANCEL</UIbutton>
           </div>
         </div>
