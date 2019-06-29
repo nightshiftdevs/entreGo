@@ -39,10 +39,10 @@ class AsideComponent extends Component {
           </div>
           <nav>
             <ul className="settings">
-              <li> <Link className="btn-settings">O R D E R</Link></li>
-              <li> <Link className="btn-settings">H I S T O R Y</Link></li>
-              <li> <Link className="btn-settings">H E L P</Link></li>
-              <li> <Link className="btn-settings">S E T T I N G S</Link></li>
+              <li> <Link to="" className="btn-settings">O R D E R</Link></li>
+              <li> <Link to="" className="btn-settings">H I S T O R Y</Link></li>
+              <li> <Link to="" className="btn-settings">H E L P</Link></li>
+              <li> <Link to="" className="btn-settings">S E T T I N G S</Link></li>
             </ul>
           </nav>
         </div>

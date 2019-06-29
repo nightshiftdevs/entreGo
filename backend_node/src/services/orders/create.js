@@ -16,18 +16,17 @@ const list = async (req, res) => {
   try {
     db.query(sql, function (error, results, fields) {
       if (error) throw error;
+      console.log(results)
       res.json({
-        orders: {
-          list: results[0]
-        }
+        list: results[0]
       });
     })
   } catch (error) {
-  return res.status(500).json({
-    'code': 'SERVER_ERROR',
-    'description': 'something went wrong, Please try again'
-  });
-}
+    return res.status(500).json({
+      'code': 'SERVER_ERROR',
+      'description': 'something went wrong, Please try again'
+    });
+  }
 };
 
 module.exports = list;

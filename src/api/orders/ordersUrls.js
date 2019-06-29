@@ -1,7 +1,7 @@
-const userUrls = {
-  createOrders: '/api/v1/orders/new',
+const ordersUrls = {
+  listOrders: '/api/v1/orders/list',
 }
 
 export {
-  userUrls
+  ordersUrls
 }
