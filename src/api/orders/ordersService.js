@@ -9,9 +9,9 @@ class OrderService {
     return Service.delete(id);
   }
 
-  getOrder(id) {
-    return Service.get(id);
-  }
+  getOrder(url, config, body) {
+    return Service.post(url, config, body);
+  };
 
   saveOrder(id, body) {
     return Service.put(id, body);

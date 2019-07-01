@@ -7,10 +7,13 @@ import { latLngBounds } from 'leaflet';
 import { carIcon, clientIcon } from './Icons';
 
 /* -------------------------
-              Socket
+              Socket instance
    ------------------------- */
 import io from 'socket.io-client';
-let ordersSocket = io.connect('http://localhost:4000/orders');
+import {entregoBaseUrl} from '../../../environment';
+import {socketUrl} from '../../../api';
+const urlSocket = `${entregoBaseUrl}${socketUrl.connectSocket}`;
+let ordersSocket = io.connect(urlSocket);
 // To connect Socket in Heroku
 /* let ordersSocket = io.connect('https://socketleaflet.herokuapp.com/orders',
     { reconnect: true, transports: ['websocket'], path: '/socket.io' }); */
@@ -117,7 +120,7 @@ function MapDriver2Container(props) {
           url={styleMap2}
         />
         {
-          props.userType === 'client' ? (
+          props.userType === '1' ? (
             <Marker position={props.position} icon={clientIcon} draggable="true">
               <Popup>
                 <span>Cliente Online: {props.username}</span>
@@ -132,7 +135,7 @@ function MapDriver2Container(props) {
             )
         }
         {markers !== null && markers.map((marker, idx) => (
-          marker.userType === 'client' ?
+          marker.userType === '1' ?
             (<Marker key={`marker-${idx}`} position={[marker.lat, marker.lng]} icon={clientIcon} draggable="true">
               <Popup>
                 <span>Cliente Online: {marker.username}</span>

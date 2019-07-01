@@ -4,10 +4,10 @@
 */
 
 /**
-  * @desc generates token when users sign-in
+  * @desc list all orders
   * @param req the request
   * @param res the response
-  * @return token, and user[id, username, email] or failure
+  * @return an array containing all current orders
 */
 
 const sql = 'call sp_list_orders';
@@ -16,7 +16,7 @@ const list = async (req, res) => {
   try {
     db.query(sql, function (error, results, fields) {
       if (error) throw error;
-      console.log(results)
+      console.log(results);
       res.json({
         list: results[0]
       });

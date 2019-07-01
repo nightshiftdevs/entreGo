@@ -17,7 +17,8 @@ module.exports = function () {
 
   // To run socket.io within the same HTTP server instance.
   const serverIO = require('http').createServer(server);
-  const io = require('socket.io')(serverIO);
+  // Socket manager which handles all user request in real-time
+  const SocketManager = require('./socketManager');
 
   create = (config, db) => {
     let routes = require('../src/routes');
@@ -41,12 +42,6 @@ module.exports = function () {
 
     // add middleware to log client's requests
     server.use(morgan('dev'));
-
-    // add middleware to include socket.io in our response, and use it in a different file
-    server.use(function (req, res, next) {
-      res.io = io;
-      next();
-    });
 
     //connect the database
     const connection = mysql.createConnection(db.connection);
@@ -74,11 +69,16 @@ module.exports = function () {
   start = () => {
     let hostname = server.get('hostname'),
       port = server.get('port');
-    // Socket io
 
+    // Socket io
     serverIO.listen(port, function () {
       console.log(`Express server listening on - http://${hostname}:${port}`);
     });
+
+    const io = require('socket.io')(serverIO);
+    const ordersSocket = io.of('/api/v1/socket');
+    ordersSocket.on('connection', SocketManager);
+
   };
   return {
     create: create,

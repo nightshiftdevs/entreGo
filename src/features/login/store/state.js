@@ -3,5 +3,6 @@ export const initialState = {
   isAuthenticated: null,
   isLoading: false,
   user: null,
-  roleID: null
+  roleID: null,
+  username: null
 }

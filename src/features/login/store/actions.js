@@ -76,7 +76,6 @@ const login = (username, password) => dispatch => {
         type: types.LOGIN_FAILED
       });
       dispatch(returnErrors(err.response.data, err.response.status));
-
     });
 }
 

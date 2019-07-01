@@ -20,10 +20,16 @@ class OrderClient3Container extends Component {
     }
   }
 
+  componentDidMount() {
+    let currentOrder = JSON.parse(localStorage.getItem('currentClient'));
+    this.setState(currentOrder);
+    console.log('CURRENT ORDER',currentOrder);
+  }
+
   render() {
     return (
       <div className="order-3">
-        <MapDriver2Layout />
+        <MapDriver2Layout {...this.state}/>
         <div>
           <div className="order-driver">
             <img className="order-data-driverphoto" src={userPlaceHolder} alt="user photo" />

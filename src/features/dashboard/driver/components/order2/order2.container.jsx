@@ -15,14 +15,18 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 class Order2Container extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="order-2">
-        <MapDriver2Layout />
+        <MapDriver2Layout {...this.props} />
         <div>
           <div className="order-btn-2">
             <UIbutton component={Link} to={driver.order3} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
-            I ARRIVED &nbsp;<FontAwesomeIcon icon={faTruck} /></UIbutton>
+              I ARRIVED &nbsp;<FontAwesomeIcon icon={faTruck} /></UIbutton>
             <UIbutton className="order-cancel-btn" name="button" color="default" fullWidth={true}>CANCEL</UIbutton>
           </div>
         </div>

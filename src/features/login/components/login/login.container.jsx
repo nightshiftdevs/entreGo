@@ -34,7 +34,6 @@ class LoginLogic extends Component {
   
   handleSubmit(e) {
     e.preventDefault();
-    console.log('state', this.state);
     this.props.login(this.state.username, this.state.password);
   };
 
