@@ -80,6 +80,7 @@ module.exports = function () {
 
     const SocketInteract = io.of('/api/v1/socket');
     SocketInteract.on('connection', SocketInteraction);
+    global.socketGlobal = SocketInteract;
 
     const ordersSocket = io.of('/api/v1/socket/order');
     ordersSocket.on('connection', SocketManager);

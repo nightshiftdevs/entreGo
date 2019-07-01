@@ -9,14 +9,6 @@ import { OrderContainer } from "../order/order.container";
 import { OrderService, ordersUrls } from '../../../../../api'
 import socketInstance from "../../../../../api/socket/socket-instance";
 
-
-import io from 'socket.io-client';
-import {entregoBaseUrl} from '../../../../../environment';
-import {socketUrl} from '../../../../../api';
-
-const urlSocket = `${entregoBaseUrl}${socketUrl.connectSocket}`;
-const socket = io.connect(urlSocket);
-
 let orderService = new OrderService();
 
 class OrderLayout extends Component {
@@ -25,11 +17,6 @@ class OrderLayout extends Component {
     this.state = {
       data: []
     }
-    
-    socket.on('Registro_orden', value => {
-      console.log(value);
-    })
-
   }
 
   componentDidMount() {
@@ -40,10 +27,11 @@ class OrderLayout extends Component {
       })
     });
 
-    // ESCUCHA "REGISTRO_ORDEN", HACER FETCH
-    console.log(socketInstance.instance);
-    console.log(socket);
-
+    // ESCUCHA "REGISTRO_ORDEN", HACER FETCH DE ORDENES
+    socketInstance.instance.emit('conductor', 'conectado');
+    socketInstance.instance.on('Registro_orden', value => {
+      console.log(value);
+    });
   }
 
   createOrders() {
