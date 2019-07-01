@@ -15,8 +15,8 @@ import {
 import socketInstance from '../../../../../api/socket/socket-instance';
 
 import io from 'socket.io-client';
-import {entregoBaseUrl} from '../../../../../environment';
-import {socketUrl} from '../../../../../api';
+import { entregoBaseUrl } from '../../../../../environment';
+import { socketUrl } from '../../../../../api';
 
 const urlSocket = `${entregoBaseUrl}${socketUrl.connectSocket}`;
 const socket = io.connect(urlSocket);
@@ -46,12 +46,12 @@ class OrderDashboardContainer extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // ENVIAR DATOS AL SERVIDOR, EN RESPONSE EMITIR "REGISTRO_ORDEN"
-    console.log('SOCKET',socketInstance.instance);
-    console.log('SOCKET',socket);
 
     socketInstance.instance.emit('Registro_orden', true);
-    
+    socketInstance.instance.on('conductor', value => {
+      console.log('CONDUCTOR', value);
+    });
+
     history.push(client.order2);
   }
 
