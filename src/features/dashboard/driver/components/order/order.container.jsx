@@ -20,6 +20,8 @@ import {
   faHandHoldingUsd
 } from '@fortawesome/free-solid-svg-icons';
 
+import socketInstance from "../../../../../api/socket/socket-instance";
+
 class OrderContainer extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +33,8 @@ class OrderContainer extends Component {
   }
 
   takeOrder() {
-    let userType = localStorage.getItem('roleID');
+    socketInstance.instance.emit('take_order',this.props.orderID);
+    let userType = localStorage.getItem('roleIDDriver');
     let properties = Object.assign({},
       this.state,
       {
@@ -40,7 +43,7 @@ class OrderContainer extends Component {
       },
       {userType});
     localStorage.setItem(`current`, JSON.stringify(properties));
-  }
+  };
 
   render() {
 

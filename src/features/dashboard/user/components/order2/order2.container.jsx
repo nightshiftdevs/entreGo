@@ -18,6 +18,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMoneyBillAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import socketInstance from '../../../../../api/socket/socket-instance';
 
 class OrderClient2Logic extends Component {
 
@@ -30,12 +31,17 @@ class OrderClient2Logic extends Component {
   }
 
   componentDidMount() {
+    
     let userName = localStorage.getItem('username');
     this.props.getOrder(userName);
+    socketInstance.instance.on('take_order', value => {
+      console.log('TAKE_ORDER', value);
+      console.log('PROPS', this.props);
+    });
   }
 
   payOrder() {
-    let userType = localStorage.getItem('roleID');
+    let userType = localStorage.getItem('roleIDClient');
     let properties = Object.assign({},
       this.props,
       {
