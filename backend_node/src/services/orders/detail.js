@@ -21,7 +21,6 @@ const detail = async (req, res) => {
       db.query(sql,
         [username], function (error, results, fields) {
           if (results.length > 0) {
-            console.log(JSON.parse(JSON.stringify(results[0])));
             res.json({
               order: results[0]
             });

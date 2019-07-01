@@ -42,6 +42,8 @@ function MapDriver2Container(props) {
     userType: props.userType
   };
 
+console.log('JOIN',props.inRoom)
+
   // useState Hooks
   let [inRoom, setInRoom] = useState(props.inRoom);
   let [insideRoom, setRoom] = useState(false);
@@ -54,7 +56,7 @@ function MapDriver2Container(props) {
 
   // To joim room and  get data from connected users
   useEffect(() => {
-    if (inRoom) {
+    if (props.inRoom) {
       console.log('Joining room!');
       ordersSocket.emit('joinRoom', props.orderID);
       ordersSocket.on('success', msg => {

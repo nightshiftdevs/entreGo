@@ -19,6 +19,7 @@ module.exports = function () {
   const serverIO = require('http').createServer(server);
   // Socket manager which handles all user request in real-time
   const SocketManager = require('./socketManager');
+  const SocketInteraction = require('./socketInteraction');
 
   create = (config, db) => {
     let routes = require('../src/routes');
@@ -76,7 +77,11 @@ module.exports = function () {
     });
 
     const io = require('socket.io')(serverIO);
-    const ordersSocket = io.of('/api/v1/socket');
+
+    const SocketInteract = io.of('/api/v1/socket');
+    SocketInteract.on('connection', SocketInteraction);
+
+    const ordersSocket = io.of('/api/v1/socket/order');
     ordersSocket.on('connection', SocketManager);
 
   };

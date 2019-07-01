@@ -8,11 +8,9 @@ module.exports = function (socket) {
 
     console.log('New User');
 
-    /*  let addedUser = false; */
-
     socket.on('joinRoom', (room) => {
         roomCurrent = room;
-        console.log(room);
+        console.log('JOINED ROOM',room);
         socket.join(room);
         socket.to(room).emit('success', true);
     });

@@ -16,7 +16,6 @@ const list = async (req, res) => {
   try {
     db.query(sql, function (error, results, fields) {
       if (error) throw error;
-      console.log(results);
       res.json({
         list: results[0]
       });
