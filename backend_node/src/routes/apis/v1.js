@@ -7,6 +7,7 @@ const express = require('express');
 const userController = require('../../controllers/users');
 const authController = require('../../controllers/auth');
 const ordersController = require('../../controllers/orders');
+const dashboardController = require('../../controllers/dashboard');
 
 let router = express.Router();
 
@@ -14,5 +15,6 @@ let router = express.Router();
 router.use('/users', userController);
 router.use('/auth', authController);
 router.use('/orders', ordersController);
+router.use('/dashboard', dashboardController);
 
 module.exports = router;
