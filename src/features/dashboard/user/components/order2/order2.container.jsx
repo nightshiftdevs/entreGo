@@ -24,7 +24,7 @@ class OrderClient2Logic extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalCost: '20.15',
+      totalCost: Math.floor(Math.random() * (100 * 100 - 1 * 100) + 1 * 100) / (1 * 100),
     }
     this.payOrder = this.payOrder.bind(this);
   }
@@ -57,7 +57,7 @@ class OrderClient2Logic extends Component {
           <h2>Total payment</h2>
           <h4>Cash</h4>
           <div className="border-total-cost">
-            <p className="total-cost">{this.props.cost} $</p>
+            <p className="total-cost">{this.state.totalCost} $</p>
           </div>
         </div>
         <div>
