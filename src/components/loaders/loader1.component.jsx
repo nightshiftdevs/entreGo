@@ -11,7 +11,7 @@ import {
 class Loader1 extends Component {
   render() {
     return (
-      <div className="loader-1">
+      <div className="loader-1 display-none">
         <div className="gradient-img-loader">
           <span className="gradient" />
           <img className="loader-img-1" src={cargoTruck} alt="Cargo truck" />

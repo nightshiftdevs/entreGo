@@ -18,7 +18,12 @@ const client = {
   order7: '/dashboard/user/order-7'
 }
 
+const misc = {
+  loader: '/loader'
+}
+
 export {
   driver,
-  client
+  client,
+  misc
 }
