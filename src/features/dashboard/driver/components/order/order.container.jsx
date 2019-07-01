@@ -23,22 +23,25 @@ import {
 class OrderContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      orderID: '123',
-      roleID: '2',
-      isDone: false,
-      inRoom: false
-    }
+    this.state = {};
     this.takeOrder = this.takeOrder.bind(this);
+  }
+  componentDidMount() {
+    this.setState(this.props);
   }
 
   takeOrder() {
-    this.setState({
-      isDone: true,
-      inRoom: true
-    });
-  };
-  
+    let userType = localStorage.getItem('roleID');
+    let properties = Object.assign({},
+      this.state,
+      {
+        isDone: true,
+        inRoom: true
+      },
+      {userType});
+    localStorage.setItem(`current`, JSON.stringify(properties));
+  }
+
   render() {
 
     return (
@@ -66,8 +69,8 @@ class OrderContainer extends Component {
             <p className="order-data-content">{this.props.observations}</p>
           </div>
           <div className="order-btn">
-            <UIbutton component={Link} to={driver.order2} className="order-accept-btn" name="button" variant="contained" color="primary"><FontAwesomeIcon icon={faHandHoldingUsd} />&nbsp; $ {this.props.cost} - ACCEPT</UIbutton>
-            <UIbutton className="order-cancel-btn" name="button" color="default" onClick={this.takeOrder}>CANCEL</UIbutton>
+            <UIbutton onClick={this.takeOrder} component={Link} to={driver.order2} className="order-accept-btn" name="button" variant="contained" color="primary"  ><FontAwesomeIcon icon={faHandHoldingUsd} />&nbsp; $ {this.props.cost} - ACCEPT</UIbutton>
+            <UIbutton className="order-cancel-btn" name="button" color="default">CANCEL</UIbutton>
           </div>
         </div>
       </div>

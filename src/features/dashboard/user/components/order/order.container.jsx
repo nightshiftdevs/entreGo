@@ -12,6 +12,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTruck
 } from '@fortawesome/free-solid-svg-icons';
+import socketInstance from '../../../../../api/socket/socket-instance';
+
+import io from 'socket.io-client';
+import {entregoBaseUrl} from '../../../../../environment';
+import {socketUrl} from '../../../../../api';
+
+const urlSocket = `${entregoBaseUrl}${socketUrl.connectSocket}`;
+const socket = io.connect(urlSocket);
 
 class OrderDashboardContainer extends Component {
   constructor(props) {
@@ -38,7 +46,13 @@ class OrderDashboardContainer extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    history.push(client.order2)
+    // ENVIAR DATOS AL SERVIDOR, EN RESPONSE EMITIR "REGISTRO_ORDEN"
+    console.log('SOCKET',socketInstance.instance);
+    console.log('SOCKET',socket);
+
+    socketInstance.instance.emit('Registro_orden', true);
+    
+    history.push(client.order2);
   }
 
   onMouseUp() {

@@ -26,14 +26,14 @@ const login = async (req, res) => {
             let token = jwt.sign({ username: username }, config.JWT.secret, {
               expiresIn: config.JWT.expiresIn
             });
+            console.log(results);
             res.json({
               user: {
                 success: true,
                 message: 'Authentication successful!',
                 id: results[0].id,
-                username: results[0].username,
-                email: results[0].email,
-                roleID:  results[0].roleID
+                username: results[0].email,
+                roleID:  results[0].roleID,
               },
               token: token
             });

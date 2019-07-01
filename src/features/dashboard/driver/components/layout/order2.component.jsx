@@ -11,6 +11,8 @@ class Order2Layout extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    let currentOrder = JSON.parse(localStorage.getItem('current'));
+    this.setState(currentOrder);
   }
 
   render() {
@@ -19,7 +21,7 @@ class Order2Layout extends Component {
         <Aside />
         <div className="main-dashboard">
           <Main>
-            <Order2Container />
+            <Order2Container {...this.state}/>
           </Main>
         </div>
       </div>

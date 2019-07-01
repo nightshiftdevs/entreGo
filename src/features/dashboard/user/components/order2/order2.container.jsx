@@ -5,6 +5,11 @@ import './order2.container.scss'
 import { client } from '../../../../../helpers/urls';
 import cargoTruck from '../../../../../assets/img/cargoTruck.jpg'
 
+// To connect the getOrder action with our component
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { getOrder } from '../../store/actions';
+
 import {
   UIbutton
 } from '../../../../../ui';
@@ -14,13 +19,31 @@ import {
   faMoneyBillAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
-class OrderClient2Container extends Component {
+class OrderClient2Logic extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       totalCost: '20.15',
     }
+    this.payOrder = this.payOrder.bind(this);
+  }
+
+  componentDidMount() {
+    let userName = localStorage.getItem('username');
+    this.props.getOrder(userName);
+  }
+
+  payOrder() {
+    let userType = localStorage.getItem('roleID');
+    let properties = Object.assign({},
+      this.props,
+      {
+        isDone: true,
+        inRoom: true
+      },
+      { userType });
+    localStorage.setItem(`currentClient`, JSON.stringify(properties));
   }
 
   render() {
@@ -34,12 +57,12 @@ class OrderClient2Container extends Component {
           <h2>Total payment</h2>
           <h4>Cash</h4>
           <div className="border-total-cost">
-            <p className="total-cost">{this.state.totalCost} $</p>
+            <p className="total-cost">{this.props.cost} $</p>
           </div>
         </div>
         <div>
           <div className="order-btn-2">
-            <UIbutton component={Link} to={client.order3} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
+            <UIbutton onClick={this.payOrder} component={Link} to={client.order3} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
               PAY &nbsp;<FontAwesomeIcon icon={faMoneyBillAlt} /></UIbutton>
             <UIbutton className="order-cancel-btn" name="button" color="default" fullWidth={true}>CANCEL</UIbutton>
           </div>
@@ -48,6 +71,19 @@ class OrderClient2Container extends Component {
     );
   }
 }
+
+OrderClient2Logic.propTypes = {
+  getOrder: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = state => ({
+  orderState: state.clientsMapReducers.orderState,
+  orderID: state.clientsMapReducers.orderID,
+  cost: state.clientsMapReducers.cost,
+  firstName: state.clientsMapReducers.firstName,
+});
+
+const OrderClient2Container = connect(mapStateToProps, { getOrder })(OrderClient2Logic)
 
 export {
   OrderClient2Container

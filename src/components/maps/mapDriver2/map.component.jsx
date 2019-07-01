@@ -14,7 +14,7 @@ function MapDriver2Layout(props) {
 
   return (
     <Fragment>
-      <MapDriver2Container position={position} username={props.username} userType={props.userType} orderID={props.orderID} inRoom={props.inRoom} />
+      <MapDriver2Container position={position} username={props.firstName} userType={props.userType} orderID={props.orderID} inRoom={props.inRoom} />
     </Fragment>
   );
 }

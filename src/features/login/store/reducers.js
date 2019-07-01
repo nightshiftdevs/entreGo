@@ -19,9 +19,11 @@ function auth (state = initialState, action) {
         case types.LOGIN_SUCCESS:
           localStorage.setItem('token', action.payload.token);
           localStorage.setItem('roleID', action.payload.user.roleID);
+          localStorage.setItem('username', action.payload.user.username);
           return {
             ...state,
             ...action.payload,
+            username: action.payload.user.username,
             roleID: action.payload.user.roleID,
             isAuthenticated: true,
             isLoading: false
@@ -31,6 +33,7 @@ function auth (state = initialState, action) {
         case types.LOGOUT_SUCESS:
           localStorage.removeItem('token');
           localStorage.removeItem('roleID');
+          localStorage.clear();
           return {
             ...state,
             token: null,

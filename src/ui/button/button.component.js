@@ -13,10 +13,12 @@ function UIbutton(props) {
     color,
     fullWidth,
     component,
-    to
+    to,
+    onClick
   } = props;
   return (
     <Button
+      onClick={onClick}
       className={`ui-button ${className}`}
       name={name}
       id={id}
