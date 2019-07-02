@@ -42,7 +42,7 @@ class OrderContainer extends Component {
         inRoom: true
       },
       {userType});
-    localStorage.setItem(`current`, JSON.stringify(properties));
+    localStorage.setItem('current', JSON.stringify(properties));
   };
 
   render() {

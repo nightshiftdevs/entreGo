@@ -12,7 +12,7 @@ import { carIcon, clientIcon } from './Icons';
 import io from 'socket.io-client';
 import {entregoBaseUrl} from '../../../environment';
 import {socketUrl} from '../../../api';
-const urlSocket = `${entregoBaseUrl}${socketUrl.connectSocket}`;
+const urlSocket = `${entregoBaseUrl}${socketUrl.connectSocketOrder}`;
 let ordersSocket = io.connect(urlSocket);
 // To connect Socket in Heroku
 /* let ordersSocket = io.connect('https://socketleaflet.herokuapp.com/orders',
@@ -53,7 +53,7 @@ console.log('JOIN',props.inRoom)
 
   // Refs to leaflet components
   const mapRef = useRef();
-
+  console.log(props);
   // To joim room and  get data from connected users
   useEffect(() => {
     if (props.inRoom) {
@@ -61,7 +61,7 @@ console.log('JOIN',props.inRoom)
       ordersSocket.emit('joinRoom', props.orderID);
       ordersSocket.on('success', msg => {
         setRoom({ insideRoom: msg })
-
+        console.log('YOURE IN ROOM');
         ordersSocket.emit('load_init');
         ordersSocket.on('load_init', data => {
           console.log('DATAA!', data);

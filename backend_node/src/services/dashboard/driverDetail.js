@@ -13,11 +13,10 @@
 const sql = 'call sp_list_driver(?)';
 
 const list = async (req, res) => {
-  let username = await req.body.username.toString();
+  let username = await req.body.username;
   try {
     db.query(sql, [username], function (error, results, fields) {
       if (error) throw error;
-      console.log('LIST DRIVER',results[0]);
       res.json({
         list: results[0]
       });
