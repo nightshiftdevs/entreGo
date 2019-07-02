@@ -14,6 +14,8 @@ import {
   faTruck,
 } from '@fortawesome/free-solid-svg-icons';
 
+import socketInstance from '../../../../../api/socket/socket-instance';
+
 class Order4Container extends Component {
   constructor(props) {
     super(props);

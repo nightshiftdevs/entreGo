@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import history from '../../../../../history';
+
 import { MapDriver3Layout } from '../../../../../components';
 import userPlaceHolder from '../../../../../assets/img/userplaceholder.png'
 import vehiclePlaceHolder from '../../../../../assets/img/vehicleplaceholder.png'
@@ -12,12 +14,26 @@ import {
   faShippingFast
 } from '@fortawesome/free-solid-svg-icons';
 
+import socketInstance from '../../../../../api/socket/socket-instance';
+
+import { client } from '../../../../../helpers/urls';
+
 class OrderClient6Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
       driverRate: '4.5',
     }
+  }
+
+  componentDidMount() {
+    let currentOrder = JSON.parse(localStorage.getItem('currentClient'));
+    this.setState(currentOrder);
+    socketInstance.instance.on('end_service', value => {
+      if (this.state.orderID == value) {
+        history.push(client.order7);
+      }
+    });
   }
 
   render() {

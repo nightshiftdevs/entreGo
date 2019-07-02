@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import history from '../../../../../history';
+
 import { MapDriver2Layout } from '../../../../../components';
 import userPlaceHolder from '../../../../../assets/img/userplaceholder.png'
 import vehiclePlaceHolder from '../../../../../assets/img/vehicleplaceholder.png'
@@ -11,6 +13,9 @@ import {
   faTruck,
   faShippingFast
 } from '@fortawesome/free-solid-svg-icons';
+import socketInstance from '../../../../../api/socket/socket-instance';
+
+import { client } from '../../../../../helpers/urls';
 
 class OrderClient3Container extends Component {
   constructor(props) {
@@ -23,13 +28,17 @@ class OrderClient3Container extends Component {
   componentDidMount() {
     let currentOrder = JSON.parse(localStorage.getItem('currentClient'));
     this.setState(currentOrder);
-    console.log('CURRENT ORDER',currentOrder);
+    socketInstance.instance.on('driver_arrived', value => {
+      if (this.state.orderID == value) {
+        history.push(client.order5);
+      }
+    });
   }
 
   render() {
     return (
       <div className="order-3">
-        <MapDriver2Layout {...this.state}/>
+        <MapDriver2Layout {...this.state} />
         <div>
           <div className="order-driver">
             <img className="order-data-driverphoto" src={userPlaceHolder} alt="user photo" />
