@@ -16,6 +16,22 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 class Order3Container extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+    this.signAgreement = this.signAgreement.bind(this);
+  }
+
+  componentDidMount() {
+    let currentOrder = JSON.parse(localStorage.getItem('current'));
+    this.setState(currentOrder);
+  }
+
+  signAgreement() {
+    socketInstance.instance.emit('sign_agreement', this.state.orderID);
+  }
+
   render() {
     return (
       <div className="order-3">
@@ -37,7 +53,7 @@ class Order3Container extends Component {
 
         <div>
           <div className="order-btn-3">
-            <UIbutton component={Link} to={driver.order4} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
+            <UIbutton onClick={this.signAgreement} component={Link} to={driver.order4} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
               ACCEPT & SEND &nbsp;<FontAwesomeIcon icon={faFileUpload} /></UIbutton>
             <UIbutton className="order-cancel-btn" name="button" color="default" fullWidth={true}>CANCEL</UIbutton>
           </div>

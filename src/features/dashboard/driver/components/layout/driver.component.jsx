@@ -25,7 +25,8 @@ class DriverLayout extends Component {
     userService.getUser(userUrls.driverDetails, { username: user }).then((res) => {
       this.setState({
         data: res.data.list
-      })
+      });
+      localStorage.setItem('driverDetails', JSON.stringify(res.data.list));
     });
     console.log(this.state);
   }
@@ -36,11 +37,11 @@ class DriverLayout extends Component {
       console.log('updated');
     }
   }
-  
+
   render() {
     return (
       <div className="container-dashboard" >
-          <Aside {...this.state} />
+        <Aside {...this.state} />
         <div className="main-dashboard">
           <Main>
             <DriverDashboard />
