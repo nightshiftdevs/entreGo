@@ -1,25 +1,22 @@
 import React, { Component } from 'react'
 
+import './user.component.scss';
+
 import {
-  Main,
-  Aside
+  Main
 } from '../../../../../components';
 
 import { OrderDashboardContainer } from '../order/order.container'
-
-import './user.component.scss';
+import { DashboardUserLayout } from '../user/dashboard.component';
 
 class UserLayout extends Component {
   render() {
     return (
-      <div className="container-dashboard">
-        <Aside />
-        <div className="main-dashboard">
-          <Main>
-            <OrderDashboardContainer />
-          </Main>
-        </div>
-      </div>
+      <DashboardUserLayout>
+        <Main>
+          <OrderDashboardContainer />
+        </Main>
+      </DashboardUserLayout>
     )
   }
 }

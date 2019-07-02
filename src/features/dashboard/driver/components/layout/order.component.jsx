@@ -8,6 +8,7 @@ import {
 import { OrderContainer } from "../order/order.container";
 import { OrderService, ordersUrls } from '../../../../../api'
 import socketInstance from "../../../../../api/socket/socket-instance";
+import { DashboardDriverLayout } from "../driver/dashoard.component";
 
 let orderService = new OrderService();
 
@@ -20,7 +21,6 @@ class OrderLayout extends Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
     orderService.getAllOrders(ordersUrls.listOrders).then((res) => {
       this.setState({
         data: res.data.list
@@ -50,16 +50,13 @@ class OrderLayout extends Component {
   render() {
 
     return (
-      <div className="container-dashboard">
-        <Aside />
-        <div className="main-dashboard">
-          <Main>
-            {
-              this.createOrders()
-            }
-          </Main>
-        </div>
-      </div>
+      <DashboardDriverLayout>
+        <Main>
+          {
+            this.createOrders()
+          }
+        </Main>
+      </DashboardDriverLayout>
     )
   }
 
