@@ -14,21 +14,20 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import socketInstance from '../../../../../api/socket/socket-instance';
 
-import io from 'socket.io-client';
-import { entregoBaseUrl } from '../../../../../environment';
-import { socketUrl } from '../../../../../api';
-
-const urlSocket = `${entregoBaseUrl}${socketUrl.connectSocket}`;
-const socket = io.connect(urlSocket);
-
 class OrderDashboardContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      startAdress: '',
-      destinationAdress: '',
+      startAddress: '',
+      endAddress: '',
+      startLat: '',
+      startLng: '',
+      endLat: '',
+      endLng: '',
       cargoVolume: '',
-      obs: ''
+      obs: '',
+      cost: Math.floor(Math.random() * (100 * 100 - 1 * 100) + 1 * 100) / (1 * 100),
+
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

@@ -1,0 +1,44 @@
+@import "../../assets/styles/imports";
+
+.loader-1 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: $color-scale0;
+
+  box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.5);
+  .gradient-img-loader {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    .loader-img-1 {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+    .gradient {
+      top: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: linear-gradient(to bottom, $color-scale5, rgba($color-scale5, 0.5));
+    }
+  }
+  .order-title {
+    position: relative;
+    padding: 30px 45px 20px;
+    text-align: center;
+
+    h2 {
+      margin: 60px 0;
+      color: $color-scale0;
+      font-size: $font-size-biggest;
+    }
+  }
+  .loader-icon {
+    font-size: 100px !important;
+    margin: 30px 0 0 0;
+    font-size: $font-size-biggest;
+    color: $color-scale0;
+  }
+}

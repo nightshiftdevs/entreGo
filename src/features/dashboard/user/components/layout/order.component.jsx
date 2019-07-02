@@ -12,7 +12,7 @@ function OrderComponent(props) {
     <form className="form" onSubmit={props.handleSubmit}>
       <div className="fields">
         <div className="row">
-          <UIinput name="destinationAdress" type="destinationAdress" value={props.destinationAdress} label="Destination adress" onChange={props.handleChange}></UIinput>
+          <UIinput name="destinationAdress" type="destinationAdress" value={props.destinationAddress} label="Destination adress" onChange={props.handleChange}></UIinput>
         </div>
         <div className="row">
           <UIinput name="cargoVolume" type="cargoVolume" value={props.cargoVolume} label="Package Volume on m3" onChange={props.handleChange}></UIinput>

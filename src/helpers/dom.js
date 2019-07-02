@@ -54,3 +54,12 @@ export function addRemoveClass(selectClass, newClass, selectClass2, deleteClass)
   const classSelect2 = document.querySelector(`.${selectClass2}`);
   classSelect2.classList.remove(`${deleteClass}`);
 }
+
+export function addNewClassToEvent(eventClass, eventType, selectClass, newClass){
+  const classEvent = document.querySelector(`.${eventClass}`);
+  classEvent.addEventListener(`${eventType}`, () => {
+    const classSelect = document.querySelector(`.${selectClass}`);
+    classSelect.classList.toggle(`${newClass}`);
+ 
+  });
+}

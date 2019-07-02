@@ -15,11 +15,11 @@ class Order5Layout extends Component {
 
   render() {
     return (
-      <div className="container-dashboard">
+      <div className="container-dashboard" >
         <Aside />
         <div className="main-dashboard">
           <Main>
-            <Order5Container />
+            <Order5Container order={this.state} />
           </Main>
         </div>
       </div>

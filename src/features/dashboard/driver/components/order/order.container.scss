@@ -12,48 +12,52 @@
   border-top-right-radius: 200px;
   border-bottom-right-radius: 200px;
   box-shadow: 0px 4px 15px -5px rgba(0, 0, 0, 0.5);
-  .order-user {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-    .order-data-client {
-      font-size: $font-size-normal-big;
-      font-family: $font-montserrat;
-      font-weight: $font-bold;
+  .order-card {
+    width: 60%;
+    .order-user {
+      display: flex;
+      align-items: center;
+      margin: 20px;
+      .order-data-client {
+        font-size: $font-size-normal-big;
+        font-family: $font-montserrat;
+        font-weight: $font-bold;
+      }
+      .order-data-userphoto {
+        margin: 0 20px 0 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
     }
-    .order-data-userphoto {
-      margin: 0 20px 0 0;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+    .order-data {
+      display: flex;
+      margin: 0 50px 0 20px;
+      .order-data-label {
+        white-space: nowrap;
+        font-weight: bold;
+        margin: 0 10px 0 0;
+      }
+      .order-data-content {
+        font-size: $font-size-little;
+      }
     }
-  }
-  .order-data {
-    display: flex;
-    margin: 0 50px 0 20px;
-    .order-data-label {
-      white-space: nowrap;
-      font-weight: bold;
-      margin: 0 10px 0 0;
-    }
-    .order-data-content {
-      font-size: $font-size-little;
-    }
-  }
-  .order-btn {
-    display: flex;
-    justify-content: center;
-    .order-accept-btn,
-    .order-cancel-btn {
-      margin: 15px 50px 15px 0;
-      font-size: $font-size-normal !important;
-      font-family: $font-montserrat !important;
-    }
-    .order-accept-btn {
-      background: $color-scale3 !important;
-    }
-    .order-cancel-btn {
-      color: $color-scale3 !important;
+    .order-btn {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 0 50px;
+      .order-accept-btn,
+      .order-cancel-btn {
+        margin: 15px 50px 15px 0;
+        font-size: $font-size-normal !important;
+        font-family: $font-montserrat !important;
+      }
+      .order-accept-btn {
+        background: $color-scale3 !important;
+      }
+      .order-cancel-btn {
+        color: $color-scale3 !important;
+      }
     }
   }
 }

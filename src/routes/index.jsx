@@ -18,7 +18,9 @@ import {
   OrderClient6Layout,
   OrderClient7Layout
 } from "../features/dashboard";
+import { Loader1 } from "../components";
 import PrivateRoute from '../components/privateRoute/privateRoute.component';
+
 
 function Routes() {
   return (
@@ -37,6 +39,7 @@ function Routes() {
         <PrivateRoute path="/dashboard/user/order-3" component={OrderClient3Layout} />
         <PrivateRoute path="/dashboard/user/order-2" component={OrderClient2Layout} />
         <PrivateRoute path="/dashboard/user" component={UserLayout} />
+        <Route path ="/loader" component={Loader1} />
         <Route path="/register/driver" component={DriverFormLayout} />
         <Route exact path="/" component={LandingLayout} />
         <Redirect exact from="/" to="/home" />

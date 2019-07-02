@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import history from '../../../../../history';
 
 import './order2.container.scss'
 import { client } from '../../../../../helpers/urls';
@@ -20,23 +20,22 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import socketInstance from '../../../../../api/socket/socket-instance';
 
+
 class OrderClient2Logic extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      totalCost: '20.15',
-    }
+    this.state = {}
     this.payOrder = this.payOrder.bind(this);
   }
 
   componentDidMount() {
-    
     let userName = localStorage.getItem('username');
     this.props.getOrder(userName);
     socketInstance.instance.on('take_order', value => {
-      console.log('TAKE_ORDER', value);
-      console.log('PROPS', this.props);
+      if (this.props.orderID == value) {
+        history.push(client.order3);
+      }
     });
   }
 
@@ -68,7 +67,7 @@ class OrderClient2Logic extends Component {
         </div>
         <div>
           <div className="order-btn-2">
-            <UIbutton onClick={this.payOrder} component={Link} to={client.order3} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
+            <UIbutton onClick={this.payOrder} className="order-accept-btn js_loader" name="button" variant="contained" color="primary" fullWidth={true}>
               PAY &nbsp;<FontAwesomeIcon icon={faMoneyBillAlt} /></UIbutton>
             <UIbutton className="order-cancel-btn" name="button" color="default" fullWidth={true}>CANCEL</UIbutton>
           </div>

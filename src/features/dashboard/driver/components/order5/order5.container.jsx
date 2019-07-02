@@ -19,6 +19,10 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 
 class Order5Container extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="order-5">
@@ -27,11 +31,14 @@ class Order5Container extends Component {
           <img className="driver-img-2" src={cargoTruck} alt="Cargo truck" />
         </div>
         <div className="total-earned">
-          <h2>Congratulations!</h2>
-          <h4>You win:</h4>
-          <div className="border-earned-money">
-            <p className="earned-money">20.15 $</p>
+          <div>
+            <h2>Congratulations!</h2>
+            <h4>You win:</h4>
+            <div className="border-earned-money">
+              <p className="earned-money">20 $</p>
+            </div>
           </div>
+
           <div className="check-circle">
             <FontAwesomeIcon icon={faCheckCircle} />
           </div>

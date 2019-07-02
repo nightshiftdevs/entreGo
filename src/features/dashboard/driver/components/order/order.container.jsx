@@ -50,7 +50,7 @@ class OrderContainer extends Component {
     return (
       <div className="order">
         <MapDriver1Layout />
-        <div>
+        <div className="order-card">
           <div className="order-user">
             <img className="order-data-userphoto" src={userPlaceHolder} alt="user photo" />
             <p className="order-data-client">{this.props.firstName} {this.props.lastName}</p>
