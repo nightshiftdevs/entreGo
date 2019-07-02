@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
-import './aside.component.scss'
+import './aside2.component.scss'
 import userPlaceHolder from '../../assets/img/userplaceholder.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,14 +23,14 @@ class AsideComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      driverRate: '4.5',
+      clientRate: '4.5',
       ready: false,
     }
   }
 
   componentDidMount() {
     let user = localStorage.getItem('username');
-    userService.getUser(userUrls.driverDetails, { username: user }).then((res) => {
+    userService.getUser(userUrls.clientDetails, { username: user }).then((res) => {
       this.setState({
         data: res.data.list
       })    
@@ -40,6 +40,7 @@ class AsideComponent extends Component {
   componentDidUpdate() {
     if (this.state.ready !== true) {
       this.setState({ ready: true });
+      console.log('updated', this.state);
     }
   }
 
@@ -52,7 +53,7 @@ class AsideComponent extends Component {
           <div className="personal-info">
             <img className="personal-userphoto" src={userPlaceHolder} alt="user photo" />
             <p className="personal-data">{this.state.ready ? `${this.state.data[0].fullname}` : 'UserName'}</p>
-            <p className="personal-data star-rate">{this.state.driverRate}&nbsp;<FontAwesomeIcon icon={faStar} /></p>
+            <p className="personal-data star-rate">{this.state.clientRate}&nbsp;<FontAwesomeIcon icon={faStar} /></p>
           </div>
           <nav>
             <ul className="settings">
@@ -77,8 +78,8 @@ const mapStateToProps = state => ({
   auth: state.auth
 })
 
-const Aside = connect(mapStateToProps, { logout })(AsideComponent)
+const Aside2 = connect(mapStateToProps, { logout })(AsideComponent)
 
 export {
-  Aside
+  Aside2
 }

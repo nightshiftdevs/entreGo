@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
 import {
-  Main,
-  Aside
+  Main
 } from '../../../../../components';
 
 import { OrderClient5Container } from "../order5/order5.container";
+import { DashboardUserLayout } from "../user/dashboard.component";
 
 class OrderClient5Layout extends Component {
 
@@ -15,17 +15,13 @@ class OrderClient5Layout extends Component {
 
   render() {
     return (
-      <div className="container-dashboard">
-        <Aside />
-        <div className="main-dashboard">
-          <Main>
-            <OrderClient5Container />
-          </Main>
-        </div>
-      </div>
+      <DashboardUserLayout>
+        <Main>
+          <OrderClient5Container />
+        </Main>
+      </DashboardUserLayout>
     )
   }
-
 };
 
 export {

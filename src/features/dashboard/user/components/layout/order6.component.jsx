@@ -1,31 +1,23 @@
 import React, { Component } from "react";
 
 import {
-  Main,
-  Aside
+  Main
 } from '../../../../../components';
 
 import { OrderClient6Container } from "../order6/order6.container";
+import { DashboardUserLayout } from "../user/dashboard.component";
 
 class OrderClient6Layout extends Component {
 
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
-
   render() {
     return (
-      <div className="container-dashboard">
-        <Aside />
-        <div className="main-dashboard">
-          <Main>
-            <OrderClient6Container />
-          </Main>
-        </div>
-      </div>
+      <DashboardUserLayout>
+        <Main>
+          <OrderClient6Container />
+        </Main>
+      </DashboardUserLayout>
     )
   }
-
 };
 
 export {
