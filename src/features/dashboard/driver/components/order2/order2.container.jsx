@@ -13,10 +13,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTruck,
 } from '@fortawesome/free-solid-svg-icons';
+import socketInstance from '../../../../../api/socket/socket-instance';
 
 class Order2Container extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+    }
+    this.arrivedStartLocation = this.arrivedStartLocation.bind(this);
+  }
+
+  componentDidMount() {
+    let currentOrder = JSON.parse(localStorage.getItem('current'));
+    this.setState(currentOrder);
+  }
+
+  arrivedStartLocation() {
+    socketInstance.instance.emit('driver_arrived', this.state.orderID);
   }
 
   render() {
@@ -25,7 +38,7 @@ class Order2Container extends Component {
         <MapDriver2Layout {...this.props} />
         <div>
           <div className="order-btn-2">
-            <UIbutton component={Link} to={driver.order3} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
+            <UIbutton onClick={this.arrivedStartLocation} component={Link} to={driver.order3} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
               I ARRIVED &nbsp;<FontAwesomeIcon icon={faTruck} /></UIbutton>
             <UIbutton className="order-cancel-btn" name="button" color="default" fullWidth={true}>CANCEL</UIbutton>
           </div>

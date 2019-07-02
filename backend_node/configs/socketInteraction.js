@@ -18,6 +18,21 @@ module.exports = function (socket) {
     socketGlobal.emit('take_order', value);
   })
 
+  socket.on('driver_arrived', value => {
+    console.log('driver_arrived', value);
+    socketGlobal.emit('driver_arrived', value);
+  })
+
+  socket.on('sign_agreement', value => {
+    console.log('sign_agreement', value);
+    socketGlobal.emit('sign_agreement', value);
+  })
+
+  socket.on('end_service', value => {
+    console.log('end_service', value);
+    socketGlobal.emit('end_service', value);
+  })
+
 }
 
 
