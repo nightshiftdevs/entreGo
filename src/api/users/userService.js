@@ -9,8 +9,8 @@ class UserService {
     return Service.delete(id);
   }
 
-  getUser(id) {
-    return Service.get(id);
+  getUser(url,body) {
+    return Service.post(url,body);
   }
 
   saveUser(id, body) {

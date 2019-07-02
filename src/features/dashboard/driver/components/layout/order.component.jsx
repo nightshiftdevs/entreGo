@@ -30,7 +30,12 @@ class OrderLayout extends Component {
     // ESCUCHA "REGISTRO_ORDEN", HACER FETCH DE ORDENES
     socketInstance.instance.emit('conductor', 'conectado');
     socketInstance.instance.on('Registro_orden', value => {
-      console.log(value);
+      console.log('REGISTRO', value);
+      orderService.getAllOrders(ordersUrls.listOrders).then((res) => {
+        this.setState({
+          data: res.data.list
+        })
+      });
     });
   }
 

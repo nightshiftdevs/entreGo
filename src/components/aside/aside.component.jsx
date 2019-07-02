@@ -21,20 +21,32 @@ class AsideComponent extends Component {
     super(props);
     this.state = {
       driverRate: '4.5',
+      updated: false,
     }
   }
 
+  componentDidMount() {
+    console.log('mounted');
+  }
+
+  componentDidUpdate() {
+    if (this.state.updated !== true) {
+      this.setState({
+        updated: true
+      })
+      console.log('updated',this.props.data[0].fullname);
+    }
+  }
   render() {
     // @1.- To connect this component to logout action
-
+    console.log('render aside');
     return (
       <aside className="aside">
         <h1 className="title-text">entreGo</h1>
-
         <div>
           <div className="personal-info">
             <img className="personal-userphoto" src={userPlaceHolder} alt="user photo" />
-            <p className="personal-data">A really really long name</p>
+            <p className="personal-data">{this.state.updated ? `${this.props.data[0].fullname}` : 'UserName'}</p>
             <p className="personal-data star-rate">{this.state.driverRate}&nbsp;<FontAwesomeIcon icon={faStar} /></p>
           </div>
           <nav>
