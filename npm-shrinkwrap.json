@@ -4437,14 +4437,12 @@
         "balanced-match": {
           "version": "1.0.0",
           "bundled": true,
-          "dev": true,
-          "optional": true
+          "dev": true
         },
         "brace-expansion": {
           "version": "1.1.11",
           "bundled": true,
           "dev": true,
-          "optional": true,
           "requires": {
             "balanced-match": "^1.0.0",
             "concat-map": "0.0.1"
@@ -4459,20 +4457,17 @@
         "code-point-at": {
           "version": "1.1.0",
           "bundled": true,
-          "dev": true,
-          "optional": true
+          "dev": true
         },
         "concat-map": {
           "version": "0.0.1",
           "bundled": true,
-          "dev": true,
-          "optional": true
+          "dev": true
         },
         "console-control-strings": {
           "version": "1.1.0",
           "bundled": true,
-          "dev": true,
-          "optional": true
+          "dev": true
         },
         "core-util-is": {
           "version": "1.0.2",
@@ -4589,8 +4584,7 @@
         "inherits": {
           "version": "2.0.3",
           "bundled": true,
-          "dev": true,
-          "optional": true
+          "dev": true
         },
         "ini": {
           "version": "1.3.5",
@@ -4602,7 +4596,6 @@
           "version": "1.0.0",
           "bundled": true,
           "dev": true,
-          "optional": true,
           "requires": {
             "number-is-nan": "^1.0.0"
           }
@@ -4617,7 +4610,6 @@
           "version": "3.0.4",
           "bundled": true,
           "dev": true,
-          "optional": true,
           "requires": {
             "brace-expansion": "^1.1.7"
           }
@@ -4625,14 +4617,12 @@
         "minimist": {
           "version": "0.0.8",
           "bundled": true,
-          "dev": true,
-          "optional": true
+          "dev": true
         },
         "minipass": {
           "version": "2.3.5",
           "bundled": true,
           "dev": true,
-          "optional": true,
           "requires": {
             "safe-buffer": "^5.1.2",
             "yallist": "^3.0.0"
@@ -4651,7 +4641,6 @@
           "version": "0.5.1",
           "bundled": true,
           "dev": true,
-          "optional": true,
           "requires": {
             "minimist": "0.0.8"
           }
@@ -4732,8 +4721,7 @@
         "number-is-nan": {
           "version": "1.0.1",
           "bundled": true,
-          "dev": true,
-          "optional": true
+          "dev": true
         },
         "object-assign": {
           "version": "4.1.1",
@@ -4745,7 +4733,6 @@
           "version": "1.4.0",
           "bundled": true,
           "dev": true,
-          "optional": true,
           "requires": {
             "wrappy": "1"
           }
@@ -4867,7 +4854,6 @@
           "version": "1.0.2",
           "bundled": true,
           "dev": true,
-          "optional": true,
           "requires": {
             "code-point-at": "^1.0.0",
             "is-fullwidth-code-point": "^1.0.0",
@@ -6246,6 +6232,15 @@
       "resolved": "https://registry.npmjs.org/leaflet/-/leaflet-1.5.1.tgz",
       "integrity": "sha512-ekM9KAeG99tYisNBg0IzEywAlp0hYI5XRipsqRXyRTeuU8jcuntilpp+eFf5gaE0xubc9RuSNIVtByEKwqFV0w=="
     },
+    "leaflet-geosearch": {
+      "version": "2.7.0",
+      "resolved": "https://registry.npmjs.org/leaflet-geosearch/-/leaflet-geosearch-2.7.0.tgz",
+      "integrity": "sha512-6rZIZ5mp9Ifp3R37DKe7ipHV6/qnUY5kP1gNDz3oMT4hp5FqKyB2V4enoTDT1iziE8yrn0hy/OP9oI4HG1dKEw==",
+      "requires": {
+        "lodash.debounce": "^4.0.8",
+        "nodent-runtime": "^3.0.4"
+      }
+    },
     "levn": {
       "version": "0.3.0",
       "resolved": "https://registry.npmjs.org/levn/-/levn-0.3.0.tgz",
@@ -6370,6 +6365,11 @@
       "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.11.tgz",
       "integrity": "sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==",
       "dev": true
+    },
+    "lodash.debounce": {
+      "version": "4.0.8",
+      "resolved": "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz",
+      "integrity": "sha1-gteb/zCmfEAF/9XiUVMArZyk168="
     },
     "lodash.tail": {
       "version": "4.1.1",
@@ -7144,6 +7144,11 @@
           "dev": true
         }
       }
+    },
+    "nodent-runtime": {
+      "version": "3.2.1",
+      "resolved": "https://registry.npmjs.org/nodent-runtime/-/nodent-runtime-3.2.1.tgz",
+      "integrity": "sha512-7Ws63oC+215smeKJQCxzrK21VFVlCFBkwl0MOObt0HOpVQXs3u483sAmtkF33nNqZ5rSOQjB76fgyPBmAUrtCA=="
     },
     "nopt": {
       "version": "3.0.6",
