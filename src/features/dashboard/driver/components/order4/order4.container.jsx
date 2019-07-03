@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { MapDriver3Layout } from '../../../../../components';
+import { MapDriver2Layout } from '../../../../../components';
 
 import './order4.container.scss'
 import { driver } from '../../../../../helpers/urls';
@@ -20,6 +20,7 @@ class Order4Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      ready: false
     }
     this.endService = this.endService.bind(this);
   }
@@ -29,6 +30,12 @@ class Order4Container extends Component {
     this.setState(currentOrder);
   }
 
+  componentDidUpdate() {
+    if (this.state.ready !== true) {
+      this.setState({ ready: true });
+    }
+  }
+
   endService() {
     socketInstance.instance.emit('end_service', this.state.orderID);
   }
@@ -36,7 +43,7 @@ class Order4Container extends Component {
   render() {
     return (
       <div className="order-4">
-        <MapDriver3Layout />
+        <MapDriver2Layout {...this.state}/>
         <div>
           <div className="order-btn-4">
             <UIbutton onClick={this.endService} component={Link} to={driver.order5} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>

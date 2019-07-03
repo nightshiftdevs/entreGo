@@ -33,17 +33,19 @@ class OrderContainer extends Component {
   }
 
   takeOrder() {
-    socketInstance.instance.emit('take_order',this.props.orderID);
     let userType = localStorage.getItem('roleIDDriver');
-    let driverDetails = JSON.parse(localStorage.getItem('driverDetails'))[0].firstName;
+    let driverName = JSON.parse(localStorage.getItem('driverDetails'))[0].firstName;
+    let driverDetail = JSON.parse(localStorage.getItem('driverDetails'));
+    socketInstance.instance.emit('take_order', {orderID: this.props.orderID, driver: driverDetail});
     let properties = Object.assign({},
       this.state,
       {
         isDone: true,
         inRoom: true
       },
-      {userType},
-      {username: driverDetails});
+      { userType },
+      { username: driverName },
+      { driverDetails: driverDetail });
     localStorage.setItem('current', JSON.stringify(properties));
   };
 

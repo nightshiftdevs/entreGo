@@ -26,7 +26,6 @@ class Order2Container extends Component {
   componentDidMount() {
     let currentOrder = JSON.parse(localStorage.getItem('current'));
     this.setState(currentOrder);
-    console.log(this.props);
   }
 
   arrivedStartLocation() {
@@ -34,6 +33,7 @@ class Order2Container extends Component {
   }
 
   render() {
+    console.log('PROPS MAPA', this.props);
     return (
       <div className="order-2">
         <MapDriver2Layout {...this.props} />
