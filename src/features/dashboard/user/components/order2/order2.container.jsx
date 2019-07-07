@@ -33,21 +33,24 @@ class OrderClient2Logic extends Component {
     let userName = localStorage.getItem('username');
     this.props.getOrder(userName);
     socketInstance.instance.on('take_order', value => {
-      if (this.props.orderID == value) {
+      if (this.props.orderID == value.orderID) {
         history.push(client.order3);
       }
+      localStorage.setItem(`currentDriver`, JSON.stringify(value.driver));
     });
   }
 
   payOrder() {
     let userType = localStorage.getItem('roleIDClient');
+    let clientName = JSON.parse(localStorage.getItem('clientDetails'))[0].firstName;
     let properties = Object.assign({},
       this.props,
       {
         isDone: true,
         inRoom: true
       },
-      { userType });
+      { userType },
+      { username: clientName });
     localStorage.setItem(`currentClient`, JSON.stringify(properties));
   }
 

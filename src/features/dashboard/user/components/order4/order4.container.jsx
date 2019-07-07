@@ -15,6 +15,20 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 class OrderClient4Container extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+    this.clearLocalStorage = this.clearLocalStorage.bind(this);
+  }
+
+  clearLocalStorage() {
+    // CLEAR DATA FROM LOCALSTORAGE
+    localStorage.remove('currentClient');
+    
+    //LLAMAR ENDPOINT PARA ELIMINAR LA ORDEN ACTUAL Y CERRARLA O CAMBIAR SU STATUS
+  };
+
   render() {
     return (
       <div className="order-4">
@@ -29,12 +43,10 @@ class OrderClient4Container extends Component {
         </div>
         <div>
           <div className="order-btn-4">
-            <UIbutton component={Link} to={client.order5} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
+            <UIbutton onClick={this.clearLocalStorage} component={Link} to={client.order5} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
               ACCEPT &nbsp;<FontAwesomeIcon icon={faTruck} /></UIbutton>
           </div>
         </div>
-
-       
       </div>
     );
   }

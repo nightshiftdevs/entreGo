@@ -33,7 +33,8 @@ class AsideComponent extends Component {
     userService.getUser(userUrls.clientDetails, { username: user }).then((res) => {
       this.setState({
         data: res.data.list
-      })    
+      });
+      localStorage.setItem('clientDetails', JSON.stringify(res.data.list));    
     });
   }
 

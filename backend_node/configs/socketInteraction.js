@@ -15,6 +15,7 @@ module.exports = function (socket) {
 
   socket.on('take_order', value => {
     console.log('TAKE_ORDER', value);
+    console.log('TAKE_ORDERID', value.orderID);
     socketGlobal.emit('take_order', value);
   })
 

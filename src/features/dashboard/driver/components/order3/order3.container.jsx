@@ -15,6 +15,8 @@ import {
   faFileUpload
 } from '@fortawesome/free-solid-svg-icons';
 
+import socketInstance from '../../../../../api/socket/socket-instance';
+
 class Order3Container extends Component {
   constructor(props) {
     super(props);
