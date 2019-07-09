@@ -23,9 +23,22 @@
 }
 
 .map-template-4 {
-  height: 35vh;
+  height: 50vh;
   min-width: 220px;
   top: 0;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  .leaflet-control-geosearch.bar {
+    margin: auto !important;
+    width: 94% !important;
+    .glass {
+      height: 45px !important;
+      font-family: $font-open !important;
+      font-size: $font-size-little !important;
+      color: $color-scale2 !important;
+    }
+    .reset{
+      display: none !important;
+    }
+  }
 }
