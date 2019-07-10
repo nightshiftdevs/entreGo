@@ -100,6 +100,8 @@
         width: 50%;
         min-width: 350px;
         .landing-img-1 {
+          object-fit: cover;
+          height: 100%;
           width: 100%;
         }
         .gradient-1 {
@@ -306,6 +308,61 @@
     .max-logo {
       font-size: $font-size-biggest;
       color: $color-scale0;
+    }
+  }
+}
+
+@media (max-width: $mq-tablet) {
+  .landing-page {
+    .gradient-img {
+      .register-login {
+        .btn {
+          margin: 10px 0;
+        }
+      }
+      .login-user {
+        top: 30%;
+      }
+      .register-user {
+        top: 20%;
+      }
+    }
+    .about {
+      .about-summary {
+        .about-summary-text {
+          width: 70%;
+        }
+      }
+    }
+    .contact {
+      .contact-text {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: $mq-mobile) {
+  .landing-page {
+    .gradient-img {
+      .register-login {
+        .btn {
+          margin: 10px 0;
+        }
+      }
+      .login-user {
+        top: 30%;
+      }
+      .register-user {
+        top: 20%;
+      }
+    }
+    .about {
+      .about-summary {
+        .about-summary-text {
+          width: 100%;
+        }
+      }
     }
   }
 }
