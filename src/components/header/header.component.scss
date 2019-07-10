@@ -36,3 +36,13 @@ header {
     }
   }
 }
+
+@media (max-width: $mq-mobile) {
+  header{
+    .inside-container{
+      .header-nav{
+        display: none;
+      }
+    }
+  }
+}

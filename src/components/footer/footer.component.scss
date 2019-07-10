@@ -28,3 +28,12 @@
     }
   }
 }
+
+@media (max-width: $mq-mobile) {
+  .footer{
+    padding: 50px 0 25px;
+    ul{
+      margin: 0 0 20px 0;
+    }
+  }
+}

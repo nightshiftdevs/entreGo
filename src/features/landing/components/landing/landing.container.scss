@@ -100,6 +100,8 @@
         width: 50%;
         min-width: 350px;
         .landing-img-1 {
+          object-fit: cover;
+          height: 100%;
           width: 100%;
         }
         .gradient-1 {
@@ -306,6 +308,151 @@
     .max-logo {
       font-size: $font-size-biggest;
       color: $color-scale0;
+    }
+  }
+}
+
+@media (max-width: $mq-tablet) {
+  .landing-page {
+    .gradient-img {
+      .register-login {
+        .btn {
+          margin: 10px 0;
+        }
+      }
+      .login-user {
+        top: 30%;
+      }
+      .register-user {
+        top: 20%;
+      }
+    }
+    .about {
+      .about-summary {
+        .about-summary-text {
+          width: 70%;
+        }
+      }
+    }
+    .contact {
+      .contact-text {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: $mq-mobile) {
+  .landing-page {
+    .gradient-img {
+      .landing-img-0 {
+        height: 600px;
+        object-fit: cover;
+      }
+      .register-login {
+        top: 20%;
+        .btn {
+          margin: 10px 0;
+          &:not(:hover) {
+            color: $color-scale0;
+            background: $color-scale5;
+            transition: all 0.5s ease;
+          }
+        }
+      }
+      .login-user {
+        top: 50%;
+      }
+      .register-user {
+        width: 400px;
+        top: 45%;
+      }
+    }
+    .about {
+      .about-summary {
+        padding: 50px 0 30px;
+        .about-summary-text {
+          padding: 0;
+          width: 100%;
+        }
+      }
+      .about-detail {
+        flex-direction: column-reverse;
+        .gradient-img-1 {
+          width: 100%;
+          .gradient-1 {
+            display: none;
+          }
+        }
+        .about-detail-text {
+          padding: 30px;
+          .title {
+            font-size: $font-size-bigger;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+    .services {
+      .underline-effect {
+        .service-text {
+          flex-direction: column;
+          padding: 0 20px 20px;
+          .services-types {
+            display: flex;
+            padding: 0;
+            .service-description {
+              padding: 20px 10px;
+              p {
+                text-align: center;
+              }
+            }
+          }
+        }
+        br {
+          display: none;
+        }
+      }
+      .services-imgs {
+        .gradient-img-2 {
+          .landing-img-2 {
+            height: 350px;
+          }
+        }
+      }
+    }
+    .work-with-us {
+      .benefit {
+        height: 250px;
+        .benefit-icon {
+          font-size: 120px;
+        }
+      }
+    }
+    .statistics {
+      flex-wrap: wrap;
+      padding: 15px 40px;
+      .statistics-type {
+        padding: 10px 0;
+        .statistics-number {
+          font-size: $font-size-bigger;
+        }
+      }
+    }
+    .contact {
+      padding: 25px 40px;
+      .contact-text {
+        .contact-data {
+          flex-direction: column;
+          margin: 0;
+          .contact-personal {
+            margin: 10px;
+          }
+        }
+      }
+    }
+    .foot-logo {
+      padding: 40px 0;
     }
   }
 }

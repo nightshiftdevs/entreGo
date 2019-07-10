@@ -64,7 +64,8 @@ class AsideComponent extends Component {
             </ul>
           </nav>
         </div>
-        <Link to='/' onClick={this.props.logout} className="btn-logout"><FontAwesomeIcon icon={faSignOutAlt} />&nbsp;LOGOUT</Link>      </aside>
+        <Link to='/' onClick={this.props.logout} className="btn-logout"><FontAwesomeIcon icon={faSignOutAlt} />&nbsp;LOGOUT</Link>
+      </aside>
     );
   }
 }

@@ -60,10 +60,6 @@ class OrderContainer extends Component {
             <p className="order-data-client">{this.props.firstName} {this.props.lastName}</p>
           </div>
           <div className="order-data">
-            <p className="order-data-label"><FontAwesomeIcon icon={faMapMarkerAlt} /> Start address:</p>
-            <p className="order-data-content">{this.props.startAddress}</p>
-          </div>
-          <div className="order-data">
             <p className="order-data-label"><FontAwesomeIcon icon={faLocationArrow} /> Dest. address:</p>
             <p className="order-data-content">{this.props.endAddress}</p>
           </div>
