@@ -14,11 +14,16 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import socketInstance from '../../../../../api/socket/socket-instance';
 
+// To send order info to server
+import { OrderService, ordersUrls } from '../../../../../api';
+let orderService = new OrderService();
+
+
 class OrderDashboardContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      startAddress: '',
+      startAddress: "We'll use coordinates instead",
       endAddress: '',
       startLat: '',
       startLng: '',
@@ -26,8 +31,8 @@ class OrderDashboardContainer extends Component {
       endLng: '',
       cargoVolume: '',
       obs: '',
+      orderStatusID: 2,
       cost: Math.floor(Math.random() * (100 * 100 - 1 * 100) + 1 * 100) / (1 * 100),
-
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -47,10 +52,29 @@ class OrderDashboardContainer extends Component {
     e.preventDefault();
 
     socketInstance.instance.emit('Registro_orden', true);
-    socketInstance.instance.on('conductor', value => {
-      console.log('CONDUCTOR', value);
-    });
 
+    let email = localStorage.getItem('username');
+
+    let mapData = JSON.parse(localStorage.getItem('infoMap'));
+
+    let sendOrder = Object.assign(
+      {},
+      { email: email },
+      { endAddress: mapData.endAddress },
+      { startLat: mapData.startLat },
+      { startLng: mapData.startLng },
+      { endLat: mapData.endLat },
+      { endLng: mapData.endLng },
+      { startAddress: this.state.startAddress },
+      { cost: this.state.cost },
+      { packageVolume: this.state.cargoVolume },
+      { observations: this.state.obs },
+      { orderStatusID: this.state.orderStatusID }
+    );
+
+    orderService.createOrder(ordersUrls.createOrder, sendOrder);
+
+    console.log('email', sendOrder);
     history.push(client.order2);
   }
 

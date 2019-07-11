@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Map, TileLayer, Marker, MapControl, Popup, ZoomControl, withLeaflet } from "react-leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
+import { carIcon, clientIcon } from '../mapDriver2/Icons';
 
 const styleMap1 = 'http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg'
 const styleMap2 = 'http://a.tile.stamen.com/toner/{z}/{x}/{y}.png';
@@ -11,18 +12,18 @@ class SearchMap extends MapControl {
     // console.log('geo')
     return GeoSearchControl({
       provider: new OpenStreetMapProvider(),
-      style: 'bar',
-      showMarker: true,
+      style: 'button',
+      showMarker: false,
       marker: {                                           // optional: L.Marker    - default L.Icon.Default
         icon: new L.Icon.Default(),
         draggable: true,
       },
       showPopup: false,
       maxMarkers: 2,
-      autoClose: true,
-      animateZoom: true,
+      autoClose: false,
+      animateZoom: false,
       keepResult: false,
-      searchLabel: 'Enter destination address', 
+      searchLabel: 'Enter destination address',
     });
   }
 }
@@ -52,29 +53,62 @@ function MapUser1Container() {
     })
   }, [])
 
+
+
   const [lastCoordenate, setLastCoordenate] = React.useState([0, 0]);
   React.useEffect(() => {
     mapRef.current.leafletElement.on('geosearch/showlocation', (value) => {
-      setLastCoordenate([parseFloat(value.location.x), parseFloat(value.location.y)]);
-      L.marker(setLastCoordenate).addTo(map);
-      console.log('lastCoordenate', value)
+      setLastCoordenate([parseFloat(value.location.y), parseFloat(value.location.x)]);
+
+      console.log('lastCoordenate', value);
     })
   }, [])
 
+  let array = [position, lastCoordenate];
+  React.useEffect(() => {
+    if (array[1][1] !== 0) {
+      mapRef.current.leafletElement.fitBounds(array);
+    }
+    let infoToGenerateOrder = Object.assign({},
+      { startLat: position[0] },
+      { startLng: position[1] },
+      { endLat: lastCoordenate[0] },
+      { endLng: lastCoordenate[1] },
+      {endAddress: dirLabel}
+    );
+    localStorage.setItem(`infoMap`, JSON.stringify(infoToGenerateOrder));
+  }, [lastCoordenate])
+
+  // Persisting the zoom
+  let [zoomMap, setZoomMap] = React.useState(13);
+  // To set the zoom whenever the user changes it
+  const zoomControl = (e) => {
+    setZoomMap(mapRef.current.leafletElement.getZoom());
+  };
 
   const map = (
     <React.Fragment>
       <div>position {position}</div>
       <div>lastCoordenate {lastCoordenate}</div>
       <div>full dir {dirLabel}</div>
-      <Map ref={mapRef} className="map-template-4" center={position} zoom={13} zoomControl={false} attributionControl={false}
+
+      <Map ref={mapRef} className="map-template-4" center={position} onzoom={zoomControl} zoom={zoomMap} minZoom={10} maxZoom={25} zoomControl={false} attributionControl={false}
       >
         <TileLayer
           url={styleMap2}
         />
         <SearchBar ref={searchRef} />
-        <Marker position={position} />
-
+        <Marker position={position}>
+        </Marker>
+        {array[1][0] !== 0 ?
+          (<Marker key={`marker-1`} icon={clientIcon} position={array[1]}>
+            <Popup>
+              <span>Dirección de destino</span>
+            </Popup>
+          </Marker>) : (
+            null
+          )
+        };
       </Map>
     </React.Fragment>
   );
