@@ -10,6 +10,10 @@ function clientsMapReducers(state = initialState, action) {
         cost: action.payload.order[0].cost,
         firstName: action.payload.order[0].firstName
       }
+    case types.CHANGE__ORDER_STATUS:
+      return {
+        ...state
+      }
     case types.GET_ORDER_ERROR:
       return {
         ...state,

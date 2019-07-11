@@ -37,7 +37,34 @@ const getOrder = (username) => dispatch => {
         type: types.GET_ORDER,
         payload: res.data
       });
-      console.log(res.data);
+    }).catch(err => {
+      dispatch({
+        type: types.GET_ORDER_ERROR
+      });
+      dispatch(returnErrors(err.response.data, err.response.status));
+    });
+}
+
+// CHANGE ORDER's STATUS
+const changeOrderStatus = (orderUpdated) => dispatch => {
+
+  // Headers
+  const config = {
+    headers: {
+      'content-Type': 'application/json'
+    }
+  }
+
+  // Request Body
+  const body = JSON.stringify(orderUpdated)
+
+  orderService.updateOrder(ordersUrls.changeOrderStatus, body, config)
+    .then(res => {
+      dispatch({
+        type: types.CHANGE_STATUS,
+        payload: res.data
+      });
+      console.log('IF CREATED',res.data)
     }).catch(err => {
       dispatch({
         type: types.GET_ORDER_ERROR
@@ -47,5 +74,6 @@ const getOrder = (username) => dispatch => {
 }
 
 export {
-  getOrder
+  getOrder,
+  changeOrderStatus
 }

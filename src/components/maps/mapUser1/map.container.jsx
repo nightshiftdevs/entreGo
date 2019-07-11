@@ -29,8 +29,11 @@ class SearchMap extends MapControl {
 }
 
 function MapUser1Container() {
+  
+
   const SearchBar = withLeaflet(SearchMap);
-  const [position, setPosition] = React.useState([0, 0]);
+  const [position, setPosition] = React.useState([-12.1196426, -77.03382040]);
+  let mapCenterPosition = position;
 
   const mapRef = useRef();
   const searchRef = useRef();
@@ -38,6 +41,7 @@ function MapUser1Container() {
   React.useEffect(() => {
     const watchID = navigator.geolocation.watchPosition(pos => {
       setPosition([pos.coords.latitude, pos.coords.longitude]);
+      mapCenterPosition = position;
       console.log('position', pos)
     });
 
@@ -65,16 +69,19 @@ function MapUser1Container() {
   }, [])
 
   let array = [position, lastCoordenate];
+
   React.useEffect(() => {
+    let midCoord = [(position[0] + lastCoordenate[0]) * .5, (position[1] + lastCoordenate[1]) * .5];
+    mapCenterPosition = midCoord;
     if (array[1][1] !== 0) {
-      mapRef.current.leafletElement.fitBounds(array);
+      mapRef.current.leafletElement.fitBounds(array, { padding: [40, 40] });
     }
     let infoToGenerateOrder = Object.assign({},
       { startLat: position[0] },
       { startLng: position[1] },
       { endLat: lastCoordenate[0] },
       { endLng: lastCoordenate[1] },
-      {endAddress: dirLabel}
+      { endAddress: dirLabel }
     );
     localStorage.setItem(`infoMap`, JSON.stringify(infoToGenerateOrder));
   }, [lastCoordenate])
@@ -92,7 +99,7 @@ function MapUser1Container() {
       <div>lastCoordenate {lastCoordenate}</div>
       <div>full dir {dirLabel}</div>
 
-      <Map ref={mapRef} className="map-template-4" center={position} onzoom={zoomControl} zoom={zoomMap} minZoom={10} maxZoom={25} zoomControl={false} attributionControl={false}
+      <Map ref={mapRef} className="map-template-4" center={mapCenterPosition} onzoom={zoomControl} zoom={zoomMap} minZoom={10} maxZoom={25} zoomControl={false} attributionControl={false}
       >
         <TileLayer
           url={styleMap2}

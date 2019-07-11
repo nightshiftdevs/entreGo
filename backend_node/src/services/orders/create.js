@@ -7,7 +7,7 @@
   * @desc To create an order
   * @param req the request
   * @param res the response
-  * @return Success or failure message when CLIENT is created
+  * @return Success or failure message when ORDER is created
 */
 
 const createOrder = async (req, res) => {
