@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 // Icons
-import { carIcon, clientIcon } from '../mapDriver2/Icons';
+import { clientIcon, clientIcon2 } from '../mapDriver2/Icons';
 
 const styleMap1 = 'http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg'
 const styleMap2 = 'http://a.tile.stamen.com/toner/{z}/{x}/{y}.png';
@@ -31,7 +31,7 @@ function MapDriver1Container(props) {
         url={styleMap2}
       />
       <Marker position={startCoord} icon={clientIcon} />
-      <Marker position={endCoord} icon={clientIcon} />
+      <Marker position={endCoord} icon={clientIcon2} />
     </Map>
   );
   return map;

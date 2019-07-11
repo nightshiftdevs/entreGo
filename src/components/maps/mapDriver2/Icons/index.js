@@ -18,7 +18,12 @@ let clientIcon = new tinyIcon({
     iconUrl: require('./assets/client.png')
 });
 
+let clientIcon2 = new tinyIcon({
+  iconUrl: require('./assets/client2.png')
+});
+
 export {
     carIcon,
-    clientIcon
+    clientIcon,
+    clientIcon2
 }
