@@ -1,13 +1,19 @@
-import React, { Fragment } from "react";
+import React, { Fragment, Component } from "react";
 import MapDriver1Container from "./map.container";
 
-function MapDriver1Layout() {
+class MapDriver1Layout extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-  return (
-    <Fragment>
-      <MapDriver1Container />
-    </Fragment>
-  );
+  render() {
+    return (
+      <Fragment>
+        <MapDriver1Container {...this.props} />
+      </Fragment>
+    );
+  }
 }
 
 export {

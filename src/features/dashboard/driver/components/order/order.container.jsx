@@ -33,7 +33,7 @@ class OrderContainer extends Component {
   }
 
   takeOrder() {
-    let userType = localStorage.getItem('roleIDDriver');
+    let userType = localStorage.getItem('roleID');
     let driverName = JSON.parse(localStorage.getItem('driverDetails'))[0].firstName;
     let driverDetail = JSON.parse(localStorage.getItem('driverDetails'));
     socketInstance.instance.emit('take_order', {orderID: this.props.orderID, driver: driverDetail});
@@ -53,7 +53,7 @@ class OrderContainer extends Component {
 
     return (
       <div className="order">
-        <MapDriver1Layout />
+        <MapDriver1Layout {...this.props}/>
         <div className="order-card">
           <div className="order-user">
             <img className="order-data-userphoto" src={userPlaceHolder} alt="user photo" />

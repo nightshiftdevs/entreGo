@@ -3,7 +3,7 @@ let statusRegister = '';
 let usersConnected = [];
 
 module.exports = function (socket) {
-  console.log('TODOS TELETUBIES');
+  console.log('New user has connected!');
 
   socket.on('Registro_orden', value => {
     socketGlobal.emit('Registro_orden', value);

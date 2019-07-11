@@ -2,7 +2,7 @@ import L from 'leaflet';
 
 let tinyIcon = L.Icon.extend({
     options: {
-        iconSize: [30, 30],
+        iconSize: [25, 40],
         iconAnchor: [12, 36],
         shadowSize: [41, 41],
         shadowAnchor: [12, 38],

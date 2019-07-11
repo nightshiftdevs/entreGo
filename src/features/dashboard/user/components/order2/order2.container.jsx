@@ -41,7 +41,7 @@ class OrderClient2Logic extends Component {
   }
 
   payOrder() {
-    let userType = localStorage.getItem('roleIDClient');
+    let userType = localStorage.getItem('roleID');
     let clientName = JSON.parse(localStorage.getItem('clientDetails'))[0].firstName;
     let properties = Object.assign({},
       this.props,

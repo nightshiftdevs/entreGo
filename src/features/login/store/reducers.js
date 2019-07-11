@@ -19,9 +19,9 @@ function auth(state = initialState, action) {
     case types.LOGIN_SUCCESS:
       localStorage.setItem('token', action.payload.token);
       if (action.payload.user.roleID == 2) {
-        localStorage.setItem('roleIDDriver', action.payload.user.roleID);
+        localStorage.setItem('roleID', action.payload.user.roleID);
       } else {
-        localStorage.setItem('roleIDClient', action.payload.user.roleID);
+        localStorage.setItem('roleID', action.payload.user.roleID);
       }
       localStorage.setItem('username', action.payload.user.username);
       return {

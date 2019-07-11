@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import history from '../../../../../history';
 
 import './order7.container.scss'
 import { client } from '../../../../../helpers/urls';
@@ -14,7 +15,24 @@ import {
   faTruck
 } from '@fortawesome/free-solid-svg-icons';
 
-class OrderClient7Container extends Component {
+// To connect the changeOrderStatus with this component
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { changeOrderStatus } from '../../store/actions';
+
+class OrderClient7Logic extends Component {
+  constructor(props) {
+    super(props);
+    this.changeStatus = this.changeStatus.bind(this);
+  }
+  
+  changeStatus() {
+    this.props.changeOrderStatus({
+      orderID: this.props.orderID,
+      orderStatusID: 2
+    });
+    history.replace(client.dashboard);
+  }
   render() {
     return (
       <div className="order-7">
@@ -30,16 +48,25 @@ class OrderClient7Container extends Component {
         </div>
         <div>
           <div className="order-btn-7">
-            <UIbutton component={Link} to={client.dashboard} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
+            <UIbutton onClick={this.changeStatus} className="order-accept-btn" name="button" variant="contained" color="primary" fullWidth={true}>
               ACCEPT &nbsp;<FontAwesomeIcon icon={faTruck} /></UIbutton>
           </div>
         </div>
 
-       
       </div>
     );
   }
 }
+
+OrderClient7Logic.PropTypes = {
+  changeOrderStatus: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => ({
+  orderID: state.clientsMapReducers.orderID
+})
+
+const OrderClient7Container = connect(mapStateToProps, { changeOrderStatus })(OrderClient7Logic)
 
 export {
   OrderClient7Container

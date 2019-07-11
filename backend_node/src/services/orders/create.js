@@ -4,28 +4,36 @@
 */
 
 /**
-  * @desc list all orders
+  * @desc To create an order
   * @param req the request
   * @param res the response
-  * @return an array containing all current orders
+  * @return Success or failure message when ORDER is created
 */
 
-const sql = 'call sp_list_orders';
+const createOrder = async (req, res) => {
+  console.log(req.body);
+  let order = await req.body,
+    startAddress = order.startAddress,
+    endAddress = order.endAddress,
+    startLat = order.startLat,
+    startLng = order.startLng,
+    endLat = order.endLat,
+    endLng = order.endLng,
+    packageVolume = order.packageVolume,
+    observations = order.observations,
+    cost = order.cost,
+    email = order.email,
+    orderStatusID = order.orderStatusID;
 
-const list = async (req, res) => {
-  try {
-    db.query(sql, function (error, results, fields) {
+ let sql = 'CALL sp_order_create(?,?,?,?,?,?,?,?,?,?,?)';
+    db.query(sql, [startAddress, endAddress, startLat, startLng, endLat, endLng, packageVolume, observations, cost, email, orderStatusID], function (error, results, fields) {
       if (error) throw error;
-      res.json({
-        list: results[0]
-      });
-    })
-  } catch (error) {
-    return res.status(500).json({
-      'code': 'SERVER_ERROR',
-      'description': 'something went wrong, Please try again'
+      else {
+        res.json({
+          msg: 'Order created successfully!'
+        });
+      }
     });
-  }
 };
 
-module.exports = list;
+module.exports = createOrder;

@@ -13,8 +13,8 @@ class OrderService {
     return Service.post(url, config, body);
   };
 
-  saveOrder(id, body) {
-    return Service.put(id, body);
+  updateOrder(url, config, body) {
+    return Service.post(url, config, body);
   }
 
   getAllOrders(url) {
