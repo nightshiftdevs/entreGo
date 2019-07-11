@@ -12,7 +12,7 @@ class SearchMap extends MapControl {
     // console.log('geo')
     return GeoSearchControl({
       provider: new OpenStreetMapProvider(),
-      style: 'button',
+      style: 'bar',
       showMarker: false,
       marker: {                                           // optional: L.Marker    - default L.Icon.Default
         icon: new L.Icon.Default(),
@@ -29,8 +29,6 @@ class SearchMap extends MapControl {
 }
 
 function MapUser1Container() {
-  
-
   const SearchBar = withLeaflet(SearchMap);
   const [position, setPosition] = React.useState([-12.1196426, -77.03382040]);
   let mapCenterPosition = position;
@@ -74,7 +72,7 @@ function MapUser1Container() {
     let midCoord = [(position[0] + lastCoordenate[0]) * .5, (position[1] + lastCoordenate[1]) * .5];
     mapCenterPosition = midCoord;
     if (array[1][1] !== 0) {
-      mapRef.current.leafletElement.fitBounds(array, { padding: [40, 40] });
+      mapRef.current.leafletElement.fitBounds(array, { padding: [80, 80] });
     }
     let infoToGenerateOrder = Object.assign({},
       { startLat: position[0] },
@@ -95,12 +93,7 @@ function MapUser1Container() {
 
   const map = (
     <React.Fragment>
-      <div>position {position}</div>
-      <div>lastCoordenate {lastCoordenate}</div>
-      <div>full dir {dirLabel}</div>
-
-      <Map ref={mapRef} className="map-template-4" center={mapCenterPosition} onzoom={zoomControl} zoom={zoomMap} minZoom={10} maxZoom={25} zoomControl={false} attributionControl={false}
-      >
+      <Map ref={mapRef} className="map-template-4" center={mapCenterPosition} onzoom={zoomControl} zoom={zoomMap} minZoom={10} maxZoom={25} zoomControl={false} attributionControl={false}>
         <TileLayer
           url={styleMap2}
         />
