@@ -47,6 +47,7 @@ class AsideComponent extends Component {
   render() {
     // @1.- To connect this component to logout action
     return (
+      <div className="all-aside">
       <aside className="aside">
         <h1 className="title-text">entreGo</h1>
         <div>
@@ -66,6 +67,7 @@ class AsideComponent extends Component {
         </div>
         <Link to='/' onClick={this.props.logout} className="btn-logout"><FontAwesomeIcon icon={faSignOutAlt} />&nbsp;LOGOUT</Link>
       </aside>
+      </div>
     );
   }
 }

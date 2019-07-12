@@ -1,76 +1,79 @@
 @import "../../assets/styles/imports";
 
-.aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  min-width: 25vw;
+.all-aside{
   min-height: 100vh;
-  padding: 20px;
+  min-width: 25vw;
   background: $color-scale4;
-
-  .title-text {
-    text-align: center;
-    color: $color-scale0;
-    margin: 0;
-  }
-  .personal-info {
+  .aside {
+    position: fixed;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    .personal-userphoto {
-      display: block;
-      width: 12vw;
-      margin: 0 0 20px 0;
-      border-radius: 100%;
-      border: 2px solid $color-scale0;
-    }
-    .personal-data {
+    justify-content: space-around;
+    padding: 20px;
+    .title-text {
+      text-align: center;
       color: $color-scale0;
-      font-size: $font-size-normal-big;
-      font-weight: $font-bolder;
-      &.star-rate {
-        color: $color-scale1;
-        font-size: $font-size-normal;
+      margin: 0;
+    }
+    .personal-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  
+      .personal-userphoto {
+        display: block;
+        width: 12vw;
+        margin: 0 0 20px 0;
+        border-radius: 100%;
+        border: 2px solid $color-scale0;
+      }
+      .personal-data {
+        color: $color-scale0;
+        font-size: $font-size-normal-big;
+        font-weight: $font-bolder;
+        &.star-rate {
+          color: $color-scale1;
+          font-size: $font-size-normal;
+        }
       }
     }
-  }
-  .settings {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0 40px;
-    border-bottom: 1px solid $color-scale0;
-    border-top: 1px solid $color-scale0;
-    .btn-settings {
-      position: relative;
-      display: inline-block;
+    .settings {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0 40px;
+      border-bottom: 1px solid $color-scale0;
+      border-top: 1px solid $color-scale0;
+      .btn-settings {
+        position: relative;
+        display: inline-block;
+        color: $color-scale0;
+        padding: 20px 0 10px 0;
+        font-weight: $font-bolder;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 90%;
+          height: 2px !important;
+          width: 40%;
+          left: 30%;
+          background-color: $color-scale0;
+          transition: 0.4s ease-out all 0.1s;
+        }
+        &:hover::after {
+          width: 130%;
+          left: -15%;
+          transition: 0.5s ease all;
+        }
+      }
+    }
+    .btn-logout {
       color: $color-scale0;
-      padding: 20px 0 10px 0;
+      display: flex;
+      justify-content: center;
       font-weight: $font-bolder;
-      &::after {
-        content: "";
-        position: absolute;
-        top: 90%;
-        height: 2px !important;
-        width: 40%;
-        left: 30%;
-        background-color: $color-scale0;
-        transition: 0.4s ease-out all 0.1s;
-      }
-      &:hover::after {
-        width: 130%;
-        left: -15%;
-        transition: 0.5s ease all;
-      }
     }
   }
-  .btn-logout {
-    color: $color-scale0;
-    display: flex;
-    justify-content: center;
-    font-weight: $font-bolder;
-  }
+  
 }
