@@ -15,12 +15,12 @@ const jwt = require('jsonwebtoken');
 
 const login = async (req, res) => {
   try {
-    
+
     let username = await req.body.username.toString();
     let password = await req.body.password;
-    
+
     if (username && password) {
-      db.query(`SELECT * FROM USERS WHERE password ='${password}' AND email ='${username}'`,
+      db.query(`SELECT * FROM USERS WHERE AES_DECRYPT(password, 'entrego') ='${password}' AND email ='${username}'`,
         [username, password], function (error, results, fields) {
           if (results.length > 0) {
             let token = jwt.sign({ username: username }, config.JWT.secret, {
@@ -33,7 +33,7 @@ const login = async (req, res) => {
                 message: 'Authentication successful!',
                 id: results[0].id,
                 username: results[0].email,
-                roleID:  results[0].roleID,
+                roleID: results[0].roleID,
               },
               token: token
             });
