@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Map, TileLayer, Marker, MapControl, Popup, ZoomControl, withLeaflet } from "react-leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
-import { carIcon, clientIcon } from '../mapDriver2/Icons';
+import { clientIcon, clientIcon2 } from '../mapDriver2/Icons';
 
 const styleMap1 = 'http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg'
 const styleMap2 = 'http://a.tile.stamen.com/toner/{z}/{x}/{y}.png';
@@ -98,10 +98,10 @@ function MapUser1Container() {
           url={styleMap2}
         />
         <SearchBar ref={searchRef} />
-        <Marker position={position}>
+        <Marker position={position} icon={clientIcon}>
         </Marker>
         {array[1][0] !== 0 ?
-          (<Marker key={`marker-1`} icon={clientIcon} position={array[1]}>
+          (<Marker key={`marker-1`} icon={clientIcon2} position={array[1]}>
             <Popup>
               <span>Dirección de destino</span>
             </Popup>
